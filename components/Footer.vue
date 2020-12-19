@@ -7,7 +7,7 @@
       target="_blank"
     >
       <span class="upyun-text">本网站由</span>
-      <IUpYun class="upyun-icon" />
+      <IconUpYun />
       <span class="upyun-text">提供云存储服务</span>
     </a>
   </Container>
@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-.upyun-icon {
+.icon {
   width: 3.75rem;
 }
 </style>

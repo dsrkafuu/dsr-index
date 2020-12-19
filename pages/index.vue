@@ -1,6 +1,8 @@
 <template>
   <Container class="main">
-    <Card></Card>
+    <Card>
+      <Icon i="steam" />
+    </Card>
   </Container>
 </template>
 
