@@ -3,7 +3,11 @@
     <ECard>
       <div class="wrapper">
         <div class="avatar">
-          <img :src="$applyCDN('/images/avatars/amzrk2_256p.webp')" />
+          <picture>
+            <source :srcset="$applyCDN('/images/avatars/amzrk2_256p.webp')" type="image/webp" />
+            <source :srcset="$applyCDN('/images/avatars/amzrk2_256p.jpg')" type="image/jpeg" />
+            <img :src="$applyCDN('/images/avatars/amzrk2_256p.jpg')" />
+          </picture>
         </div>
         <div class="content">
           <span class="name">DSRKafuU</span>
@@ -107,7 +111,8 @@ export default {
     padding-right: 0;
   }
 
-  .main .avatar img {
+  .main .avatar img,
+  .main .avatar picture {
     display: block;
     width: 8rem;
     height: 8rem;
