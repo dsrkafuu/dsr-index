@@ -60,7 +60,7 @@ export default {
       'svg',
       {
         class: ['icon'],
-        style: { fill: this.fill },
+        style: { fill: this.fill, height: this.size },
         attrs: { viewBox: data.viewBox, xmlns: 'http://www.w3.org/2000/svg' },
       },
       paths
@@ -75,6 +75,10 @@ export default {
     fill: {
       type: String,
       default: 'currentColor',
+    },
+    size: {
+      type: String,
+      default: '1.25rem',
     },
   },
 };

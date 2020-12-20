@@ -10,7 +10,7 @@
 .card {
   background-color: var(--color-bg);
   box-shadow: var(--shadow);
-  border-radius: var(--radius);
+  border-radius: var(--size-radius);
   padding: var(--space-base);
 }
 </style>

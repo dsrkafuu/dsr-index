@@ -3,7 +3,6 @@
     'Helvetica Neue', 'Helvetica', sans-serif;
   --font-base: 16px;
   --font-sm: 0.875rem;
-
   --color-body: #f2f5f8;
   --color-bg: #fffffd;
   --color-hover: #f3f5fa;
@@ -11,12 +10,9 @@
   --color-font: #3f4551;
   --color-primary: #8aa2d3;
   --color-secondary: #8b81c3;
-
   --space-sm: 0.5rem;
   --space-base: 1rem;
   --space-lg: 1.5rem;
-
+  --size-radius: 3px;
   --shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
-
-  --radius: 3px;
 }

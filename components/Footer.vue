@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-.icon {
+.icon-up {
   width: 3.75rem;
 }
 </style>
