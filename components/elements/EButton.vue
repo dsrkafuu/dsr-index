@@ -25,12 +25,6 @@ export default {
     },
     active: Boolean,
     disabled: Boolean,
-    rmRadius: {
-      type: String,
-      validator: (val) => {
-        return ['top', 'bottom'].includes(val);
-      },
-    },
   },
   computed: {
     buttonClasses() {
@@ -40,13 +34,13 @@ export default {
           'btn-disabled': this.disabled,
           'btn-active': this.active,
         },
-        this.rmRadius && `btn-rm-${this.rmRadius}`,
       ];
     },
     buttonSize() {
       return {
         width: this.size || this.width,
         height: this.size || this.height,
+        lineHeight: this.size || this.height,
       };
     },
   },
@@ -67,7 +61,6 @@ export default {
   border-radius: var(--size-radius);
   /* icon support */
   display: inline-flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -84,15 +77,5 @@ export default {
 .btn.btn-disabled:hover {
   cursor: not-allowed;
   background-color: transparent;
-}
-
-.btn.btn-rm-bottom {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.btn.btn-rm-top {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 </style>

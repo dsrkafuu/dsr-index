@@ -16,8 +16,9 @@ html,
 body {
   font-family: var(--font-family);
   font-size: var(--font-base);
-  background-color: var(--color-body);
+  /* background-color: var(--color-body); */
   color: var(--color-font);
+  user-select: none;
 }
 
 #app {

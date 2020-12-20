@@ -1,15 +1,90 @@
 <template>
-  <Container class="main">
-    <Card>
-      <Button size="2.5rem" rmRadius="bottom">
-        <Icon i="steam" />
-      </Button>
-      <Button size="2.5rem" rmRadius="bottom">
-        <Icon i="github" />
-      </Button>
-    </Card>
-  </Container>
+  <EContainer class="main">
+    <ECard>
+      <div class="wrapper">
+        <div class="avatar">
+          <img :src="$applyCDN('/images/avatars/amzrk2_256p.webp')" />
+        </div>
+        <div class="content">
+          <span class="name">DSRKafuU</span>
+          <span class="id">amzrk2</span>
+          <div class="ctrl">
+            <EButton
+              v-for="icon of icons"
+              :key="icon.name"
+              size="2.5rem"
+              :href="icon.link"
+              target="_blank"
+            >
+              <Icon :i="icon.icon" />
+            </EButton>
+          </div>
+        </div>
+      </div>
+    </ECard>
+  </EContainer>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      icons: [
+        { name: 'Blog', icon: 'blog', link: 'https://blog.amzrk2.cc' },
+        { name: 'GitHub', icon: 'github', link: 'https://blog.amzrk2.cc' },
+        { name: 'Twitter', icon: 'twitter', link: 'https://blog.amzrk2.cc' },
+        { name: 'Bangumi', icon: 'tv', link: 'https://blog.amzrk2.cc' },
+        { name: 'Steam', icon: 'steam', link: 'https://blog.amzrk2.cc' },
+      ],
+    };
+  },
+};
+</script>
+
 <style>
+.main .wrapper {
+  display: flex;
+  height: 12.5rem;
+}
+
+.main .avatar {
+  flex: 0 0 auto;
+  width: 12.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .avatar img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background-color: var(--color-wrapper);
+}
+
+.main .content {
+  flex: 1 0 auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .content .name {
+  font-size: var(--font-lg);
+  font-weight: 500;
+  letter-spacing: 0.025rem;
+}
+
+.main .content .id {
+  font-size: var(--font-sm);
+  margin-top: var(--space-sm);
+}
+
+.main .content .ctrl {
+  margin-top: var(--space-base);
+}
 </style>

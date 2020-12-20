@@ -1,8 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-wrapper">
-      <slot>Card no contents</slot>
-    </div>
+    <slot>Card no contents</slot>
   </div>
 </template>
 
@@ -11,6 +9,6 @@
   background-color: var(--color-bg);
   box-shadow: var(--shadow);
   border-radius: var(--size-radius);
-  padding: var(--space-base);
+  width: 100%;
 }
 </style>
