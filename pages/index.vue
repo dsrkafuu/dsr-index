@@ -3,15 +3,13 @@
     <ECard>
       <div class="wrapper">
         <div class="avatar">
-          <picture class="image">
-            <source :srcset="$applyCDN('/images/avatars/amzrk2_256p.webp')" type="image/webp" />
-            <source :srcset="$applyCDN('/images/avatars/amzrk2_256p.jpg')" type="image/jpeg" />
+          <div class="image">
             <img
               :src="$applyCDN('/images/avatars/amzrk2_256p.jpg')"
               :style="avatarStyle"
               @load="avatarLoaded"
             />
-          </picture>
+          </div>
         </div>
         <div class="content">
           <span class="name">DSRKafuU</span>
@@ -45,6 +43,7 @@ export default {
         { name: 'Steam', icon: 'steam', link: 'https://steamcommunity.com/id/amzrk2/' },
       ],
       avatarStyle: {
+        transition: 'opacity 300ms ease',
         opacity: 0,
       },
     };
@@ -84,7 +83,6 @@ export default {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  transition: opacity 300ms ease;
 }
 
 .main .content {
