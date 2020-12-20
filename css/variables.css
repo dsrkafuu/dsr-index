@@ -1,7 +1,8 @@
 :root {
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Arial',
     'Helvetica Neue', 'Helvetica', sans-serif;
-  --font-lg: 1.75rem;
+  --font-title: 1.75rem;
+  --font-lg: 1.25rem;
   --font-base: 16px;
   --font-sm: 0.875rem;
   --color-body: #f2f5f8;

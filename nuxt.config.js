@@ -19,12 +19,7 @@ export default {
   },
 
   // global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    'normalize.css',
-    './assets/css/fonts.css',
-    './assets/css/variables.css',
-    './assets/css/reset.css',
-  ],
+  css: ['normalize.css', './css/fonts.css', './css/variables.css', './css/reset.css'],
 
   // auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

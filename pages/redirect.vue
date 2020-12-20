@@ -110,7 +110,6 @@ export default {
 
 .progress > div {
   height: 0.35rem;
-  border-radius: var(--size-radius);
   overflow: hidden;
 }
 </style>
