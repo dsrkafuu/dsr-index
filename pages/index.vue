@@ -90,4 +90,47 @@ export default {
 .main .content .ctrl {
   margin-top: var(--space-base);
 }
+
+@media screen and (max-width: 524px) {
+  .main .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: unset;
+  }
+
+  .main .avatar {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .main .avatar img {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: var(--color-wrapper);
+  }
+
+  .main .content {
+    padding-top: 0;
+    padding-left: var(--space-lg);
+  }
+
+  .main .content .name {
+    margin-top: 0;
+  }
+
+  .main .content .id {
+    font-size: var(--font-sm);
+    margin-top: var(--space-sm);
+  }
+
+  .main .content .ctrl {
+    margin-top: var(--space-base);
+  }
+}
 </style>
