@@ -96,7 +96,7 @@ export default {
 }
 
 .main .content .name {
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   font-weight: 500;
   letter-spacing: 0.025rem;
   margin-top: var(--space-sm);
