@@ -3,10 +3,14 @@
     <ECard>
       <div class="wrapper">
         <div class="avatar">
-          <picture>
+          <picture class="image">
             <source :srcset="$applyCDN('/images/avatars/amzrk2_256p.webp')" type="image/webp" />
             <source :srcset="$applyCDN('/images/avatars/amzrk2_256p.jpg')" type="image/jpeg" />
-            <img :src="$applyCDN('/images/avatars/amzrk2_256p.jpg')" />
+            <img
+              :src="$applyCDN('/images/avatars/amzrk2_256p.jpg')"
+              :style="avatarStyle"
+              @load="avatarLoaded"
+            />
           </picture>
         </div>
         <div class="content">
@@ -40,7 +44,15 @@ export default {
         { name: 'Bangumi', icon: 'tv', link: 'https://bgm.tv/user/amzrk2' },
         { name: 'Steam', icon: 'steam', link: 'https://steamcommunity.com/id/amzrk2/' },
       ],
+      avatarStyle: {
+        opacity: 0,
+      },
     };
+  },
+  methods: {
+    avatarLoaded() {
+      this.avatarStyle.opacity = 1;
+    },
   },
 };
 </script>
@@ -61,12 +73,18 @@ export default {
   padding-right: 1rem;
 }
 
+.main .image {
+  border-radius: 50%;
+  background-color: var(--color-wrapper);
+  overflow: hidden;
+}
+
 .main .avatar img {
   display: block;
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  background-color: var(--color-wrapper);
+  transition: opacity 300ms ease;
 }
 
 .main .content {
