@@ -1,17 +1,19 @@
 {
   "name": "dsr-index",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "cross-env NODE_ENV=development nuxt",
+    "build": "cross-env NODE_ENV=production nuxt build",
+    "start": "cross-env NODE_ENV=production nuxt start",
+    "generate": "cross-env NODE_ENV=production nuxt generate"
   },
   "dependencies": {
     "core-js": "~3.8.1",
     "normalize.css": "~8.0.1",
     "nuxt": "~2.14.12"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
 }
