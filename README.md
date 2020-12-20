@@ -1,20 +1,9 @@
 # dsr-index
 
-## Build Setup
+Index page of all my domains built with Nuxt.js, also includes redirect pages.
 
-```bash
-# install dependencies
-$ npm install
+## LICENSE
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+The repo is released under the `Apache License 2.0`, for more information read the [LICENSE](https://github.com/amzrk2/dsr-index/blob/master/LICENSE).
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+**Copyright © 2020-present DSRKafuU <https://amzrk2.cc/>**
