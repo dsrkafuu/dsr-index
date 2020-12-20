@@ -111,8 +111,7 @@ export default {
     padding-right: 0;
   }
 
-  .main .avatar img,
-  .main .avatar picture {
+  .main .avatar img {
     display: block;
     width: 8rem;
     height: 8rem;
