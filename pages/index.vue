@@ -35,10 +35,10 @@ export default {
     return {
       icons: [
         { name: 'Blog', icon: 'blog', link: 'https://blog.amzrk2.cc' },
-        { name: 'GitHub', icon: 'github', link: 'https://blog.amzrk2.cc' },
-        { name: 'Twitter', icon: 'twitter', link: 'https://blog.amzrk2.cc' },
-        { name: 'Bangumi', icon: 'tv', link: 'https://blog.amzrk2.cc' },
-        { name: 'Steam', icon: 'steam', link: 'https://blog.amzrk2.cc' },
+        { name: 'GitHub', icon: 'github', link: 'https://github.com/amzrk2' },
+        { name: 'Twitter', icon: 'twitter', link: 'https://twitter.com/amzrk2' },
+        { name: 'Bangumi', icon: 'tv', link: 'https://bgm.tv/user/amzrk2' },
+        { name: 'Steam', icon: 'steam', link: 'https://steamcommunity.com/id/amzrk2/' },
       ],
     };
   },
