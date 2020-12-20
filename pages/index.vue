@@ -52,8 +52,9 @@ export default {
   width: 12.5rem;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .main .avatar img {
@@ -67,6 +68,7 @@ export default {
 .main .content {
   flex: 1 0 auto;
   padding: var(--space-lg);
+  padding-left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,6 +79,7 @@ export default {
   font-size: var(--font-lg);
   font-weight: 500;
   letter-spacing: 0.025rem;
+  margin-top: var(--space-sm);
 }
 
 .main .content .id {

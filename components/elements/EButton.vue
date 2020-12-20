@@ -63,6 +63,7 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: all 150ms ease;
 }
 
 .btn:hover {
