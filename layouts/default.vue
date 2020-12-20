@@ -1,22 +1,9 @@
 <template>
   <div id="app">
     <Nuxt />
-    <Footer v-if="showFooter" />
+    <!-- <Footer /> -->
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    showFooter() {
-      if (process.client) {
-        return window.location.hostname !== 'amzrk2.cc';
-      }
-      return true;
-    },
-  },
-};
-</script>
 
 <style>
 *,
