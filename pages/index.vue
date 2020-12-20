@@ -24,7 +24,7 @@
               :href="icon.link"
               target="_blank"
             >
-              <Icon :i="icon.icon" />
+              <IFont :i="icon.icon" />
             </EButton>
           </div>
         </div>

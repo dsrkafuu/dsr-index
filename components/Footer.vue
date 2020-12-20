@@ -7,7 +7,7 @@
       href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
       target="_blank"
     >
-      <span>本网站由</span><IconUpYun class="icon" /><span>提供云存储服务</span>
+      <span>本网站由</span><IUpYun class="icon" /><span>提供云存储服务</span>
     </EButton>
   </EContainer>
 </template>
