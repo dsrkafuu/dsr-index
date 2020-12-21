@@ -38,7 +38,9 @@ module.exports = {
     // clean last built files
     new CleanWebpackPlugin(),
     // extract css files from loader
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
     // create html files use `html-loader` and `svg-inline-loader`
     new HtmlWebpackPlugin({
       template: './src/index.html',
