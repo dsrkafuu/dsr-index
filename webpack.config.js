@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: env,
@@ -13,7 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     hashDigestLength: 6,
-    filename: 'assets/[name].[contenthash].js',
+    filename: '[name].[contenthash].js',
   },
   // js minification settings
   optimization: {
@@ -56,6 +57,9 @@ module.exports = {
               useShortDoctype: true,
             }
           : false,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'static' }],
     }),
   ],
 };
