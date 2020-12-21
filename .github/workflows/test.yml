@@ -26,6 +26,6 @@ jobs:
       - name: Build ✨
         run: |
           npm ci
-          npm run generate
+          npm run build
           cp README.md dist/README.md
           echo "nojekyll" >> dist/.nojekyll
