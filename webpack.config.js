@@ -26,14 +26,19 @@ module.exports = {
         test: /\.s?[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
+      // inline svg required in html template
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
     ],
   },
   plugins: [
     // clean last built files
     new CleanWebpackPlugin(),
-    // create css files
+    // extract css files from loader
     new MiniCssExtractPlugin(),
-    // create html files
+    // create html files use `html-loader` and `svg-inline-loader`
     new HtmlWebpackPlugin({
       template: './src/index.html',
       minify:
