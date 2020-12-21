@@ -1,3 +1,17 @@
 body {
   background-color: aqua;
+  flex: 1 1 auto;
+  display: flex;
+}
+::placeholder {
+  color: gray;
+}
+
+.image {
+  background: #ffffff;
+}
+@media (min-resolution: 2dppx) {
+  .image {
+    background: #ffffff;
+  }
 }

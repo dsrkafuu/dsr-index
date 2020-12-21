@@ -1,0 +1,6 @@
+>= 0.5%
+last 1 major version
+not dead
+chrome >= 70
+firefox >= 70
+edge >= 18
