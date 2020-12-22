@@ -93,7 +93,11 @@ module.exports = (env) => {
       contentBase: 'dist',
       compress: true,
       port: 9000,
+      // fallback all 404 to 404.html like github pages
+      historyApiFallback: {
+        rewrites: [{ from: /^\/.*/, to: '/404.html' }],
+      },
     },
-    devtool: env.production ? false : 'cheap-module-source-map',
+    devtool: env.production ? false : 'source-map',
   };
 };
