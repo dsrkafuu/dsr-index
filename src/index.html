@@ -23,7 +23,10 @@
         <div class="main">
           <div class="avatar">
             <div class="image">
-              <img src="<%= require('./images/avatars/amzrk2_256p.webp') %>" />
+              <picture>
+                <source type="image/webp" srcset="<%= require('./images/avatars/amzrk2_256p.webp') %>">
+                <img src="<%= require('./images/avatars/amzrk2_256p.jpg') %>" alt="avatar">
+              </picture>
             </div>
           </div>
           <div class="content">
