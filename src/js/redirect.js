@@ -45,11 +45,18 @@ function insertIndicator(target, duration) {
  * @returns {Promise<void>}
  */
 async function initRedirect(urlParams) {
-  const target = urlParams.get('t') || '';
-  const duration = urlParams.get('d') || 5000;
+  const target = (urlParams.get('t') || '').trim();
+  const duration = urlParams.get('d') || 3000;
 
   // init animation
   await insertIndicator(target, duration);
+
+  // check target then redirect
+  if (/^.*:\/\//.exec(target)) {
+    setTimeout(() => {
+      window.location.href = target;
+    }, duration);
+  }
 }
 
 export { initRedirect };
