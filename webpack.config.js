@@ -13,10 +13,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    hashDigestLength: 6,
-    filename: '[name].[contenthash].js',
+    filename: '[name].[contenthash:6].js',
   },
-  // js minification settings
   optimization: {
     minimizer: [new TerserWebpackPlugin({ extractComments: false })],
   },
@@ -30,7 +28,20 @@ module.exports = {
       // inline svg required in html template
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader',
+        loader: 'raw-loader',
+        options: {
+          esModule: false,
+        },
+      },
+      // files
+      {
+        test: /\.(jpe?g|png|gif|webp|ico|woff2?|[to]tf)$/i,
+        loader: 'file-loader',
+        options: {
+          esModule: false,
+          name: '[name].[contenthash:6].[ext]',
+          outputPath: 'assets',
+        },
       },
     ],
   },
@@ -39,7 +50,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     // extract css files from loader
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: '[name].[contenthash:6].css',
     }),
     // create html files use `html-loader` and `svg-inline-loader`
     new HtmlWebpackPlugin({
