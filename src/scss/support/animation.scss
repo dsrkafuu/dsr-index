@@ -19,3 +19,13 @@
     height: $height-info + $height-redirect;
   }
 }
+
+@include responsive {
+  .a-height {
+    height: $height-info-mob;
+
+    &-end {
+      height: $height-info-mob + $height-redirect + $space-lg;
+    }
+  }
+}

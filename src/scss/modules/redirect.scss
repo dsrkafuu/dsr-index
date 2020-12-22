@@ -6,6 +6,11 @@
   padding-bottom: $space-lg;
   height: $height-redirect;
 
+  @include responsive {
+    padding-bottom: $space-lg * 2;
+    height: $height-redirect + $space-lg;
+  }
+
   svg {
     flex: 0 0 auto;
     overflow-y: hidden;

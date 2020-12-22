@@ -4,6 +4,7 @@
 
   @include responsive {
     flex-direction: column;
+    height: $height-info-mob;
   }
 
   .avatar {
@@ -17,8 +18,9 @@
 
     @include responsive {
       width: 100%;
-      height: 12rem;
+      height: 11rem;
       justify-content: center;
+      align-items: flex-end;
       padding-right: 0;
     }
 
@@ -51,6 +53,7 @@
     @include responsive {
       padding-top: 0;
       padding-left: $space-lg;
+      padding-bottom: 0;
     }
   }
 
