@@ -1,0 +1,56 @@
+/* container */
+
+.container {
+  width: $resp-width;
+  max-width: $resp-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include responsive {
+    padding-left: $space-lg;
+    padding-right: $space-lg;
+    width: 100%;
+    max-width: $resp-overflow;
+  }
+}
+
+/* card */
+
+.card {
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow);
+  border-radius: $radius;
+  width: 100%;
+}
+
+/* icons */
+
+.icon {
+  fill: currentColor;
+  height: 1.25rem;
+
+  .icon-opacity {
+    opacity: 0.4;
+  }
+}
+
+/* buttons */
+
+.btn {
+  color: var(--color-font);
+  background-color: transparent;
+  text-align: center;
+  user-select: none;
+  border-radius: $radius;
+
+  /* icon support */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 150ms ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-hover);
+  }
+}

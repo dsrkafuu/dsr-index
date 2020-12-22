@@ -7,6 +7,4 @@ import './scss/index.scss';
 /* js */
 import { logInfo } from './utils/logger.js';
 
-document.body.textContent = 'home page';
 logInfo('Section successfully initialized');
-//assasa

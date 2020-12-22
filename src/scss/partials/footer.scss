@@ -1,0 +1,23 @@
+#footer {
+  margin-top: $space-base;
+  font-size: $font-sm;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .btn {
+    height: 1.75rem;
+    width: 100%;
+    gap: 0.4rem;
+  }
+
+  .upyun {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-upyun {
+    fill: currentColor;
+    width: 3.75rem;
+  }
+}

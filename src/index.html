@@ -10,14 +10,59 @@
     <title>DSRKafuU</title>
     <meta name="description" content="DSRKafuU's home page" />
     <!-- prettier-ignore -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./img/favicons/apple-touch-icon.png') %>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./images/favicons/apple-touch-icon.png') %>" />
     <!-- prettier-ignore -->
-    <link rel="icon" type="image/png" sizes="32x32" href="<%= require('./img/favicons/favicon-32x32.png') %>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= require('./images/favicons/favicon-32x32.png') %>" />
     <!-- prettier-ignore -->
-    <link rel="shortcut icon" href="<%= require('./img/favicons/favicon.ico') %>">
+    <link rel="shortcut icon" href="<%= require('./images/favicons/favicon.ico') %>">
   </head>
-  <body>
-    <%= require('./svg/blog.svg') %>
+
+  <body data-theme="auto">
+    <main id="main" class="container">
+      <div class="card">
+        <div class="main">
+          <div class="avatar">
+            <div class="image">
+              <img src="<%= require('./images/avatars/amzrk2_256p.webp') %>" />
+            </div>
+          </div>
+          <div class="content">
+            <span class="name">DSRKafuU</span>
+            <span class="id">amzrk2</span>
+            <div class="ctrl">
+              <a class="btn" href="https://blog.amzrk2.cc" target="_blank">
+                <%= require('./svg/blog.svg') %>
+              </a>
+              <a class="btn" href="https://github.com/amzrk2" target="_blank">
+                <%= require('./svg/github.svg') %>
+              </a>
+              <a class="btn" href="https://twitter.com/amzrk2" target="_blank">
+                <%= require('./svg/twitter.svg') %>
+              </a>
+              <a class="btn" href="https://bgm.tv/user/amzrk2" target="_blank">
+                <%= require('./svg/tv-retro.svg') %>
+              </a>
+              <a class="btn" href="https://steamcommunity.com/id/amzrk2/" target="_blank">
+                <%= require('./svg/steam.svg') %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="container">
+      <a class="btn">rendering light color scheme</div>
+      <a class="btn icp">ICP 备案号申请中</a>
+      <a
+        class="btn upyun"
+        href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
+        target="_blank"
+      >
+        <span>本站由</span><%= require('./svg/upyun.svg') %><span>提供云存储服务</span>
+      </a>
+    </footer>
+
     <!-- scripts will be auto injected by webpack -->
   </body>
 </html>

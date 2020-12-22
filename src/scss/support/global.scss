@@ -1,0 +1,51 @@
+/* reset */
+
+a {
+  color: var(--color-font);
+  text-decoration: none;
+}
+
+body * {
+  scrollbar-width: thin;
+}
+
+/* global */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $font-family;
+  font-size: $font-base;
+  background-color: var(--color-body);
+  color: var(--color-font);
+  user-select: none;
+}
+
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+/* super small overflow */
+@include overflow {
+  html {
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  body {
+    width: $resp-overflow;
+  }
+}

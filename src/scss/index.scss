@@ -1,19 +1,9 @@
 /*! dsr-index | DSRKafuU <amzrk2.cc> | Copyright (c) Apache 2.0 License */
 
-body {
-  background-color: aqua;
-  flex: 1 1 auto;
-  display: flex;
-}
-::placeholder {
-  color: gray;
-}
+@import './support/variables.scss';
+@import './support/theme.scss';
+@import './support/global.scss';
+@import './support/utils.scss';
 
-.image {
-  background: #ffffff;
-}
-@media (min-resolution: 2dppx) {
-  .image {
-    background: #ffffff;
-  }
-}
+@import './partials/main.scss';
+@import './partials/footer.scss';

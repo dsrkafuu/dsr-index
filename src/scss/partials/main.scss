@@ -1,0 +1,80 @@
+#main {
+  .main {
+    display: flex;
+
+    @include responsive {
+      flex-direction: column;
+    }
+  }
+
+  .avatar {
+    flex: 0 0 auto;
+    width: 12.5rem;
+    height: 12.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
+
+    @include responsive {
+      width: 100%;
+      height: 12rem;
+      justify-content: center;
+      padding-right: 0;
+    }
+
+    .image {
+      border-radius: 50%;
+      background-color: var(--color-wrapper);
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+    }
+  }
+
+  .content {
+    flex: 1 0 auto;
+    padding: $space-lg;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include responsive {
+      padding-top: 0;
+      padding-left: $space-lg;
+    }
+  }
+
+  .name {
+    font-size: $font-xl;
+    font-weight: 500;
+    letter-spacing: 0.025rem;
+    margin-top: $space-sm;
+
+    @include responsive {
+      margin-top: 0;
+    }
+  }
+
+  .id {
+    font-size: $font-sm;
+    margin-top: $space-sm;
+  }
+
+  .ctrl {
+    margin-top: $space-base;
+    display: flex;
+
+    .btn {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}

@@ -14,6 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash:6].js',
+    publicPath: '/',
   },
   optimization: {
     minimizer: [new TerserWebpackPlugin({ extractComments: false })],
@@ -75,4 +76,9 @@ module.exports = {
       patterns: [{ from: 'static' }],
     }),
   ],
+  devServer: {
+    contentBase: 'dist',
+    compress: true,
+    port: 9000,
+  },
 };
