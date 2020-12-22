@@ -9,6 +9,20 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = (env) => {
   const BASE_PATH = '/';
   const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/';
+  const HTML_SETTINGS = env.production
+    ? {
+        // custom
+        collapseBooleanAttributes: true,
+        ignoreCustomComments: [/^!/, /^\s*#/],
+        // html-webpack-plugin default
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      }
+    : false;
 
   return {
     // set entry and output dist
@@ -61,21 +75,15 @@ module.exports = (env) => {
       }),
       // create html files use `html-loader` and `svg-inline-loader`
       new HtmlWebpackPlugin({
+        filename: 'index.html',
         template: './src/index.html',
-        minify: env.production
-          ? {
-              // custom
-              collapseBooleanAttributes: true,
-              ignoreCustomComments: [/^!/, /^\s*#/],
-              // html-webpack-plugin default
-              collapseWhitespace: true,
-              removeComments: true,
-              removeRedundantAttributes: true,
-              removeScriptTypeAttributes: true,
-              removeStyleLinkTypeAttributes: true,
-              useShortDoctype: true,
-            }
-          : false,
+        minify: HTML_SETTINGS,
+      }),
+      // a 404.html fallback for github pages
+      new HtmlWebpackPlugin({
+        filename: '404.html',
+        template: './src/index.html',
+        minify: HTML_SETTINGS,
       }),
       new CopyWebpackPlugin({
         patterns: [{ from: 'static' }],
