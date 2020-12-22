@@ -22,9 +22,10 @@
 
   pre {
     padding: $space-sm / 2;
-    font-size: $font-sm;
+    font-size: $font-xs;
     margin: 0;
     background-color: var(--color-wrapper);
     overflow-x: auto;
+    font-family: $font-family;
   }
 }
