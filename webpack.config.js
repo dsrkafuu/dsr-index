@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 
@@ -79,6 +80,9 @@ module.exports = (env) => {
       // for ejs-loader
       new webpack.ProvidePlugin({
         _: 'lodash',
+      }),
+      new webpack.DefinePlugin({
+        'process.env.CN_ICP': JSON.stringify(process.env.CN_ICP),
       }),
       // clean last built files
       new CleanWebpackPlugin(),

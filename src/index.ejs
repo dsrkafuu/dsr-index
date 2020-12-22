@@ -12,7 +12,7 @@
     <%= require('./ejs/main.ejs')() %>
 
     <!-- footer -->
-    <%= require('./ejs/theme.ejs')() %>
+    <% if (process.env.CN_ICP) { %> <%= require('./ejs/footer.ejs')() %> <% } %>
 
     <!-- [webpack] scripts will be auto injected -->
   </body>
