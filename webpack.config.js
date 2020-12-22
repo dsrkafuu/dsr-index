@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
@@ -50,6 +51,14 @@ module.exports = (env) => {
             esModule: false,
           },
         },
+        // html template
+        {
+          test: /\.ejs$/,
+          loader: 'ejs-loader',
+          options: {
+            esModule: false,
+          },
+        },
         // files
         {
           test: /\.(jpe?g|png|gif|webp|ico|woff2?|[to]tf)$/i,
@@ -67,6 +76,10 @@ module.exports = (env) => {
       ],
     },
     plugins: [
+      // for ejs-loader
+      new webpack.ProvidePlugin({
+        _: 'lodash',
+      }),
       // clean last built files
       new CleanWebpackPlugin(),
       // extract css files from loader
@@ -76,13 +89,13 @@ module.exports = (env) => {
       // create html files use `html-loader` and `svg-inline-loader`
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: './src/index.html',
+        template: './src/index.ejs',
         minify: HTML_SETTINGS,
       }),
       // a 404.html fallback for github pages
       new HtmlWebpackPlugin({
         filename: '404.html',
-        template: './src/index.html',
+        template: './src/index.ejs',
         minify: HTML_SETTINGS,
       }),
       new CopyWebpackPlugin({
