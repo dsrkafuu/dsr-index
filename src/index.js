@@ -8,8 +8,14 @@ import './scss/index.scss';
 /* js */
 
 import { initInfo } from './js/info.js';
-import { insertIndicator } from './js/redirect.js';
 
-initInfo().then(() => {
-  insertIndicator();
-});
+(async function () {
+  await initInfo();
+
+  const url = new URL(window.location.href);
+  const urlParams = url.searchParams;
+  if (urlParams.has('t')) {
+    const { initRedirect } = await import(/* webpackChunkName: "redirect" */ './js/redirect.js');
+    initRedirect(urlParams);
+  }
+})();

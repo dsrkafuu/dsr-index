@@ -1,9 +1,30 @@
 .redirect {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: $space-sm;
   padding-bottom: $space-lg;
   height: $height-redirect;
+
+  svg {
+    flex: 0 0 auto;
+    overflow-y: hidden;
+  }
+
+  span,
+  pre {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: $space-sm;
+    overflow-y: hidden;
+  }
+
+  pre {
+    padding: $space-sm / 2;
+    font-size: $font-sm;
+    margin: 0;
+    background-color: var(--color-wrapper);
+    overflow-x: auto;
+  }
 }

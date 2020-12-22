@@ -7,6 +7,7 @@ import jpgAvatar from '../images/avatars/amzrk2_256p.jpg';
 /**
  * process info animation
  * @param {Boolean} webp webp support status
+ * @returns {Promise<void>}
  */
 function initInfoAnimation(webp) {
   return new Promise((resolve, reject) => {
@@ -29,11 +30,11 @@ function initInfoAnimation(webp) {
       setTimeout(() => {
         if (event && event.type === 'load') {
           triggerAnimation(info);
-          resolve(event);
+          resolve();
         } else {
-          avatar.onload = (evt) => {
+          avatar.onload = () => {
             triggerAnimation(info);
-            resolve(evt);
+            resolve();
           };
         }
       }, 500);
@@ -48,6 +49,7 @@ function initInfoAnimation(webp) {
 
 /**
  * load avatar
+ * @returns {Promise<void>}
  */
 async function initInfo() {
   try {

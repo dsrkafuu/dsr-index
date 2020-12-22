@@ -5,8 +5,32 @@ a {
   text-decoration: none;
 }
 
+/* custom scrollbar */
 body * {
   scrollbar-width: thin;
+
+  @media (pointer: fine) {
+    &::-webkit-scrollbar {
+      background-color: var(--color-scroll-bg);
+      height: 0.35rem;
+      width: 0.35rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-scroll-thumb);
+      min-height: 3rem;
+      min-width: 3rem;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--color-scroll-hover);
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background-color: var(--color-scroll-active);
+    }
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
+  }
 }
 
 /* global */
