@@ -7,7 +7,9 @@ import './scss/index.scss';
 
 /* js */
 
-import { main } from './js/avatar.js';
-import { insertIndicator } from './js/redirect';
-main();
-insertIndicator();
+import { initInfo } from './js/info.js';
+import { insertIndicator } from './js/redirect.js';
+
+initInfo().then(() => {
+  insertIndicator();
+});

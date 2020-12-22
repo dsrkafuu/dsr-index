@@ -1,0 +1,9 @@
+.redirect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space-sm;
+  padding-bottom: $space-lg;
+  height: $height-redirect;
+}

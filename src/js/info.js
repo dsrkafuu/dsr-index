@@ -1,46 +1,38 @@
 import { checkWebP } from './utils/feature.js';
 import { logError } from './utils/logger.js';
-
+import { triggerAnimation } from './utils/animation.js';
 import webpAvatar from '../images/avatars/amzrk2_256p.webp';
 import jpgAvatar from '../images/avatars/amzrk2_256p.jpg';
 
 /**
- * process main init animation
+ * process info animation
  * @param {Boolean} webp webp support status
  */
-function mainAnimation(webp) {
+function initInfoAnimation(webp) {
   return new Promise((resolve, reject) => {
     try {
-      let loadEvent = null;
-      const transAnimation = 'opacity 1000ms ease';
+      let event = null;
 
-      // get contents node
-      const content = document.querySelector('#main .content');
-      content.style.transition = transAnimation;
+      // get info node
+      const info = document.querySelector('main .info');
 
       // init avatar
-      const wrapper = document.querySelector('#main .image');
+      const wrapper = document.querySelector('.avatar .image');
       const avatar = new Image();
       avatar.alt = 'avatar';
-
-      // animation
-      avatar.style.opacity = 0;
-      avatar.style.transition = transAnimation;
       avatar.onload = (evt) => {
-        loadEvent = evt;
+        event = evt;
       };
       wrapper.appendChild(avatar);
 
       // load callbacks
       setTimeout(() => {
-        if (loadEvent && loadEvent.type === 'load') {
-          content.style.opacity = 1;
-          avatar.style.opacity = 1;
-          resolve(loadEvent);
+        if (event && event.type === 'load') {
+          triggerAnimation(info);
+          resolve(event);
         } else {
           avatar.onload = (evt) => {
-            content.style.opacity = 1;
-            avatar.style.opacity = 1;
+            triggerAnimation(info);
             resolve(evt);
           };
         }
@@ -57,13 +49,13 @@ function mainAnimation(webp) {
 /**
  * load avatar
  */
-async function main() {
+async function initInfo() {
   try {
     const webp = await checkWebP();
-    await mainAnimation(webp);
+    await initInfoAnimation(webp);
   } catch (e) {
     logError(e);
   }
 }
 
-export { main };
+export { initInfo };

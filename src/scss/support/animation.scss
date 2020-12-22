@@ -1,0 +1,21 @@
+/* opacity */
+
+.a-opacity {
+  transition: opacity 1000ms ease;
+  opacity: 0;
+
+  &-end {
+    opacity: 1;
+  }
+}
+
+/* main card height */
+
+.a-height {
+  transition: height 1000ms ease;
+  height: $height-info;
+
+  &-end {
+    height: $height-info + $height-redirect;
+  }
+}

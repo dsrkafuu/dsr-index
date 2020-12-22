@@ -1,16 +1,15 @@
-#main {
-  .main {
-    display: flex;
+.info {
+  display: flex;
+  height: $height-info;
 
-    @include responsive {
-      flex-direction: column;
-    }
+  @include responsive {
+    flex-direction: column;
   }
 
   .avatar {
     flex: 0 0 auto;
-    width: 12.5rem;
-    height: 12.5rem;
+    width: $height-info;
+    height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
