@@ -6,8 +6,9 @@
   "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=production webpack"
+    "dev": "webpack serve --env NODE_ENV=development --env development --progress",
+    "test": "webpack --env NODE_ENV=development --env development --progress",
+    "build": "webpack --env NODE_ENV=production --env production --progress"
   },
   "dependencies": {
     "normalize.css": "~8.0.1"
