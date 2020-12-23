@@ -8,13 +8,13 @@ import './scss/index.scss';
 /* js */
 
 import { initInfo } from './js/info.js';
-import { ThemeManager } from './js/theme.js';
 
 (async function () {
   // check redirect
   let initRedirect = null;
   const url = new URL(window.location.href);
   const urlParams = url.searchParams;
+  // load module if needed
   if (urlParams.has('t')) {
     const redirect = await import(/* webpackChunkName: "redirect" */ './js/redirect.js');
     initRedirect = redirect.initRedirect;

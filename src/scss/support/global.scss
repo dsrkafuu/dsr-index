@@ -73,17 +73,3 @@ body {
     width: $resp-overflow;
   }
 }
-
-/* adjust */
-.adjust {
-  position: fixed;
-  right: $space-lg;
-  top: $space-lg;
-  width: 2.5rem;
-  height: 2.5rem;
-
-  @include responsive {
-    right: $space-base * 0.75;
-    top: $space-base * 0.75;
-  }
-}

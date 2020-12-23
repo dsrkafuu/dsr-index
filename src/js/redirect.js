@@ -12,6 +12,7 @@ async function initRedirect(urlParams) {
     // get info
     const target = (urlParams.get('t') || '').trim();
     const duration = urlParams.get('d') || 2000;
+    logInfo('Redirecting request received');
 
     // gen dom
     const redirect = document.createElement('div');
@@ -27,10 +28,13 @@ async function initRedirect(urlParams) {
     // insert dom and trigger animations
     const main = document.querySelector('main .card');
     await triggerAnimation(main, 1000, 250);
+    main.appendChild(redirect);
+    // ensure redirect animation triggered on webkit
     await new Promise((resolve) => {
-      main.appendChild(redirect);
-      // wait event loop query
-      setTimeout(() => resolve(), 4);
+      setTimeout(() => {
+        const trigger = redirect.offsetTop + redirect.style.transition;
+        resolve(trigger);
+      }, 10);
     });
     await triggerAnimation(redirect, 1000, 0);
     logInfo('Redirect secion initialized');
