@@ -6,44 +6,30 @@ const STORAGE_KEY = 'dsr-index_theme';
 
 class ThemeManager {
   constructor() {
-    this.theme = getLS(STORAGE_KEY) || document.body.getAttribute(ATTR_KEY);
-    // if inline body script failed
-    if (this.theme !== document.body.getAttribute(ATTR_KEY)) {
-      document.body.setAttribute(ATTR_KEY, this.theme);
+    this.theme = getLS(STORAGE_KEY) || 'auto';
+    if (this.theme !== 'auto' && this.theme !== this.getCSSScheme()) {
+      this.setTheme(this.theme);
     }
   }
 
   /**
    * @private
-   * get css prefer theme
+   * get css prefer scheme
    */
-  getCSSTheme() {
+  getCSSScheme() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
   /**
    * @private
-   * get real rendered theme
-   */
-  getRenderedTheme() {
-    if (this.theme === 'auto') {
-      // if auto mode, get css theme
-      return this.getCSSTheme();
-    } else {
-      return this.theme === 'dark' ? 'dark' : 'light';
-    }
-  }
-
-  /**
-   * @private
    * set theme
-   * @param {String} scheme
+   * @param {String} theme
    */
-  setTheme(scheme) {
-    if (['auto', 'dark', 'light'].includes(scheme)) {
-      document.body.setAttribute(ATTR_KEY, scheme);
-      this.theme = scheme;
-      logInfo(`Theme switched to ${scheme} mode`);
+  setTheme(theme) {
+    if (['auto', 'dark', 'light'].includes(theme)) {
+      document.body.setAttribute(ATTR_KEY, theme);
+      this.theme = theme;
+      logInfo(`Theme switched to ${theme}`);
     }
   }
 
@@ -51,16 +37,21 @@ class ThemeManager {
    * @public
    * switch theme
    */
-  switchTheme() {
-    const nowTheme = this.getRenderedTheme();
-    const targetTheme = nowTheme === 'light' ? 'dark' : 'light';
-    if (targetTheme === this.getCSSTheme()) {
-      // if target is css prefer, back to auto mode
+  switch() {
+    let nowScheme;
+    if (this.theme === 'auto') {
+      nowScheme = this.getCSSScheme();
+    } else {
+      nowScheme = this.theme;
+    }
+    const targetScheme = nowScheme === 'light' ? 'dark' : 'light';
+    if (targetScheme === this.getCSSScheme()) {
+      // if target scheme is css prefer, back to auto theme
       this.setTheme('auto');
       setLS(STORAGE_KEY, 'auto');
     } else {
-      this.setTheme(targetTheme);
-      setLS(STORAGE_KEY, targetTheme);
+      this.setTheme(targetScheme);
+      setLS(STORAGE_KEY, targetScheme);
     }
   }
 }

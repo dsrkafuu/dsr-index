@@ -1,24 +1,30 @@
 /**
  * trigger the css animation on html node
  * @param {HTMLElement} node
+ * @param {Number} duration animation total duration
+ * @param {Number} transition animation transition time
+ * @returns {Promise<void>}
  */
-function triggerAnimation(node) {
-  if (!node || !node.classList) {
-    return;
-  }
-  // get animations
-  const animations = [];
-  node.classList.forEach((className) => {
-    if (className.startsWith('a-')) {
-      animations.push(className);
-    }
-  });
-  if (!animations.length) {
-    return;
-  }
-  // trigger animations
-  animations.forEach((className) => {
-    node.classList.add(`${className}-end`);
+function triggerAnimation(node, duration = 1000, transition = 250) {
+  return new Promise((resolve, reject) => {
+    duration - transition <= 0 && reject();
+    (!node || !node.classList) && reject();
+    // get animations
+    const animations = [];
+    node.classList.forEach((className) => {
+      if (className.startsWith('a-')) {
+        animations.push(className);
+      }
+    });
+    !animations.length && reject();
+    // trigger animations
+    animations.forEach((className) => {
+      node.classList.add(`${className}-end`);
+    });
+    // wait for animation be done
+    setTimeout(() => {
+      resolve();
+    }, duration - transition);
   });
 }
 

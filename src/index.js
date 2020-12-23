@@ -11,18 +11,20 @@ import { initInfo } from './js/info.js';
 import { ThemeManager } from './js/theme.js';
 
 (async function () {
-  // init theme manager
-  const tm = new ThemeManager();
-  document.querySelector('.adjust.btn').addEventListener('click', () => {
-    tm.switchTheme();
-  });
-  // init info
-  await initInfo();
   // check redirect
+  let initRedirect = null;
   const url = new URL(window.location.href);
   const urlParams = url.searchParams;
   if (urlParams.has('t')) {
-    const { initRedirect } = await import(/* webpackChunkName: "redirect" */ './js/redirect.js');
+    const redirect = await import(/* webpackChunkName: "redirect" */ './js/redirect.js');
+    initRedirect = redirect.initRedirect;
+  }
+
+  // init info
+  await initInfo();
+
+  // go redirect
+  if (initRedirect) {
     initRedirect(urlParams);
   }
 })();

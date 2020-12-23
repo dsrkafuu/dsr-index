@@ -34,21 +34,12 @@ $colors-dark: (
     --color-#{$key}: #{$value};
   }
   --shadow: none;
-  img {
-    filter: brightness(85%);
-  }
 }
 
-body[data-theme='auto'] {
+:root {
   @include light();
 
   @media (prefers-color-scheme: dark) {
     @include dark();
   }
-}
-body[data-theme='light'] {
-  @include light();
-}
-body[data-theme='dark'] {
-  @include dark();
 }
