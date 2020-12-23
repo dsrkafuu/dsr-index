@@ -1,32 +1,38 @@
+// `.env` CN_ICP env
 require('dotenv').config();
+// deps
 const path = require('path');
+const childProcess = require('child_process');
 const webpack = require('webpack');
-
+// plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+/**
+ * @param {Object} env env from webpack
+ */
 module.exports = (env) => {
   const BASE_PATH = '/';
   const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/';
-  const HTML_SETTINGS = env.production
-    ? {
-        // custom
-        collapseBooleanAttributes: true,
-        ignoreCustomComments: [/^!/, /^\s*#/],
-        // html-webpack-plugin default
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      }
-    : false;
+  const HTML_SETTINGS = {
+    // custom
+    collapseBooleanAttributes: true,
+    ignoreCustomComments: [/^!/, /^\s*#/],
+    // html-webpack-plugin default
+    collapseWhitespace: true,
+    removeComments: Boolean(env.production),
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+  };
+  const PKG_VERSION = require('./package.json').version;
+  const COMMIT_HASH = childProcess.execSync('git rev-parse --short HEAD').toString();
 
   return {
+    mode: env.development ? 'development' : 'production',
     // set entry and output dist
     entry: './src/index.js',
     output: {
@@ -34,44 +40,40 @@ module.exports = (env) => {
       filename: '[name].[contenthash:6].js',
       publicPath: BASE_PATH,
     },
+    // do not extrace `LICENSE.txt`
     optimization: {
       minimizer: [new TerserWebpackPlugin({ extractComments: false })],
     },
     module: {
       rules: [
-        // css & scss
+        // export css
         {
           test: /\.s?[ac]ss$/i,
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-        },
-        // inline svg required in html template
-        {
-          test: /\.svg$/,
-          loader: 'raw-loader',
-          options: {
-            esModule: false,
-          },
         },
         // html template
         {
           test: /\.ejs$/,
           loader: 'ejs-loader',
-          options: {
-            esModule: false,
-          },
+          options: { esModule: false },
+        },
+        // inline svg required in html template
+        {
+          test: /\.svg$/,
+          // migrated from `raw-loader`
+          type: 'asset/source',
         },
         // files
         {
           test: /\.(jpe?g|png|gif|webp|ico|woff2?|[to]tf)$/i,
           loader: 'file-loader',
           options: {
-            // prevent no default issue
             esModule: false,
             // output to dist/* with same path as src/*
             context: 'src',
             // remove hash when using cdn
-            name: `[path][name]${env.production ? '' : '.[contenthash:6]'}.[ext]`,
-            publicPath: env.production ? CDN_BASE_PATH : BASE_PATH,
+            name: `[path][name]${env.development ? '.[contenthash:6]' : ''}.[ext]`,
+            publicPath: env.development ? BASE_PATH : CDN_BASE_PATH,
           },
         },
       ],
@@ -81,8 +83,11 @@ module.exports = (env) => {
       new webpack.ProvidePlugin({
         _: 'lodash',
       }),
+      // global variables
       new webpack.DefinePlugin({
-        'process.env.CN_ICP': JSON.stringify(process.env.CN_ICP),
+        __webpack_VERSION__: JSON.stringify(PKG_VERSION),
+        __webpack_HASH__: JSON.stringify(COMMIT_HASH),
+        __webpack_ICP__: JSON.stringify(process.env.ICP),
       }),
       // clean last built files
       new CleanWebpackPlugin(),
@@ -115,6 +120,6 @@ module.exports = (env) => {
         rewrites: [{ from: /^\/.*/, to: '/404.html' }],
       },
     },
-    devtool: env.production ? false : 'source-map',
+    devtool: env.development ? 'source-map' : false,
   };
 };

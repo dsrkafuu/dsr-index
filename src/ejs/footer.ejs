@@ -1,4 +1,6 @@
 <footer class="container">
+  <a class="btn hash">v<%= __webpack_VERSION__ %> build <%= __webpack_HASH__ %></a>
+  <% if (__webpack_ICP__) { %>
   <a class="btn icp">ICP 备案号申请中</a>
   <a
     class="btn upyun"
@@ -7,4 +9,5 @@
   >
     <span>本站由</span><%= require('../svg/upyun.svg') %><span>提供云存储服务</span>
   </a>
+  <% } %>
 </footer>
