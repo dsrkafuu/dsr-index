@@ -1,8 +1,12 @@
 # DSRIndeX
 
-Index page of all DSR domains, also includes redirect function.
+Index page of all DSR domains, also includes redirect module.
 
 Deployed from [amzrk2/dsr-index](https://github.com/amzrk2/dsr-index) to [dsrca/dsrca.github.io](https://github.com/dsrca/dsrca.github.io).
+
+## CDN
+
+All static assets is packaged by `file-loader` then write to `dist/`. When in production mode, the `publicPath` will be set to jsDelivr and removed the content hash in `filename`.
 
 ## LICENSE
 
