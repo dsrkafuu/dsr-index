@@ -18,15 +18,19 @@ module.exports = (env) => {
   const BASE_PATH = '/';
   const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/';
   const HTML_SETTINGS = {
-    // custom
     collapseBooleanAttributes: true,
-    ignoreCustomComments: [/^!/, /^\s*#/],
-    // html-webpack-plugin default
     collapseWhitespace: true,
-    removeComments: Boolean(env.production),
+    ignoreCustomComments: [/^!/, /^\s*#/],
+    keepClosingSlash: true,
+    removeComments: true,
     removeRedundantAttributes: true,
     removeScriptTypeAttributes: true,
     removeStyleLinkTypeAttributes: true,
+    sortAttributes: true,
+    sortClassName: true,
+    useShortDoctype: true,
+    minifyCSS: true,
+    minifyJS: true,
   };
   const PKG_VERSION = require('./package.json').version;
   const COMMIT_HASH = childProcess.execSync('git rev-parse --short HEAD').toString();
