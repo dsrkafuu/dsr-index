@@ -1,0 +1,45 @@
+main > .card {
+  position: relative;
+}
+
+.info.skt {
+  cursor: default;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+
+  .image {
+    background-color: var(--color-wrapper);
+  }
+
+  .name,
+  .id,
+  .ctrl {
+    background-color: var(--color-wrapper);
+    border-radius: $radius;
+  }
+
+  .name {
+    width: 8.25rem;
+    height: 1.875rem;
+  }
+
+  .id {
+    width: 3.0625rem;
+    height: 1rem;
+  }
+
+  .ctrl {
+    width: 12.5rem;
+    height: 2.5rem;
+
+    .btn {
+      &:hover {
+        background-color: var(--color-wrapper);
+        cursor: not-allowed;
+      }
+    }
+  }
+}

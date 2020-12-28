@@ -6,7 +6,7 @@
   "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "webpack serve --env NODE_ENV=development --env development --progress",
+    "dev": "webpack serve --env NODE_ENV=development --env development --progress --open firefox",
     "test": "webpack --env NODE_ENV=development --env development --progress",
     "build": "webpack --env NODE_ENV=production --env production"
   },

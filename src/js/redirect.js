@@ -16,7 +16,7 @@ async function initRedirect(urlParams) {
 
     // gen dom
     const redirect = document.createElement('div');
-    redirect.classList.add('redirect', 'a-opacity');
+    redirect.classList.add('redirect', 'a-fadein');
     redirect.innerHTML = `${svgSpinner}`.trim();
     let label = document.createElement('span');
     label.textContent = 'redirecting to';

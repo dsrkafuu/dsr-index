@@ -14,12 +14,20 @@ async function initInfo() {
     const webp = await checkWebP();
 
     // init avatar
-    const wrapper = document.querySelector('.avatar .image');
+    const wrapper = document.querySelector('.info:not(.skt) .avatar .image');
     await loadImage(wrapper, webp ? webpAvatar : jpgAvatar, 'avatar');
     logInfo('Avatar loaded');
 
     // trigger animation
-    const info = document.querySelector('main .info');
+    // skt fadeout and info fadein at same 1000ms transition
+    const skt = document.querySelector('main .info.skt');
+    await triggerAnimation(skt, 1000, 1000);
+    setTimeout(() => {
+      document.querySelector('main .card').removeChild(skt);
+      logInfo('Skeleton removed');
+    }, 1000);
+    // 250ms transition for redirect
+    const info = document.querySelector('main .info:not(.skt)');
     await triggerAnimation(info, 1000, 250);
     logInfo('Info section initialized');
   } catch (e) {

@@ -7,8 +7,8 @@
  */
 function triggerAnimation(node, duration = 1000, transition = 250) {
   return new Promise((resolve, reject) => {
-    duration - transition <= 0 && reject();
     (!node || !node.classList) && reject();
+
     // get animations
     const animations = [];
     node.classList.forEach((className) => {
@@ -17,14 +17,19 @@ function triggerAnimation(node, duration = 1000, transition = 250) {
       }
     });
     !animations.length && reject();
+
     // trigger animations
     animations.forEach((className) => {
       node.classList.add(`${className}-end`);
     });
+
     // wait for animation be done
-    setTimeout(() => {
-      resolve();
-    }, duration - transition);
+    setTimeout(
+      () => {
+        resolve();
+      },
+      duration - transition < 4 ? 4 : duration - transition
+    );
   });
 }
 

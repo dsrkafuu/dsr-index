@@ -1,6 +1,7 @@
 .info {
   display: flex;
   height: $height-info;
+  z-index: 10;
 
   @include responsive {
     flex-direction: column;
