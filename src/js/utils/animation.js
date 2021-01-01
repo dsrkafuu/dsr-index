@@ -5,7 +5,7 @@
  * @param {Number} transition animation transition time
  * @returns {Promise<void>}
  */
-function triggerAnimation(node, duration = 1000, transition = 250) {
+function triggerAnimation(node, duration = 500, transition = 100) {
   return new Promise((resolve, reject) => {
     (!node || !node.classList) && reject();
 

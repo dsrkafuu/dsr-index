@@ -27,7 +27,7 @@ async function initRedirect(urlParams) {
 
     // insert dom and trigger animations
     const main = document.querySelector('main .card');
-    await triggerAnimation(main, 1000, 250);
+    await triggerAnimation(main, 750, 150); // anime/trans = 750ms/150ms
     main.appendChild(redirect);
     // ensure redirect animation triggered on webkit
     await new Promise((resolve) => {
@@ -36,7 +36,7 @@ async function initRedirect(urlParams) {
         resolve(trigger);
       }, 10);
     });
-    await triggerAnimation(redirect, 1000, 0);
+    await triggerAnimation(redirect, 500, 0); // anime/trans = 750ms/0ms
     logInfo('Redirect secion initialized');
 
     // check target then redirect

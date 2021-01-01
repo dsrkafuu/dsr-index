@@ -19,16 +19,16 @@ async function initInfo() {
     logInfo('Avatar loaded');
 
     // trigger animation
-    // skt fadeout and info fadein at same 1000ms transition
+    // skt fadeout and info fadein
     const skt = document.querySelector('main .info.skt');
-    await triggerAnimation(skt, 1000, 1000);
+    await triggerAnimation(skt, 500, 500); // anime/trans = 500ms/500ms
     setTimeout(() => {
       document.querySelector('main .card').removeChild(skt);
       logInfo('Skeleton removed');
-    }, 1000);
-    // 250ms transition for redirect
+    }, 500);
+    // 200ms transition for redirect
     const info = document.querySelector('main .info:not(.skt)');
-    await triggerAnimation(info, 1000, 250);
+    await triggerAnimation(info, 500, 200); // anime/trans = 500ms/200ms
     logInfo('Info section initialized');
   } catch (e) {
     logError(e);

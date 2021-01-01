@@ -8,7 +8,7 @@
     // transition should add to the end state
     // to prevent webkit rendering duplicate transition
     // from opacity 1 to 0 before 0 to 1
-    transition: opacity 1000ms ease;
+    transition: opacity 500ms ease;
   }
 }
 
@@ -17,7 +17,7 @@
 
   &-end {
     opacity: 0;
-    transition: opacity 1000ms ease;
+    transition: opacity 500ms ease;
   }
 }
 
@@ -28,7 +28,7 @@
 
   &-end {
     height: $height-info + $height-redirect;
-    transition: height 1000ms ease;
+    transition: height 750ms ease;
   }
 }
 
