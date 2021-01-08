@@ -91,6 +91,7 @@ module.exports = (env) => {
       new webpack.DefinePlugin({
         __webpack_VERSION__: JSON.stringify(PKG_VERSION),
         __webpack_HASH__: JSON.stringify(COMMIT_HASH),
+        __webpack_GA__: JSON.stringify(process.env.GA),
         __webpack_ICP__: JSON.stringify(process.env.ICP),
       }),
       // clean last built files
