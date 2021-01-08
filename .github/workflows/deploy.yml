@@ -26,6 +26,8 @@ jobs:
           npm run build
           cp README.md dist/README.md
           echo "nojekyll" >> dist/.nojekyll
+        env:
+          GA: ${{ secrets.ENV_GA }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
@@ -35,5 +37,3 @@ jobs:
           FOLDER: dist
           REPOSITORY_NAME: dsrca/dsrca.github.io
           CLEAN: true
-        env:
-          GA: ${{ secrets.ENV_GA }}
