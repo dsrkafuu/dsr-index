@@ -29,3 +29,5 @@ jobs:
           npm run build
           cp README.md dist/README.md
           echo "nojekyll" >> dist/.nojekyll
+        env:
+          GA: G-XXXXXXXXXX
