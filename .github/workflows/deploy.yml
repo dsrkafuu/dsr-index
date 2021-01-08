@@ -36,4 +36,4 @@ jobs:
           REPOSITORY_NAME: dsrca/dsrca.github.io
           CLEAN: true
         env:
-          GA: G-CYQH6MHREC
+          GA: ${{ secrets.ENV_GA }}
