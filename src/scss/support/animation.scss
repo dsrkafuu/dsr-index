@@ -41,3 +41,27 @@
     }
   }
 }
+
+/* skt */
+.skt {
+  .image,
+  .name,
+  .id,
+  .ctrl {
+    background: linear-gradient(
+        100deg,
+        var(--color-skt-bg) 40%,
+        var(--color-skt-fg) 50%,
+        var(--color-skt-bg) 60%
+      )
+      var(--color-wrapper);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1500ms skt-loading ease-in-out infinite;
+  }
+}
+@keyframes skt-loading {
+  to {
+    background-position-x: -80%;
+  }
+}

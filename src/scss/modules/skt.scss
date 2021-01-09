@@ -36,8 +36,10 @@ main > .card {
     height: 2.5rem;
 
     .btn {
+      background-color: transparent;
+
       &:hover {
-        background-color: var(--color-wrapper);
+        background-color: transparent;
         cursor: not-allowed;
       }
     }

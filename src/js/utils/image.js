@@ -15,8 +15,8 @@ function loadImage(container, src, alt) {
       reject(e);
     };
     image.onload = () => {
-      // at lease 500ms loading time
-      const lt = 500 - (Date.now() - st);
+      // at lease 1s loading time for better skeleton loading animation
+      const lt = 1000 - (Date.now() - st);
 
       if (lt >= 4) {
         setTimeout(() => {

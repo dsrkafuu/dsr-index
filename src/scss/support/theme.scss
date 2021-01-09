@@ -8,6 +8,8 @@ $colors-light: (
   'scroll-thumb': #dadada,
   'scroll-hover': #bebebe,
   'scroll-active': #999999,
+  'skt-fg': rgba(255, 255, 253, 0.75),
+  'skt-bg': rgba(255, 255, 253, 0),
 );
 @mixin light {
   // @each $key, $value in $colors-dark {
@@ -27,6 +29,8 @@ $colors-dark: (
   'scroll-thumb': #67696b,
   'scroll-hover': #87888a,
   'scroll-active': #a1a3a5,
+  'skt-fg': rgba(77, 81, 88, 0.75),
+  'skt-bg': rgba(77, 81, 88, 0),
 );
 @mixin dark {
   // @each $key, $value in $colors-light {
