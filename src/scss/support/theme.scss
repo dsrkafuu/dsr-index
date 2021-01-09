@@ -16,7 +16,7 @@ $colors-light: (
   @each $key, $value in $colors-light {
     --color-#{$key}: #{$value};
   }
-  --shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.06);
+  --shadow: 0 0.1875rem 0.2rem rgba(48, 55, 66, 0.1);
 }
 
 $colors-dark: (
@@ -37,7 +37,7 @@ $colors-dark: (
   @each $key, $value in $colors-dark {
     --color-#{$key}: #{$value};
   }
-  --shadow: none;
+  --shadow: 0 0.1875rem 0.2rem rgba(0, 0, 0, 0.15);
 }
 
 :root {
