@@ -15,8 +15,17 @@
   <meta property="og:description" content="DSRKafuU's home page." />
   <!-- prettier-ignore -->
   <meta property="og:image" content="https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.jpg" />
-  <!-- prettier-ignore -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"DSRKafuU","url":"https://amzrk2.cc","description":"DSRKafuU's home page.","image":"https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.jpg","sameAs":["https://twitter.com/amzrk2","https://github.com/amzrk2"]}</script>
+  <script type="application/ld+json">
+    <%= JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'DSRKafuU',
+      url: 'https://amzrk2.cc',
+      description: "DSRKafuU's home page.",
+      image: 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.jpg',
+      sameAs: ['https://twitter.com/amzrk2', 'https://github.com/amzrk2'],
+    }) %>
+  </script>
   <!-- prettier-ignore -->
   <link rel="apple-touch-icon" sizes="180x180" href="<%= require('../images/favicons/apple-touch-icon.png') %>" />
   <!-- prettier-ignore -->
