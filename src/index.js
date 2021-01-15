@@ -10,6 +10,13 @@ import './scss/index.scss';
 import { initInfo } from './js/info.js';
 
 (async function () {
+  // check domain
+  const host = window.location.host;
+  if (!/amzrk2\.cc$/gi.exec(host) || !/^localhost/gi.exec(host)) {
+    document.body.textContent = 'host not allowed';
+    return;
+  }
+
   // check redirect
   let initRedirect = null;
   const url = new URL(window.location.href);
