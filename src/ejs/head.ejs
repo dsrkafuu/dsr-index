@@ -1,18 +1,38 @@
 <head>
   <!-- base meta-->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
+  <meta content="no-transform" http-equiv="Cache-Control" />
+  <meta content="no-siteapp" http-equiv="Cache-Control" />
 
   <!-- seo info -->
   <title>DSRKafuU</title>
-  <meta name="description" content="DSRKafuU's home page" />
+  <meta name="description" content="DSRKafuU's home page." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DSRKafuU" />
+  <meta property="og:description" content="DSRKafuU's home page." />
+  <!-- prettier-ignore -->
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.jpg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "DSRKafuU",
+      "url": "https://amzrk2.cc",
+      "description": "DSRKafuU's home page.",
+      "image": "https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/images/avatars/amzrk2_256p.jpg",
+      "sameAs": ["https://twitter.com/amzrk2", "https://github.com/amzrk2"]
+    }
+  </script>
   <!-- prettier-ignore -->
   <link rel="apple-touch-icon" sizes="180x180" href="<%= require('../images/favicons/apple-touch-icon.png') %>" />
   <!-- prettier-ignore -->
   <link rel="icon" type="image/png" sizes="32x32" href="<%= require('../images/favicons/favicon-32x32.png') %>" />
   <!-- prettier-ignore -->
   <link rel="shortcut icon" href="<%= require('../images/favicons/favicon.ico') %>">
-  <!-- prettier-ignore -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=<%= __webpack_GA__ %>"></script>
   <script>
     if (/amzrk2\.cc$/gi.exec(window.location.host)) {
