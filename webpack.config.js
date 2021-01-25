@@ -1,4 +1,4 @@
-// `.env` CN_ICP env
+// `.env`
 require('dotenv').config();
 // deps
 const path = require('path');
