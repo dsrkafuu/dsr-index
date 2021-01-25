@@ -50,6 +50,12 @@ module.exports = (env) => {
     },
     module: {
       rules: [
+        // babel
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
         // export css
         {
           test: /\.s?[ac]ss$/i,
