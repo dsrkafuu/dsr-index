@@ -28,6 +28,7 @@ jobs:
           echo "nojekyll" >> dist/.nojekyll
         env:
           GA: ${{ secrets.ENV_GA }}
+          HOST: ${{ secrets.ENV_HOST }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1

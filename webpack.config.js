@@ -93,6 +93,7 @@ module.exports = (env) => {
         __webpack_HASH__: JSON.stringify(COMMIT_HASH),
         __webpack_GA__: JSON.stringify(process.env.GA),
         __webpack_ICP__: JSON.stringify(process.env.ICP),
+        __webpack_HOST__: JSON.stringify(process.env.HOST),
       }),
       // clean last built files
       new CleanWebpackPlugin(),

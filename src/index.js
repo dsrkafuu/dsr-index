@@ -12,7 +12,7 @@ import { initInfo } from './js/info.js';
 (async function () {
   // check domain
   const host = window.location.host;
-  if (!/amzrk2\.cc$/gi.exec(host) && !/^localhost/gi.exec(host)) {
+  if (!location.host.includes(__webpack_HOST__) && !/^localhost/gi.exec(host)) {
     document.body.textContent = 'host not allowed';
     return;
   }

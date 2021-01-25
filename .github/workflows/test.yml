@@ -31,3 +31,4 @@ jobs:
           echo "nojekyll" >> dist/.nojekyll
         env:
           GA: G-XXXXXXXXXX
+          HOST: example.org
