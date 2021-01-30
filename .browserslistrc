@@ -1,6 +1,9 @@
->= 0.5%
-last 1 major version
+# https://github.com/browserslist/browserslist#full-list
+
+> 0.5%
+last 2 major versions
+firefox esr
 not dead
-chrome >= 70
-firefox >= 70
-edge >= 18
+not edge <= 18
+not ie <= 11
+not op_mini all
