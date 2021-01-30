@@ -11,9 +11,10 @@ import { initInfo } from './js/info.js';
 
 (async function () {
   // check domain
-  const host = window.location.host;
-  if (!location.host.includes(__webpack_HOST__) && !/^localhost/gi.exec(host)) {
-    document.body.textContent = 'host not allowed';
+  const host = window.location.hostname;
+  const allowHosts = ['localhost', '127.0.0.1', ...__webpack_HOST__.split(',')];
+  if (!allowHosts.includes(host)) {
+    document.body.textContent = 'hostname not allowed';
     return;
   }
 
