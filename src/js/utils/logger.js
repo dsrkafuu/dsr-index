@@ -3,7 +3,7 @@
  * @param {...any} args
  */
 export function logInfo(...args) {
-  console.info('[DSRIndeX]', ...args);
+  console.info('[dsr-index]', ...args);
 }
 
 /**
@@ -11,5 +11,5 @@ export function logInfo(...args) {
  * @param {...any} args
  */
 export function logError(...args) {
-  console.error('[DSRIndeX]', ...args);
+  console.error('[dsr-index]', ...args);
 }

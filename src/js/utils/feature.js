@@ -1,6 +1,6 @@
 /**
  * check webp (lossy, non alpha/animate) support
- * @returns {Promise<Boolean>}
+ * @returns {Promise<boolean>}
  */
 export function checkWebP() {
   return new Promise((resolve) => {

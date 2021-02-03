@@ -1,8 +1,8 @@
 /**
  * trigger the css animation on html node
  * @param {HTMLElement} node
- * @param {Number} duration animation total duration
- * @param {Number} transition animation transition time
+ * @param {number} duration animation total duration
+ * @param {number} transition animation transition time
  * @returns {Promise<void>}
  */
 function triggerAnimation(node, duration = 500, transition = 100) {

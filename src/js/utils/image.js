@@ -1,7 +1,7 @@
 /**
  * load an image
  * @param {HTMLElement} container
- * @param {String} src
+ * @param {string} src
  */
 function loadImage(container, src, alt) {
   // loading start time

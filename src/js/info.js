@@ -16,7 +16,7 @@ async function initInfo() {
     // init avatar
     const wrapper = document.querySelector('.info:not(.skt) .avatar .image');
     await loadImage(wrapper, webp ? webpAvatar : jpgAvatar);
-    logInfo('Avatar loaded');
+    logInfo('avatar loaded');
 
     // trigger animation
     // skt fadeout and info fadein
@@ -24,12 +24,12 @@ async function initInfo() {
     await triggerAnimation(skt, 500, 500); // anime/trans = 500ms/500ms
     setTimeout(() => {
       document.querySelector('main .card').removeChild(skt);
-      logInfo('Skeleton removed');
+      logInfo('skeleton removed');
     }, 500);
     // 200ms transition for redirect
     const info = document.querySelector('main .info:not(.skt)');
     await triggerAnimation(info, 500, 200); // anime/trans = 500ms/200ms
-    logInfo('Info section initialized');
+    logInfo('info section initialized');
   } catch (e) {
     logError(e);
   }

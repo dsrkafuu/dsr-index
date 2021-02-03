@@ -12,7 +12,7 @@ async function initRedirect(urlParams) {
     // get info
     const target = (urlParams.get('t') || '').trim();
     const duration = urlParams.get('d') || 2000;
-    logInfo('Redirecting request received');
+    logInfo('redirecting request received');
 
     // gen dom
     const redirect = document.createElement('div');
@@ -37,7 +37,7 @@ async function initRedirect(urlParams) {
       }, 10);
     });
     await triggerAnimation(redirect, 500, 0); // anime/trans = 750ms/0ms
-    logInfo('Redirect secion initialized');
+    logInfo('redirect secion initialized');
 
     // check target then redirect
     if (/^.*:\/\//.exec(target)) {
