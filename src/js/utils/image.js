@@ -12,7 +12,15 @@ function loadImage(container, src, alt, width, height) {
 
   return new Promise((resolve, reject) => {
     const image = new Image();
-    alt && (image.alt = alt);
+    if (alt) {
+      image.alt = alt;
+      const words = alt.split(' ');
+      words.forEach((val, index) => {
+        words[index] = `${val.charAt(0).toUpperCase()}${val.slice(1)}`;
+      });
+      image.setAttribute('aria-label', words.join(' '));
+    }
+
     width && (image.width = width);
     height && (image.height = height);
 
