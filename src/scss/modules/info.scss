@@ -26,6 +26,7 @@
     }
 
     .image {
+      aspect-ratio: attr(width) / attr(height);
       width: 8rem;
       height: 8rem;
       border-radius: 50%;

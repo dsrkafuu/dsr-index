@@ -15,7 +15,7 @@ async function initInfo() {
 
     // init avatar
     const wrapper = document.querySelector('.info:not(.skt) .avatar .image');
-    await loadImage(wrapper, webp ? webpAvatar : jpgAvatar);
+    await loadImage(wrapper, webp ? webpAvatar : jpgAvatar, 'avatar', 128, 128);
     logInfo('avatar loaded');
 
     // trigger animation
