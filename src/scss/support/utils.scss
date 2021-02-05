@@ -1,5 +1,4 @@
 /* container */
-
 .container {
   width: $resp-width;
   max-width: $resp-width;
@@ -15,7 +14,6 @@
 }
 
 /* card */
-
 .card {
   background-color: var(--color-bg);
   box-shadow: var(--shadow);
@@ -24,7 +22,6 @@
 }
 
 /* icons */
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -48,7 +45,6 @@
 }
 
 /* buttons */
-
 .btn {
   color: var(--color-font);
   background-color: transparent;

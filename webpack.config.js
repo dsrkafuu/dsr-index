@@ -105,8 +105,6 @@ module.exports = (env) => {
         __webpack_HASH__: JSON.stringify(COMMIT_HASH),
         // google analytics ua
         __webpack_GA__: JSON.stringify(process.env.GA),
-        // china icp license
-        __webpack_ICP__: JSON.stringify(process.env.ICP),
         // allow hosts split with `,`
         __webpack_HOST__: JSON.stringify(process.env.HOST),
       }),
