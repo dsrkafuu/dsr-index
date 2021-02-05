@@ -79,7 +79,7 @@ module.exports = (env) => {
         },
         // files
         {
-          test: /\.(jpe?g|png|gif|webp|ico|woff2?|[to]tf)$/i,
+          test: /\.(jpe?g|png|gif|webp|ico|woff2?)$/i,
           loader: 'file-loader',
           options: {
             esModule: false,
