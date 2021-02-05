@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // https://github.com/tsconfig/bases
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // https://www.typescriptlang.org/docs/handbook/babel-with-typescript.html
+    // ensure that .d.ts files are created by tsc, but not .js files
+    "declaration": true,
+    // "emitDeclarationOnly": true,
+    // ensure that Babel can safely transpile files in the TypeScript project
+    "isolatedModules": true,
+
+    // no need to emit declare files
+    "noEmit": true,
+
+    // webpack loader support
+    "typeRoots": ["node_modules/@types", "src/types"]
+  },
+  "exclude": ["node_modules"]
+}

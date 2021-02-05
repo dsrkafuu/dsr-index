@@ -1,8 +1,8 @@
 /**
  * check webp (lossy, non alpha/animate) support
- * @returns {Promise<boolean>}
+ * @return {Promise<boolean>}
  */
-export function checkWebP() {
+export function checkWebP(): Promise<boolean> {
   return new Promise((resolve) => {
     // init an image
     const uri =
@@ -10,12 +10,13 @@ export function checkWebP() {
     const img = new Image();
 
     // set triggers
-    function handleResult(event) {
-      const result = event && event.type === 'load' ? img.width == 1 : false;
+    img.onerror = () => {
+      resolve(false);
+    };
+    img.onload = (event) => {
+      const result = event && event.type === 'load' ? Number(img.width) === 1 : false;
       resolve(result);
-    }
-    img.onerror = handleResult;
-    img.onload = handleResult;
+    };
     img.src = uri;
   });
 }

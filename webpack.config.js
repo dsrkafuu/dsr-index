@@ -16,7 +16,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
  */
 module.exports = (env) => {
   const BASE_PATH = '/';
-  const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1/';
+  const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1.0/';
   const HTML_SETTINGS = {
     collapseBooleanAttributes: true,
     collapseWhitespace: true,
@@ -38,7 +38,7 @@ module.exports = (env) => {
   return {
     mode: env.development ? 'development' : 'production',
     // set entry and output dist
-    entry: './src/index.js',
+    entry: './src/index.ts',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[contenthash:6].js',
@@ -48,11 +48,15 @@ module.exports = (env) => {
     optimization: {
       minimizer: [new TerserWebpackPlugin({ extractComments: false })],
     },
+    // add ts support
+    resolve: {
+      extensions: ['.ts', '.js'],
+    },
     module: {
       rules: [
         // babel
         {
-          test: /\.m?js$/,
+          test: /\.[jt]s$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
@@ -81,7 +85,7 @@ module.exports = (env) => {
             esModule: false,
             // output to dist/* with same path as src/*
             context: 'src',
-            // remove hash when using cdn
+            // remove hash when using cdn in production
             name: `[path][name]${env.development ? '.[contenthash:6]' : ''}.[ext]`,
             publicPath: env.development ? BASE_PATH : CDN_BASE_PATH,
           },

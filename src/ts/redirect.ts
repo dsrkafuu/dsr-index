@@ -1,17 +1,16 @@
-import { triggerAnimation } from './utils/animation.js';
-import { logError, logInfo } from './utils/logger.js';
+import { triggerAnimation } from './utils/animation';
+import { logError, logInfo } from './utils/logger';
 import svgSpinner from '../svg/spinner-third.svg';
 
 /**
  * init redirect
  * @param {URLSearchParams} urlParams
- * @returns {Promise<void>}
  */
-async function initRedirect(urlParams) {
+async function initRedirect(urlParams: URLSearchParams) {
   try {
     // get info
     const target = (urlParams.get('t') || '').trim();
-    const duration = urlParams.get('d') || 2000;
+    const duration = Number(urlParams.get('d')) || 2000;
     logInfo('redirecting request received');
 
     // gen dom
@@ -27,6 +26,9 @@ async function initRedirect(urlParams) {
 
     // insert dom and trigger animations
     const main = document.querySelector('main .card');
+    if (!main) {
+      return;
+    }
     await triggerAnimation(main, 750, 150); // anime/trans = 750ms/150ms
     main.appendChild(redirect);
     // ensure redirect animation triggered on webkit

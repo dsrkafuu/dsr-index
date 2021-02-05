@@ -1,12 +1,19 @@
 /**
  * load an image
- * @param {HTMLElement} container
+ * @param {Element} container
  * @param {string} src
  * @param {string} alt
  * @param {number} width
  * @param {number} height
+ * @return {Promise<void>}
  */
-function loadImage(container, src, alt, width, height) {
+function loadImage(
+  container: Element,
+  src: string,
+  alt: string,
+  width: number,
+  height: number
+): Promise<void> {
   // loading start time
   const st = Date.now();
 
