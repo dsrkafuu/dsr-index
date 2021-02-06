@@ -3,12 +3,14 @@
  * @param {Element} node
  * @param {number} duration animation total duration
  * @param {number} transition animation transition time
+ * @param {Function} callback callback after total duration
  * @return {Promise<void>}
  */
 function triggerAnimation(
   node: Element,
   duration: number = 500,
-  transition: number = 100
+  transition: number = 0,
+  callback?: Function
 ): Promise<void> {
   return new Promise((resolve, reject) => {
     !node.classList && reject();
@@ -23,17 +25,15 @@ function triggerAnimation(
     !animations.length && reject();
 
     // trigger animations
-    animations.forEach((className) => {
-      node.classList.add(`${className}-end`);
-    });
+    const trigeredClasses = animations.map((className) => `${className}-end`);
+    node.classList.add(...trigeredClasses);
 
-    // wait for animation be done
-    setTimeout(
-      () => {
-        resolve();
-      },
-      duration - transition < 4 ? 4 : duration - transition
-    );
+    // animation resolved after `duration - transition`
+    setTimeout(() => resolve(), duration - transition < 4 ? 4 : duration - transition);
+    // callback after total duration
+    if (callback) {
+      setTimeout(callback, duration < 4 ? 4 : duration);
+    }
   });
 }
 

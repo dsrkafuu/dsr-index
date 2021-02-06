@@ -1,7 +1,7 @@
-import { checkWebP } from './utils/feature';
-import { loadImage } from './utils/image';
-import { logError, logInfo } from './utils/logger';
-import { triggerAnimation } from './utils/animation';
+import { checkWebP } from './utils/checkWebP';
+import { loadImage } from './utils/loadImage';
+import { logError, logInfo } from './utils/loggers';
+import { triggerAnimation } from './utils/triggerAnimation';
 import webpAvatar from '../images/avatars/amzrk2_256p.webp';
 import jpgAvatar from '../images/avatars/amzrk2_256p.jpg';
 
@@ -25,19 +25,22 @@ async function initInfo() {
     if (!skt) {
       return;
     }
-    await triggerAnimation(skt, 500, 500); // anime/trans = 500ms/500ms
-    setTimeout(() => {
+    // anime/trans = 500ms/500ms
+    await triggerAnimation(skt, 500, 500, () => {
       document.querySelector('main .card')?.removeChild(skt);
       logInfo('skeleton removed');
-    }, 500);
+    });
 
-    // 200ms transition then trigger redirect
+    // start fade-in info same time as skeleton fade-out trigered
     const info = document.querySelector('main .info:not(.skt)');
     if (!info) {
       return;
     }
-    await triggerAnimation(info, 500, 200); // anime/trans = 500ms/200ms
-    logInfo('info section initialized');
+    // anime/trans = 500ms/200ms
+    // wait 200ms then trigger redirect
+    await triggerAnimation(info, 500, 200, () => {
+      logInfo('info section initialized');
+    });
   } catch (e) {
     logError(e);
   }

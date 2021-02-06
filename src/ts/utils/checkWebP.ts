@@ -2,7 +2,7 @@
  * check webp (lossy, non alpha/animate) support
  * @return {Promise<boolean>}
  */
-export function checkWebP(): Promise<boolean> {
+function checkWebP(): Promise<boolean> {
   return new Promise((resolve) => {
     // init an image
     const uri =
@@ -20,3 +20,5 @@ export function checkWebP(): Promise<boolean> {
     img.src = uri;
   });
 }
+
+export { checkWebP };

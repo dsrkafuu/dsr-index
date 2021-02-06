@@ -1,5 +1,5 @@
-import { triggerAnimation } from './utils/animation';
-import { logError, logInfo } from './utils/logger';
+import { triggerAnimation } from './utils/triggerAnimation';
+import { logError, logInfo } from './utils/loggers';
 import svgSpinner from '../svg/spinner-third.svg';
 
 /**
@@ -13,7 +13,7 @@ async function initRedirect(urlParams: URLSearchParams) {
     const duration = Number(urlParams.get('d')) || 2000;
     logInfo('redirecting request received');
 
-    // gen dom
+    // generate dom
     const redirect = document.createElement('div');
     redirect.classList.add('redirect', 'a-fadein');
     redirect.innerHTML = `${svgSpinner}`.trim();
@@ -24,21 +24,20 @@ async function initRedirect(urlParams: URLSearchParams) {
     pre.textContent = target;
     redirect.appendChild(pre);
 
-    // insert dom and trigger animations
+    // insert dom
     const main = document.querySelector('main .card');
     if (!main) {
       return;
     }
-    await triggerAnimation(main, 750, 150); // anime/trans = 750ms/150ms
     main.appendChild(redirect);
-    // ensure redirect animation triggered on webkit
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        const trigger = redirect.offsetTop + redirect.style.transition;
-        resolve(trigger);
-      }, 10);
-    });
-    await triggerAnimation(redirect, 500, 0); // anime/trans = 750ms/0ms
+
+    // main card height change
+    // anime/trans = 750ms/150ms
+    await triggerAnimation(main, 750, 150);
+
+    // redirect section fade-in
+    // anime/trans = 750ms/0ms
+    await triggerAnimation(redirect, 500, 0);
     logInfo('redirect secion initialized');
 
     // check target then redirect
