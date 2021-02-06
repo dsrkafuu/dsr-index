@@ -19,11 +19,16 @@ import { initInfo } from './ts/info';
   // check redirect
   let initRedirect: Function | null = null;
   const url = new URL(window.location.href);
-  const urlParams = url.searchParams;
+  let urlParams = url.searchParams;
   // load module if needed
-  if (urlParams.has('t')) {
+  if (url.pathname !== '/' || urlParams.has('t')) {
     const redirect = await import(/* webpackChunkName: "redirect" */ './ts/redirect');
     initRedirect = redirect.initRedirect;
+    // if 404 page, redirect to home
+    if (url.pathname !== '/') {
+      urlParams = new URLSearchParams();
+      urlParams.set('t', window.location.origin);
+    }
   }
 
   // init info
