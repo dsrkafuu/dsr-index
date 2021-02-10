@@ -14,34 +14,34 @@
   <meta property="og:title" content="DSRKafuU" />
   <meta property="og:description" content="DSRKafuU's home page." />
   <!-- prettier-ignore -->
-  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1.0/images/avatars/amzrk2_256p.jpg" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1.1/images/opengraph/dsrkafuu_og.jpg" />
   <script type="application/ld+json">
     <%= JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Person',
       name: 'DSRKafuU',
-      url: 'https://amzrk2.cc',
+      url: 'https://dsrkafuu.co',
       description: "DSRKafuU's home page.",
-      image: 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1.0/images/avatars/amzrk2_256p.jpg',
-      sameAs: ['https://twitter.com/amzrk2', 'https://github.com/amzrk2'],
+      image: 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1.1/images/opengraph/dsrkafuu_og.jpg',
+      sameAs: ['https://twitter.com/dsrkafuu', 'https://github.com/dsrkafuu'],
     }) %>
   </script>
   <!-- prettier-ignore -->
-  <link rel="apple-touch-icon" sizes="180x180" href="<%= require('../images/favicons/apple-touch-icon.png') %>" />
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= __webpack_BASE__ %>apple-touch-icon.png" />
   <!-- prettier-ignore -->
-  <link rel="icon" type="image/png" sizes="32x32" href="<%= require('../images/favicons/favicon-32x32.png') %>" />
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= __webpack_BASE__ %>favicon-32x32.png" />
   <!-- prettier-ignore -->
-  <link rel="shortcut icon" href="<%= require('../images/favicons/favicon.ico') %>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= __webpack_BASE__ %>favicon-16x16.png" />
+  <!-- prettier-ignore -->
+  <link rel="shortcut icon" href="<%= __webpack_BASE__ %>favicon.ico">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=<%= __webpack_GA__ %>"></script>
   <script>
-    if (/amzrk2\.cc$/gi.exec(window.location.host)) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', '<%= __webpack_GA__ %>');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
     }
+    gtag('js', new Date());
+    gtag('config', '<%= __webpack_GA__ %>');
   </script>
 </head>

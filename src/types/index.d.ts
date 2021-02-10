@@ -55,6 +55,7 @@ declare module '*.woff' {
 }
 
 // injected variables
+declare const __webpack_BASE__: string;
 declare const __webpack_VERSION__: string;
 declare const __webpack_HASH__: string;
 declare const __webpack_GA__: string;

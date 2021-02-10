@@ -16,7 +16,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
  */
 module.exports = (env) => {
   const BASE_PATH = '/';
-  const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/amzrk2/dsr-cdn@1.0/';
+  const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1.1/';
   const HTML_SETTINGS = {
     collapseBooleanAttributes: true,
     collapseWhitespace: true,
@@ -69,7 +69,9 @@ module.exports = (env) => {
         {
           test: /\.ejs$/,
           loader: 'ejs-loader',
-          options: { esModule: false },
+          options: {
+            esModule: false, // load ejs as cjs modules
+          },
         },
         // inline svg required in html template
         {
@@ -82,6 +84,7 @@ module.exports = (env) => {
           test: /\.(jpe?g|png|gif|webp|ico|woff2?)$/i,
           loader: 'file-loader',
           options: {
+            // load files as cjs modules
             esModule: false,
             // output to dist/* with same path as src/*
             context: 'src',
@@ -99,6 +102,8 @@ module.exports = (env) => {
       }),
       // global variables
       new webpack.DefinePlugin({
+        // base path
+        __webpack_BASE__: JSON.stringify(BASE_PATH),
         // build version from `package.json`
         __webpack_VERSION__: JSON.stringify(PKG_VERSION),
         // commit hash from `git rev-parse --short HEAD`
