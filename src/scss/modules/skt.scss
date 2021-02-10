@@ -15,7 +15,7 @@ main > .card {
   }
 
   .name,
-  .id,
+  .bio,
   .ctrl {
     background-color: var(--color-wrapper);
     border-radius: $radius;
@@ -26,8 +26,8 @@ main > .card {
     height: 1.875rem;
   }
 
-  .id {
-    width: 3.0625rem;
+  .bio {
+    width: 12rem;
     height: 1rem;
   }
 
