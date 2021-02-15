@@ -3,7 +3,7 @@
   "name": "dsr-index",
   "version": "1.4.4",
   "description": "Index page of all DSR domains, also includes redirect function.",
-  "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.co)",
+  "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
   "license": "Apache-2.0",
   "scripts": {
     "dev:tsc": "tsc --watch",
