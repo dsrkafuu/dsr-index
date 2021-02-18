@@ -1,11 +1,9 @@
 /*! dsr-index | DSRKafuU | Copyright (c) Apache 2.0 License */
 
-/* css */
 import 'normalize.css';
 import './scss/index.scss';
-
-/* ts */
-import { initInfo } from './ts/info';
+import info from './ts/info';
+import redirect from './ts/redirect';
 
 (async function () {
   // check domain
@@ -16,26 +14,12 @@ import { initInfo } from './ts/info';
     return;
   }
 
-  // check redirect
-  let initRedirect: Function | null = null;
-  const url = new URL(window.location.href);
-  let urlParams = url.searchParams;
-  // load module if needed
-  if (url.pathname !== '/' || urlParams.has('t')) {
-    const redirect = await import(/* webpackChunkName: "redirect" */ './ts/redirect');
-    initRedirect = redirect.initRedirect;
-    // if 404 page, redirect to home
-    if (url.pathname !== '/') {
-      urlParams = new URLSearchParams();
-      urlParams.set('t', window.location.origin);
-    }
-  }
-
   // init info
-  await initInfo();
+  await info();
 
   // go redirect
-  if (initRedirect) {
-    initRedirect(urlParams);
+  const url = new URL(window.location.href);
+  if (url.searchParams.has('t')) {
+    await redirect(url.searchParams);
   }
 })();

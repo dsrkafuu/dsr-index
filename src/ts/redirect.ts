@@ -1,4 +1,4 @@
-import { triggerAnimation } from './utils/triggerAnimation';
+import triggerAnimation from './utils/triggerAnimation';
 import { logError, logInfo } from './utils/loggers';
 import svgSpinner from '../svg/spinner-third.svg';
 
@@ -6,7 +6,7 @@ import svgSpinner from '../svg/spinner-third.svg';
  * init redirect
  * @param {URLSearchParams} urlParams
  */
-async function initRedirect(urlParams: URLSearchParams) {
+async function redirect(urlParams: URLSearchParams) {
   try {
     // get info
     const target = (urlParams.get('t') || '').trim();
@@ -51,4 +51,4 @@ async function initRedirect(urlParams: URLSearchParams) {
   }
 }
 
-export { initRedirect };
+export default redirect;

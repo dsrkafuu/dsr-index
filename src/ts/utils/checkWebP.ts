@@ -21,4 +21,4 @@ function checkWebP(): Promise<boolean> {
   });
 }
 
-export { checkWebP };
+export default checkWebP;

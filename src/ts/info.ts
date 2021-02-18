@@ -1,14 +1,14 @@
-import { checkWebP } from './utils/checkWebP';
-import { loadImage } from './utils/loadImage';
+import checkWebP from './utils/checkWebP';
+import loadImage from './utils/loadImage';
 import { logError, logInfo } from './utils/loggers';
-import { triggerAnimation } from './utils/triggerAnimation';
+import triggerAnimation from './utils/triggerAnimation';
 import webpAvatar from '../images/avatars/dsrkafuu_256p.webp';
 import jpgAvatar from '../images/avatars/dsrkafuu_256p.jpg';
 
 /**
  * init info section
  */
-async function initInfo() {
+async function info() {
   try {
     const webp = await checkWebP();
 
@@ -46,4 +46,4 @@ async function initInfo() {
   }
 }
 
-export { initInfo };
+export default info;

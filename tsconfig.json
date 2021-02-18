@@ -19,7 +19,8 @@
     "noEmit": true,
 
     // webpack loader support
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "moduleResolution": "node"
   },
   "exclude": ["node_modules"]
 }

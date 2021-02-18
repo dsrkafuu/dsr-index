@@ -37,4 +37,4 @@ function triggerAnimation(
   });
 }
 
-export { triggerAnimation };
+export default triggerAnimation;
