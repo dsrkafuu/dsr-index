@@ -4,7 +4,9 @@ Index page of all DSR domains, also includes redirect module.
 
 ## CDN
 
-All static assets is packaged by `file-loader` then write to `dist/`. When in production mode, the `publicPath` will be set to jsDelivr and removed the content hash in `filename`.
+All static assets is packaged by `file-loader` then write to `dist/assets/`.
+
+When in production mode, the `publicPath` of files in `src/cdn/` will be set to jsDelivr and removed the content hash in `filename`.
 
 ## LICENSE
 
