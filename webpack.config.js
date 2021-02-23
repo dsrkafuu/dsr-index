@@ -1,9 +1,9 @@
-// `.env`
 require('dotenv').config();
 // deps
 const path = require('path');
 const childProcess = require('child_process');
 const webpack = require('webpack');
+const package = require('./package.json');
 // plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
@@ -32,7 +32,7 @@ module.exports = (env) => {
     minifyCSS: true,
     minifyJS: true,
   };
-  const PKG_VERSION = require('./package.json').version;
+  const PKG_VERSION = package.version;
   const COMMIT_HASH = childProcess.execSync('git rev-parse --short HEAD').toString();
 
   return {
@@ -44,14 +44,14 @@ module.exports = (env) => {
       filename: '[name].[contenthash:6].js',
       publicPath: BASE_PATH,
     },
+    resolve: {
+      extensions: ['.ts', '.js'],
+    },
     // do not extrace `LICENSE.txt`
     optimization: {
       minimizer: [new TerserWebpackPlugin({ extractComments: false })],
     },
-    // add ts support
-    resolve: {
-      extensions: ['.ts', '.js'],
-    },
+
     module: {
       rules: [
         // babel
@@ -76,25 +76,33 @@ module.exports = (env) => {
         // inline svg required in html template
         {
           test: /\.svg$/,
-          // migrated from `raw-loader`
-          type: 'asset/source',
+          type: 'asset/source', // migrated from `raw-loader`
         },
         // files
         {
-          test: /\.(jpe?g|png|gif|webp|ico|woff2?)$/i,
+          test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
+          exclude: [path.resolve(__dirname, 'src/cdn')],
           loader: 'file-loader',
           options: {
-            // load files as cjs modules
-            esModule: false,
-            // output to dist/* with same path as src/*
-            context: 'src',
-            // remove hash when using cdn in production
-            name: `[path][name]${env.development ? '.[contenthash:6]' : ''}.[ext]`,
+            name: '[name].[contenthash:6].[ext]',
+            outputPath: 'assets',
+          },
+        },
+        // cdn files
+        {
+          test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
+          include: [path.resolve(__dirname, 'src/cdn')],
+          loader: 'file-loader',
+          options: {
+            emitFile: true,
+            context: 'src/cdn', // set base path to `src/cdn/`
+            name: `[path][name]${env.development ? '.[contenthash:6]' : ''}.[ext]`, // no hash in production
             publicPath: env.development ? BASE_PATH : CDN_BASE_PATH,
           },
         },
       ],
     },
+
     plugins: [
       // for ejs-loader
       new webpack.ProvidePlugin({
@@ -102,16 +110,11 @@ module.exports = (env) => {
       }),
       // global variables
       new webpack.DefinePlugin({
-        // base path
-        __webpack_BASE__: JSON.stringify(BASE_PATH),
-        // build version from `package.json`
-        __webpack_VERSION__: JSON.stringify(PKG_VERSION),
-        // commit hash from `git rev-parse --short HEAD`
-        __webpack_HASH__: JSON.stringify(COMMIT_HASH),
-        // google analytics ua
-        __webpack_GA__: JSON.stringify(process.env.GA),
-        // allow hosts split with `,`
-        __webpack_HOST__: JSON.stringify(process.env.HOST),
+        __webpack_BASE__: JSON.stringify(BASE_PATH), // base path
+        __webpack_VERSION__: JSON.stringify(PKG_VERSION), // build version from `package.json`
+        __webpack_HASH__: JSON.stringify(COMMIT_HASH), // commit hash from `git rev-parse --short HEAD`
+        __webpack_GA__: JSON.stringify(process.env.GA), // google analytics ua
+        __webpack_HOST__: JSON.stringify(process.env.HOST), // allow hosts split with `,`
       }),
       // clean last built files
       new CleanWebpackPlugin(),
@@ -125,7 +128,7 @@ module.exports = (env) => {
         template: './src/index.ejs',
         minify: HTML_SETTINGS,
       }),
-      // a 404.html fallback for github pages
+      // 404.html fallback
       new HtmlWebpackPlugin({
         filename: '404.html',
         template: './src/index.ejs',
@@ -135,11 +138,11 @@ module.exports = (env) => {
         patterns: [{ from: 'static' }],
       }),
     ],
+
     devServer: {
       contentBase: 'dist',
       compress: true,
       port: 9000,
-      // fallback all 404 to 404.html like github pages
       historyApiFallback: {
         rewrites: [{ from: /^\/.*/, to: '/404.html' }],
       },

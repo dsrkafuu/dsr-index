@@ -14,9 +14,6 @@ function loadImage(
   width: number,
   height: number
 ): Promise<void> {
-  // loading start time
-  const st = Date.now();
-
   return new Promise((resolve, reject) => {
     const image = new Image();
     if (alt) {
@@ -35,18 +32,10 @@ function loadImage(
       reject(e);
     };
     image.onload = () => {
-      // at lease 1s loading time for better skeleton loading animation
-      const lt = 1000 - (Date.now() - st);
-
-      if (lt >= 4) {
-        setTimeout(() => {
-          container.appendChild(image);
-          resolve();
-        }, lt);
-      } else {
+      setTimeout(() => {
         container.appendChild(image);
         resolve();
-      }
+      }, 4);
     };
 
     image.src = src;

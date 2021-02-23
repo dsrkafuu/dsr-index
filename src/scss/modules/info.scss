@@ -68,6 +68,10 @@
     @include responsive {
       margin-top: 0;
     }
+
+    &.notfound {
+      letter-spacing: 0.01rem;
+    }
   }
 
   .bio {

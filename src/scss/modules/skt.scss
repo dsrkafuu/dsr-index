@@ -24,10 +24,14 @@ main > .card {
   .name {
     width: 8.25rem;
     height: 1.875rem;
+
+    &.notfound {
+      width: 11.875rem;
+    }
   }
 
   .bio {
-    width: 12rem;
+    width: 12.125rem;
     height: 1rem;
   }
 

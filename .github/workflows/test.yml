@@ -22,12 +22,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
+          check-latest: true
 
       - name: Build ✨
         run: |
-          npm ci
-          npm run build
-          cp README.md dist/README.md
+          npm install -g pnpm
+          pnpm install
+          pnpm run build
           echo "nojekyll" >> dist/.nojekyll
         env:
           GA: G-XXXXXXXXXX

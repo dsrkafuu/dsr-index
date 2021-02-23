@@ -4,13 +4,13 @@ import svgSpinner from '../svg/spinner-third.svg';
 
 /**
  * init redirect
- * @param {URLSearchParams} urlParams
+ * @param {string} target
+ * @param {number} timeout
  */
-async function redirect(urlParams: URLSearchParams) {
+async function redirect(target: string, timeout: number = 2000) {
   try {
     // get info
-    const target = (urlParams.get('t') || '').trim();
-    const duration = Number(urlParams.get('d')) || 2000;
+    target = target.trim();
     logInfo('redirecting request received');
 
     // generate dom
@@ -44,7 +44,7 @@ async function redirect(urlParams: URLSearchParams) {
     if (/^.*:\/\//.exec(target)) {
       setTimeout(() => {
         window.location.href = target;
-      }, duration);
+      }, timeout);
     }
   } catch (e) {
     logError(e);

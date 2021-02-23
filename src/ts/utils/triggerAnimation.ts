@@ -3,7 +3,7 @@
  * @param {Element} node
  * @param {number} duration animation total duration
  * @param {number} transition animation transition time
- * @param {Function} callback callback after total duration
+ * @param {Function} callback callback (like cleaner) after total duration
  * @return {Promise<void>}
  */
 function triggerAnimation(

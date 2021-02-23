@@ -2,14 +2,14 @@
   font-family: 'Inter';
   font-style: normal;
   font-display: swap;
-  src: local('Inter Regular'), url('../fonts/inter/inter-regular.woff2') format('woff2');
+  src: local('Inter Regular'), url('../cdn/fonts/inter/inter-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: local('Inter Medium'), url('../fonts/inter/inter-medium.woff2') format('woff2');
+  src: local('Inter Medium'), url('../cdn/fonts/inter/inter-medium.woff2') format('woff2');
 }
 $font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Arial',
   'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN',
