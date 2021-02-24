@@ -6,17 +6,12 @@
  * @param {Function} callback callback (like cleaner) after total duration
  * @return {Promise<void>}
  */
-function triggerAnimation(
-  node: Element,
-  duration: number = 500,
-  transition: number = 0,
-  callback?: Function
-): Promise<void> {
+function triggerAnimation(node, duration = 500, transition = 0, callback) {
   return new Promise((resolve, reject) => {
     !node.classList && reject();
 
     // get animation classnames
-    const animations: string[] = [];
+    const animations = [];
     node.classList.forEach((className) => {
       if (className.startsWith('a-')) {
         animations.push(className);

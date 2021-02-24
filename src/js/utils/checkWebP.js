@@ -2,7 +2,7 @@
  * check webp (lossy, non alpha/animate) support
  * @return {Promise<boolean>}
  */
-function checkWebP(): Promise<boolean> {
+function checkWebP() {
   return new Promise((resolve) => {
     // init an image
     const uri =

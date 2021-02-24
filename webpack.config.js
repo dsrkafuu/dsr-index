@@ -38,16 +38,16 @@ module.exports = (env) => {
   return {
     mode: env.development ? 'development' : 'production',
     // set entry and output dist
-    entry: './src/index.ts',
+    entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[contenthash:6].js',
       publicPath: BASE_PATH,
     },
     resolve: {
-      extensions: ['.ts', '.js'],
+      alias: { '@': path.resolve('src') },
     },
-    // do not extrace `LICENSE.txt`
+    // do not extract `LICENSE.txt`
     optimization: {
       minimizer: [new TerserWebpackPlugin({ extractComments: false })],
     },
@@ -56,8 +56,8 @@ module.exports = (env) => {
       rules: [
         // babel
         {
-          test: /\.[jt]s$/,
-          exclude: /node_modules/,
+          test: /\.m?js$/i,
+          exclude: /node_modules/i,
           loader: 'babel-loader',
         },
         // export css
@@ -67,7 +67,7 @@ module.exports = (env) => {
         },
         // html template
         {
-          test: /\.ejs$/,
+          test: /\.ejs$/i,
           loader: 'ejs-loader',
           options: {
             esModule: false, // load ejs as cjs modules
@@ -81,7 +81,7 @@ module.exports = (env) => {
         // files
         {
           test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
-          exclude: [path.resolve(__dirname, 'src/cdn')],
+          exclude: /src\/cdn/i,
           loader: 'file-loader',
           options: {
             name: '[name].[contenthash:6].[ext]',
@@ -91,12 +91,12 @@ module.exports = (env) => {
         // cdn files
         {
           test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
-          include: [path.resolve(__dirname, 'src/cdn')],
+          include: /src\/cdn/i,
           loader: 'file-loader',
           options: {
             emitFile: true,
             context: 'src/cdn', // set base path to `src/cdn/`
-            name: `[path][name]${env.development ? '.[contenthash:6]' : ''}.[ext]`, // no hash in production
+            name: `[path][name].[ext]`, // no hash needed
             publicPath: env.development ? BASE_PATH : CDN_BASE_PATH,
           },
         },

@@ -7,13 +7,7 @@
  * @param {number} height
  * @return {Promise<void>}
  */
-function loadImage(
-  container: Element,
-  src: string,
-  alt: string,
-  width: number,
-  height: number
-): Promise<void> {
+function loadImage(container, src, alt, width, height) {
   return new Promise((resolve, reject) => {
     const image = new Image();
     if (alt) {

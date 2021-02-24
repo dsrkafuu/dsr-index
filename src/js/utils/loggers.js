@@ -2,7 +2,7 @@
  * log information
  * @param {...any} args
  */
-export function logInfo(...args: any[]) {
+export function logInfo(...args) {
   console.info('[dsr-index]', ...args);
 }
 
@@ -10,6 +10,6 @@ export function logInfo(...args: any[]) {
  * log errors
  * @param {...any} args
  */
-export function logError(...args: any[]) {
+export function logError(...args) {
   console.error('[dsr-index]', ...args);
 }

@@ -2,9 +2,10 @@
 
 import 'normalize.css';
 import './scss/index.scss';
-import notfound from './ts/notfound';
-import info from './ts/info';
-import redirect from './ts/redirect';
+
+import notfound from './js/notfound';
+import info from './js/info';
+import redirect from './js/redirect';
 
 (async function () {
   // check domain

@@ -7,7 +7,7 @@ import svgSpinner from '../svg/spinner-third.svg';
  * @param {string} target
  * @param {number} timeout
  */
-async function redirect(target: string, timeout: number = 2000) {
+async function redirect(target, timeout = 2000) {
   try {
     // get info
     target = target.trim();
