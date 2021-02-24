@@ -76,11 +76,3 @@ main.draggable {
 footer {
   z-index: 1;
 }
-
-.card {
-  transition: box-shadow 200ms ease-in-out;
-
-  &.dragshadow {
-    box-shadow: var(--shadow);
-  }
-}

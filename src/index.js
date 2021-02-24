@@ -28,6 +28,9 @@ import interact from './js/interact';
     nf = true;
   }
 
+  // init interact
+  await interact();
+
   // init info
   await info();
 
@@ -42,7 +45,4 @@ import interact from './js/interact';
   else if (target) {
     await redirect(`${target}`, duration);
   }
-
-  // init interact
-  await interact();
 })();
