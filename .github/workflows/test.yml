@@ -26,9 +26,8 @@ jobs:
 
       - name: Build ✨
         run: |
-          npm install -g pnpm
-          pnpm install
-          pnpm run build
+          npm ci
+          npm run build
           echo "nojekyll" >> dist/.nojekyll
         env:
           GA: G-XXXXXXXXXX
