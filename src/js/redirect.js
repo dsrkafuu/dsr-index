@@ -1,6 +1,6 @@
 import triggerAnimation from './utils/triggerAnimation';
 import { logError, logInfo } from './utils/loggers';
-import svgSpinner from '../svg/spinner-third.svg';
+import svgSpinner from '@/svg/spinner-third.svg';
 
 /**
  * init redirect

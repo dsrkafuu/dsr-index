@@ -2,8 +2,8 @@ import checkWebP from './utils/checkWebP';
 import loadImage from './utils/loadImage';
 import { logError, logInfo } from './utils/loggers';
 import triggerAnimation from './utils/triggerAnimation';
-import webpAvatar from '../cdn/images/avatars/dsrkafuu_256p.webp';
-import jpgAvatar from '../cdn/images/avatars/dsrkafuu_256p.jpg';
+import webpAvatar from '@/cdn/images/avatars/dsrkafuu_256p.webp';
+import jpgAvatar from '@/cdn/images/avatars/dsrkafuu_256p.jpg';
 
 /**
  * init info section
