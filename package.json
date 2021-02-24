@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "~7.13.6",
+    "@interactjs/actions": "~1.10.3",
+    "@interactjs/auto-start": "~1.10.3",
+    "@interactjs/inertia": "~1.10.3",
     "@interactjs/interact": "~1.10.3",
+    "@interactjs/modifiers": "^1.10.3",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {

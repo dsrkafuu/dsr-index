@@ -64,3 +64,23 @@
     background-position-x: -80%;
   }
 }
+
+/* draggable */
+.draggable {
+  touch-action: none;
+  user-select: none;
+}
+main.draggable {
+  z-index: 2;
+}
+footer {
+  z-index: 1;
+}
+
+.card {
+  transition: box-shadow 200ms ease-in-out;
+
+  &.dragshadow {
+    box-shadow: var(--shadow);
+  }
+}

@@ -30,8 +30,9 @@ $height-info-mob: 22rem;
 $height-redirect: 7rem;
 
 $resp-width: 500px;
-$resp-overflow: 310px;
-$resp-threshold: 24px;
+$resp-overflow: 270px;
+$resp-threshold: 40px;
+
 @mixin responsive {
   @media screen and (max-width: $resp-width + $resp-threshold) {
     @content;

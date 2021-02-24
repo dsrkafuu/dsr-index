@@ -1,5 +1,8 @@
 footer {
-  margin-top: $space-base;
+  position: fixed;
+  bottom: $space-sm;
+  left: 0;
+  right: 0;
   font-size: $font-sm;
   display: flex;
   flex-direction: column;

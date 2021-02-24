@@ -6,6 +6,7 @@ import './scss/index.scss';
 import notfound from './js/notfound';
 import info from './js/info';
 import redirect from './js/redirect';
+import interact from './js/interact';
 
 (async function () {
   // check domain
@@ -41,4 +42,7 @@ import redirect from './js/redirect';
   else if (target) {
     await redirect(`${target}`, duration);
   }
+
+  // init interact
+  await interact();
 })();

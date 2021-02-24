@@ -6,8 +6,6 @@
   margin-right: auto;
 
   @include responsive {
-    padding-left: $space-lg;
-    padding-right: $space-lg;
     width: 100%;
     max-width: $resp-overflow;
   }
@@ -16,7 +14,6 @@
 /* card */
 .card {
   background-color: var(--color-bg);
-  box-shadow: var(--shadow);
   border-radius: $radius;
   width: 100%;
 }
