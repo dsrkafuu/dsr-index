@@ -1,9 +1,10 @@
-import '@interactjs/auto-start';
-import '@interactjs/inertia';
-import '@interactjs/modifiers';
-import '@interactjs/actions/drag';
-import '@interactjs/dev-tools';
-import _interact from '@interactjs/interact';
+// https://github.com/taye/interact.js/issues/885
+import '@interactjs/auto-start/index.prod';
+import '@interactjs/inertia/index.prod';
+import '@interactjs/modifiers/index.prod';
+import '@interactjs/actions/drag/index.prod';
+import '@interactjs/dev-tools/index.prod';
+import _interact from '@interactjs/interact/index.prod';
 
 /**
  * init interact feature
