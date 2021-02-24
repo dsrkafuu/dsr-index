@@ -20,18 +20,24 @@ import redirect from './ts/redirect';
   }
 
   // check not found
+  let nf = false;
   if (window.location.pathname !== '/') {
     notfound();
+    nf = true;
   }
 
   // init info
   await info();
 
-  // go redirect
   const url = new URL(window.location.href);
   const target = url.searchParams.get('t');
   const duration = Number(url.searchParams.get('d')) || undefined;
-  if (target) {
+  // go home if 404
+  if (nf) {
+    await redirect(`https://${window.location.hostname}`, duration);
+  }
+  // go redirect
+  else if (target) {
     await redirect(`${target}`, duration);
   }
 })();
