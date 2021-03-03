@@ -21,22 +21,24 @@ import interact from './js/interact';
     return;
   }
 
-  // check not found
+  // check not found and redirect param
   let nf = false;
   if (window.location.pathname !== '/') {
     notfound();
     nf = true;
   }
+  const url = new URL(window.location.href);
+  const target = url.searchParams.get('t');
+  const duration = Number(url.searchParams.get('d')) || undefined;
 
-  // init interact
-  await interact();
+  // init interact if not 404 or redirect
+  if (!nf && !target) {
+    interact();
+  }
 
   // init info
   await info();
 
-  const url = new URL(window.location.href);
-  const target = url.searchParams.get('t');
-  const duration = Number(url.searchParams.get('d')) || undefined;
   // go home if 404
   if (nf) {
     await redirect(window.location.origin || `https://${window.location.host}`, duration);

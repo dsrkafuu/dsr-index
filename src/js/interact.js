@@ -9,7 +9,7 @@ import _interact from '@interactjs/interact';
 /**
  * init interact feature
  */
-async function interact() {
+function interact() {
   // fast click fix
   _interact('a[href]').on('tap', (e) => {
     window.location.href = e.currentTarget.href;
