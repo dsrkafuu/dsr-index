@@ -39,7 +39,7 @@ import interact from './js/interact';
   const duration = Number(url.searchParams.get('d')) || undefined;
   // go home if 404
   if (nf) {
-    await redirect(`https://${window.location.hostname}`, duration);
+    await redirect(window.location.origin || `https://${window.location.host}`, duration);
   }
   // go redirect
   else if (target) {
