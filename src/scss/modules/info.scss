@@ -1,6 +1,7 @@
 .info {
   display: flex;
   height: $height-info;
+  position: relative;
   z-index: 10;
 
   @include responsive {
