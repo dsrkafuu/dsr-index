@@ -113,6 +113,7 @@ module.exports = {
       __webpack_HASH__: JSON.stringify(COMMIT_HASH), // commit hash from `git rev-parse --short HEAD`
       __webpack_GA__: JSON.stringify(process.env.GA), // google analytics ua
       __webpack_HOST__: JSON.stringify(process.env.HOST), // allow hosts split with `,`
+      __webpack_ICP__: JSON.stringify(process.env.ICP), // icp number
     }),
     // clean last built files
     new CleanWebpackPlugin(),
