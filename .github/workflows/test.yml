@@ -26,7 +26,7 @@ jobs:
 
       - name: Build ✨
         run: |
-          npm ci
+          npm install
           npm run build
           echo "nojekyll" >> dist/.nojekyll
         env:
