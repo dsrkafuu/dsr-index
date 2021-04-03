@@ -2,7 +2,7 @@
   <a class="btn hash" href="https://github.com/dsrkafuu/dsr-index/actions" target="_blank">
     v<%= __webpack_VERSION__ %> build <%= __webpack_HASH__ %>
   </a>
-  <div class="btn icp" href="https://example.org" target="_blank">
-    <%= __webpack_ICP__ %>
-  </div>
+  <% if (__webpack_ICP__) { %>
+  <div class="btn icp" href="https://example.org" target="_blank"><%= __webpack_ICP__ %></div>
+  <% } %>
 </footer>
