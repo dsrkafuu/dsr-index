@@ -14,7 +14,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // constants
 const BASE_PATH = '/';
-const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1.1/';
+const CDN_BASE_PATH = 'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn@1/';
 const HTML_SETTINGS = {
   collapseBooleanAttributes: true,
   collapseWhitespace: true,
@@ -124,12 +124,6 @@ module.exports = {
     // create html files use `html-loader` and `svg-inline-loader`
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/index.ejs',
-      minify: HTML_SETTINGS,
-    }),
-    // 404.html fallback
-    new HtmlWebpackPlugin({
-      filename: '404.html',
       template: './src/index.ejs',
       minify: HTML_SETTINGS,
     }),
