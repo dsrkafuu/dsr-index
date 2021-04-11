@@ -111,7 +111,7 @@ module.exports = {
       __webpack_BASE__: JSON.stringify(BASE_PATH), // base path
       __webpack_VERSION__: JSON.stringify(PKG_VERSION), // build version from `package.json`
       __webpack_HASH__: JSON.stringify(COMMIT_HASH), // commit hash from `git rev-parse --short HEAD`
-      __webpack_CF_BEACON__: JSON.stringify(process.env.CF_BEACON), // cloudflare web analytics
+      __webpack_GA__: JSON.stringify(process.env.GA), // google analytics ua
       __webpack_HOST__: JSON.stringify(process.env.HOST), // allow hosts split with `,`
       __webpack_ICP__: JSON.stringify(process.env.ICP), // icp number
     }),

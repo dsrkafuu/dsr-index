@@ -35,10 +35,14 @@
   <!-- prettier-ignore -->
   <link rel="shortcut icon" href="<%= __webpack_BASE__ %>favicon.ico">
 
-  <!-- cloudflare web analytics -->
-  <script
-    defer
-    src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token": "<%= __webpack_CF_BEACON__ %>"}'
-  ></script>
+  <!-- google analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= __webpack_GA__ %>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '<%= __webpack_GA__ %>');
+  </script>
 </head>
