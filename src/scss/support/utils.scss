@@ -60,4 +60,10 @@
     cursor: pointer;
     background-color: var(--color-hover);
   }
+
+  /* small button */
+  &.small {
+    font-size: $font-xs;
+    height: 1.5rem;
+  }
 }

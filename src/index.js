@@ -14,7 +14,7 @@ import interact from './js/interact';
   const allowHosts = [
     'localhost',
     '127.0.0.1',
-    ...__webpack_HOST__.split(',').map((val) => val.trim()),
+    ...(__webpack_HOST__ || '').split(',').map((val) => val.trim()),
   ];
   if (!allowHosts.includes(host)) {
     document.body.textContent = 'hostname not allowed';

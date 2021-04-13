@@ -114,6 +114,7 @@ module.exports = {
       __webpack_GA__: JSON.stringify(process.env.GA), // google analytics ua
       __webpack_HOST__: JSON.stringify(process.env.HOST), // allow hosts split with `,`
       __webpack_ICP__: JSON.stringify(process.env.ICP), // icp number
+      __webpack_PD__: JSON.stringify(process.env.PD), // pd number
     }),
     // clean last built files
     new CleanWebpackPlugin(),
