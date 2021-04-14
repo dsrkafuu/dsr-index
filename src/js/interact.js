@@ -1,4 +1,4 @@
-// https://github.com/taye/interact.js/issues/885
+// [fixed] https://github.com/taye/interact.js/issues/885
 import '@interactjs/auto-start';
 import '@interactjs/inertia';
 import '@interactjs/modifiers';
