@@ -33,13 +33,96 @@ const HTML_SETTINGS = {
 const PKG_VERSION = package.version;
 const COMMIT_HASH = childProcess.execSync('git rev-parse --short HEAD').toString();
 
+const rules = [
+  // babel
+  {
+    test: /\.m?js$/i,
+    exclude: /node_modules/i,
+    loader: 'babel-loader',
+  },
+  // export css
+  {
+    test: /\.s?[ac]ss$/i,
+    use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+  },
+  // html template
+  {
+    test: /\.ejs$/i,
+    loader: 'ejs-loader',
+    options: {
+      esModule: false, // load ejs as cjs modules
+    },
+  },
+  // inline svg required in html template
+  {
+    test: /\.svg$/,
+    type: 'asset/source', // migrated from `raw-loader`
+  },
+  // files
+  {
+    test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
+    exclude: process.env.NODE_ENV === 'production' ? [path.resolve(__dirname, 'src/cdn')] : [],
+    type: 'asset', // migrated from `url-loader` + `file-loader`
+    generator: {
+      filename: 'assets/[name].[contenthash:6].[ext]',
+    },
+  },
+];
+
+// load files from cdn in production
+process.env.NODE_ENV === 'production' &&
+  rules.push({
+    test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
+    include: [path.resolve(__dirname, 'src/cdn')],
+    type: 'asset', // migrated from `file-loader`
+    generator: {
+      emit: false, // no output needed
+      filename: (pathData) => {
+        return pathData.filename.replace('src/cdn/', '');
+      }, // render correct path
+      publicPath: CDN_BASE_PATH,
+    },
+  });
+
+const plugins = [
+  // for ejs-loader
+  new webpack.ProvidePlugin({
+    _: 'lodash',
+  }),
+  // global variables
+  new webpack.DefinePlugin({
+    __webpack_BASE__: JSON.stringify(BASE_PATH), // base path
+    __webpack_VERSION__: JSON.stringify(PKG_VERSION), // build version from `package.json`
+    __webpack_HASH__: JSON.stringify(COMMIT_HASH), // commit hash from `git rev-parse --short HEAD`
+    __webpack_GA__: JSON.stringify(process.env.GA), // google analytics ua
+    __webpack_HOST__: JSON.stringify(process.env.HOST), // allow hosts split with `,`
+    __webpack_ICP__: JSON.stringify(process.env.ICP), // icp number
+    __webpack_NIS__: JSON.stringify(process.env.NIS), // pd number
+  }),
+  // clean last built files
+  new CleanWebpackPlugin(),
+  // extract css files from loader
+  new MiniCssExtractPlugin({
+    filename: 'assets/[name].[contenthash:6].css',
+  }),
+  // create html files use `html-loader` and `svg-inline-loader`
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: './src/index.ejs',
+    minify: HTML_SETTINGS,
+  }),
+  new CopyWebpackPlugin({
+    patterns: [{ from: 'static' }],
+  }),
+];
+
 module.exports = {
   mode: process.env.NODE_ENV,
   // set entry and output dist
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash:6].js',
+    filename: 'assets/[name].[contenthash:6].js',
     publicPath: BASE_PATH,
   },
   resolve: {
@@ -51,87 +134,9 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      // babel
-      {
-        test: /\.m?js$/i,
-        exclude: /node_modules/i,
-        loader: 'babel-loader',
-      },
-      // export css
-      {
-        test: /\.s?[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-      // html template
-      {
-        test: /\.ejs$/i,
-        loader: 'ejs-loader',
-        options: {
-          esModule: false, // load ejs as cjs modules
-        },
-      },
-      // inline svg required in html template
-      {
-        test: /\.svg$/,
-        type: 'asset/source', // migrated from `raw-loader`
-      },
-      // files
-      {
-        test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
-        exclude: /src\/cdn/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[contenthash:6].[ext]',
-          outputPath: 'assets',
-        },
-      },
-      // cdn files
-      {
-        test: /\.(jpe?g|png|gif|ico|webp|woff2?)$/i,
-        include: /src\/cdn/i,
-        loader: 'file-loader',
-        options: {
-          emitFile: true,
-          context: 'src/cdn', // set base path to `src/cdn/`
-          name: `[path][name].[ext]`, // no hash needed
-          publicPath: process.env.NODE_ENV === 'development' ? BASE_PATH : CDN_BASE_PATH,
-        },
-      },
-    ],
+    rules,
   },
-
-  plugins: [
-    // for ejs-loader
-    new webpack.ProvidePlugin({
-      _: 'lodash',
-    }),
-    // global variables
-    new webpack.DefinePlugin({
-      __webpack_BASE__: JSON.stringify(BASE_PATH), // base path
-      __webpack_VERSION__: JSON.stringify(PKG_VERSION), // build version from `package.json`
-      __webpack_HASH__: JSON.stringify(COMMIT_HASH), // commit hash from `git rev-parse --short HEAD`
-      __webpack_GA__: JSON.stringify(process.env.GA), // google analytics ua
-      __webpack_HOST__: JSON.stringify(process.env.HOST), // allow hosts split with `,`
-      __webpack_ICP__: JSON.stringify(process.env.ICP), // icp number
-      __webpack_PD__: JSON.stringify(process.env.PD), // pd number
-    }),
-    // clean last built files
-    new CleanWebpackPlugin(),
-    // extract css files from loader
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:6].css',
-    }),
-    // create html files use `html-loader` and `svg-inline-loader`
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.ejs',
-      minify: HTML_SETTINGS,
-    }),
-    new CopyWebpackPlugin({
-      patterns: [{ from: 'static' }],
-    }),
-  ],
+  plugins,
 
   devServer: {
     contentBase: 'dist',

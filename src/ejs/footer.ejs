@@ -6,13 +6,14 @@
   <a class="btn small icp" href="https://beian.miit.gov.cn" target="_blank">
     <%= __webpack_ICP__ %>
   </a>
-  <% } %> <% if (__webpack_PD__) { %>
+  <% } %> <% if (__webpack_NIS__) { %>
   <a
-    class="btn small icp"
-    href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%= __webpack_PD__.split(' ')[1] %>"
+    class="btn small nis"
+    href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%= __webpack_NIS__.split(' ')[1] %>"
     target="_blank"
   >
-    <%= __webpack_PD__ %>
+    <img src="<%= require('@/assets/nis.png') %>" alt="NIS" />
+    <%= __webpack_NIS__ %>
   </a>
   <% } %>
 </footer>
