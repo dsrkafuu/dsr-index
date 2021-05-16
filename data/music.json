@@ -1,5 +1,65 @@
 [
   {
-    "title": ""
+    "cid": "1038",
+    "name": "秋绪",
+    "file": "56eL57uq",
+    "songs": [
+      {
+        "cid": "125013",
+        "name": "秋绪",
+        "artistes": ["塞壬唱片-MSR", "山川恵津子"],
+        "file": "56eL57uq",
+        "lrc": true
+      }
+    ]
+  },
+  {
+    "cid": "4524",
+    "name": "危机合约黄铁·利刃·燃灰OST",
+    "file": "5Y2x5py65ZCI57qm6buE6ZOBwrfliKnliIPCt+eHg+eBsE9TVA==",
+    "songs": [
+      {
+        "cid": "048747",
+        "name": "Operation Pyrite",
+        "artistes": ["塞壬唱片-MSR"],
+        "file": "T3BlcmF0aW9uIFB5cml0ZQ==",
+        "lrc": true
+      },
+      {
+        "cid": "880378",
+        "name": "Operation Blade",
+        "artistes": ["塞壬唱片-MSR"],
+        "file": "T3BlcmF0aW9uIEJsYWRl",
+        "lrc": true
+      }
+    ]
+  },
+  {
+    "cid": "4525",
+    "name": "Renegade",
+    "file": "UmVuZWdhZGU=",
+    "songs": [
+      {
+        "cid": "514584",
+        "name": "Renegade",
+        "artistes": ["塞壬唱片-MSR"],
+        "file": "UmVuZWdhZGU=",
+        "lrc": true
+      }
+    ]
+  },
+  {
+    "cid": "8947",
+    "name": "火蓝之心原声带",
+    "file": "54Gr6JOd5LmL5b+D5Y6f5aOw5bim",
+    "songs": [
+      {
+        "cid": "125019",
+        "name": "Ready?",
+        "artistes": ["D.D.D."],
+        "file": "UmVhZHnvvJ8=",
+        "lrc": false
+      }
+    ]
   }
 ]

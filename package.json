@@ -17,7 +17,8 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "~7.14.0"
+    "@babel/runtime-corejs3": "~7.14.0",
+    "aplayer": "~1.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.2",
