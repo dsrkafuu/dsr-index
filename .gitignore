@@ -3,6 +3,7 @@
 
 # output
 dist/
+public/
 
 # logs
 logs
