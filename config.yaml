@@ -1,0 +1,17 @@
+baseURL: "https://dsrkafuu.su"
+
+hasCJKLanguage: true
+enableEmoji: true
+enableRobotsTXT: true
+enableGitInfo: true
+disableKinds:
+  - "page"
+  - "section"
+  - "taxonomy"
+  - "term"
+  - "RSS"
+  - "sitemap"
+  - "404"
+
+build:
+  noJSConfigInAssets: true

@@ -1,0 +1,49 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{{- hugo.Generator -}}
+
+{{- $name := .Site.Data.meta.name -}}
+{{- $bio := .Site.Data.meta.bio -}}
+{{- $opengraph := .Site.Data.meta.opengraph -}}
+
+<title>{{- $name -}}</title>
+<meta name="author" content="{{- $name -}}" />
+<meta name="description" content="{{- $bio -}}" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{- .Site.Data.favicon.apple -}}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{- .Site.Data.favicon.png_32x -}}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{- .Site.Data.favicon.png_16x -}}" />
+<link rel="shortcut icon" href="{{- .Site.Data.favicon.ico -}}" />
+
+<meta property="og:title" content="{{- $name -}}" />
+<meta property="og:description" content="{{- $bio -}}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{- .Permalink -}}" />
+<meta property="og:image" content="{{- $opengraph -}}" />
+
+<meta name="twitter:title" content="{{- $name -}}" />
+<meta name="twitter:description" content="{{- $bio -}}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{- $opengraph -}}" />
+
+{{- $dev := eq (getenv "NODE_ENV") "development" -}}
+{{- $pkg := getJSON "package.json" -}}
+{{- $src := "styles/main.scss" -}}
+{{- $out := printf "_assets/main_v%s.min.css" $pkg.version -}}
+{{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $dev -}}
+{{- $css := resources.Get $src | resources.ToCSS $options -}}
+<link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+
+{{- $ga := getenv "GA" -}}
+{{- if and (not $dev) $ga -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{- $ga -}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', '{{- $ga -}}');
+</script>
+{{- end -}}

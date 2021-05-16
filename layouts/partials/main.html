@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="avatar">
+    <picture>
+      <source srcset="{{- .Site.Data.meta.avatar_webp -}}" type="image/webp">
+      <source srcset="{{- .Site.Data.meta.avatar_jpg -}}" type="image/jpeg">
+      <img src="{{- .Site.Data.meta.avatar_jpg -}}" alt="Avatar" aria-label="Avatar" width="128" height="128">
+    </picture>
+  </div>
+  <div class="info">
+    <div class="meta">
+      <h1 aria-label="Name">{{- .Site.Data.meta.name -}}</h1>
+      <p aria-label="Bio">{{- .Site.Data.meta.bio -}}</p>
+    </div>
+
+    <div class="links">
+      {{- range .Site.Data.links -}}
+      <a class="link" href="{{- .href -}}" target="_blank" rel="noopener" title="{{- .name -}}"
+        aria-label="{{- .name -}}">
+        {{- $.Scratch.Set "icon" .icon -}}
+        {{- partial "icon" $ -}}
+      </a>
+      {{- end -}}
+    </div>
+  </div>
+</div>

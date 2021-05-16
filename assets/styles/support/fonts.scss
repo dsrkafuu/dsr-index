@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('Inter Regular'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_400.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_400.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local('Inter Medium'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_500.woff2')
+      format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/inter/inter_500.woff')
+      format('woff');
+}

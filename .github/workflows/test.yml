@@ -28,7 +28,5 @@ jobs:
         run: |
           npm install
           npm run build
-          echo "nojekyll" >> dist/.nojekyll
         env:
           GA: G-XXXXXXXXXX
-          HOST: example.org

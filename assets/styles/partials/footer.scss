@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-sm;
+  padding: 1rem;
+
+  .link {
+    width: 100%;
+    max-width: $size-content-row;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

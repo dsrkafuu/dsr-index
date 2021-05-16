@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Blog",
+    "icon": "blog",
+    "href": "https://blog.dsrkafuu.su"
+  },
+  {
+    "name": "GitHub",
+    "icon": "github",
+    "href": "https://github.com/dsrkafuu"
+  },
+  {
+    "name": "Twitter",
+    "icon": "twitter",
+    "href": "https://twitter.com/dsrkafuu"
+  },
+  {
+    "name": "Bangumi",
+    "icon": "tv-retro",
+    "href": "https://bgm.tv/user/amzrk2"
+  },
+  {
+    "name": "Steam",
+    "icon": "steam",
+    "href": "https://steamcommunity.com/id/dsrkafuu/"
+  }
+]

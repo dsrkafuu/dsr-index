@@ -1,0 +1,101 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    display: flex;
+    width: 100%;
+    max-width: $size-content-row;
+    margin: 1.5rem;
+    box-shadow: var(--box-shadow);
+  }
+
+  .avatar {
+    flex: 0 0 auto;
+    margin: 0.75rem 1.5rem;
+
+    picture,
+    img {
+      display: block;
+      width: $size-avatar;
+      height: $size-avatar;
+    }
+
+    img {
+      color: transparent;
+    }
+
+    picture {
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: var(--color-wrapper);
+    }
+  }
+
+  .info {
+    flex: 1 1 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.55rem;
+
+    h1 {
+      margin: 0;
+      font-size: $font-size-xl;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 0;
+      margin-top: 0.75rem;
+      font-size: $font-size-base;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.05rem;
+
+    .link {
+      width: $size-icon;
+      height: $size-icon;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.65rem;
+    }
+  }
+
+  @include responsive {
+    .card {
+      flex-direction: column;
+      max-width: $size-content-col;
+      min-width: $size-content-col;
+    }
+
+    .avatar {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .info {
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

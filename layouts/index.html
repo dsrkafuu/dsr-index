@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{{- "<!-- dsr-index | DSRKafuU (https://dsrkafuu.su) | Copyright (c) Apache-2.0 License -->" | safeHTML -}}
+
+<html lang="en">
+
+<head>
+  {{- partial "head" . -}}
+</head>
+
+<body>
+  <main>
+    {{- partial "main" . -}}
+  </main>
+
+  {{- if or (getenv "ICP") (getenv "POLICE") -}}
+  <footer>
+    {{- partial "footer" . -}}
+  </footer>
+  {{- end -}}
+
+  {{- $dev := eq (getenv "NODE_ENV") "development" -}}
+  {{- $pkg := getJSON "package.json" -}}
+  {{- $src := "js/main.js" -}}
+  {{- $out := printf "_assets/main_v%s.min.js" $pkg.version -}}
+  {{- $options := dict "targetPath" $out "minify" false "target" "esnext" "format" "iife" -}}
+  {{- $built := resources.Get $src | js.Build $options -}}
+  <script defer src="{{ $built.RelPermalink }}"></script>
+</body>
+
+</html>

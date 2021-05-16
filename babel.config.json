@@ -1,11 +1,5 @@
 {
   "presets": ["@babel/preset-env"],
   "plugins": [["@babel/plugin-transform-runtime", { "corejs": 3 }]],
-  "exclude": "node_modules",
-
-  "env": {
-    "production": {
-      "plugins": ["@interactjs/dev-tools/babel-plugin-prod"]
-    }
-  }
+  "exclude": "**/node_modules/**"
 }
