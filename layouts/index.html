@@ -22,9 +22,14 @@
   {{- $pkg := getJSON "package.json" -}}
   {{- $src := "js/main.js" -}}
   {{- $out := printf "_assets/main_v%s.min.js" $pkg.version -}}
+
+  {{- if $dev -}}
   {{- $options := dict "targetPath" $out "minify" false "target" "esnext" "format" "iife" -}}
   {{- $built := resources.Get $src | js.Build $options -}}
-  <script defer src="{{ $built.RelPermalink }}"></script>
+  <script defer src="{{- $built.RelPermalink -}}"></script>
+  {{- else -}}
+  <script defer src="{{- $out | relURL -}}"></script>
+  {{- end -}}
 </body>
 
 </html>
