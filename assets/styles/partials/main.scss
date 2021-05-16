@@ -65,17 +65,15 @@ main {
   .links {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-top: 1.05rem;
+    align-items: center;
+    margin-top: 1rem;
 
     .link {
-      width: $size-icon;
-      height: $size-icon;
-      padding: 0;
+      font-size: $font-size-lg;
+      padding: 0.6rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0.65rem;
     }
   }
 
@@ -95,7 +93,7 @@ main {
 
     .info {
       margin-top: 1.75rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
   }
 }

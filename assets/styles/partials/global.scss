@@ -26,15 +26,15 @@ footer {
 }
 
 .link {
-  display: block;
-  color: inherit;
+  display: inline-block;
+  color: var(--color-font);
   text-decoration: none;
   padding: 0.5rem;
   border-radius: $size-radius;
   transition: background-color 150ms ease;
 
   &:hover {
-    color: inherit;
+    color: var(--color-font);
     text-decoration: none;
     background-color: var(--color-hover);
   }

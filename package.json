@@ -7,11 +7,13 @@
   "license": "Apache-2.0",
   "scripts": {
     "hugo:dev": "hugo server",
+    "hugo:inspect": "hugo server --bind=0.0.0.0 --baseURL=http://0.0.0.0:1313",
     "hugo:prod": "hugo --cleanDestinationDir",
     "rollup": "rollup -c",
     "minify": "node ./scripts/minify.js",
     "data": "node ./scripts/data.js",
     "dev": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:dev",
+    "inspect": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:inspect",
     "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
   },
   "dependencies": {
