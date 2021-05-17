@@ -11,7 +11,6 @@ disableKinds:
   - "term"
   - "RSS"
   - "sitemap"
-  - "404"
 
 build:
   noJSConfigInAssets: true

@@ -47,7 +47,7 @@ function getFiles(dirPath) {
 
 const t = Date.now();
 console.log('fetching raw files...');
-getFiles(path.resolve(__dirname, '../public'));
+getFiles(path.resolve(__dirname, './public'));
 console.log(`raw files fetched in ${Date.now() - t}ms`);
 
 // minify

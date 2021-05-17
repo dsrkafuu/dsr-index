@@ -5,7 +5,6 @@
 dist/
 public/
 resources/
-static/_data/
 
 # logs
 logs

@@ -1,3 +1,5 @@
+{{- $type := .Scratch.Get "PAGE_TYPE" -}}
+
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,31 +9,32 @@
 {{- $bio := .Site.Data.meta.bio -}}
 {{- $opengraph := .Site.Data.meta.opengraph -}}
 
-<title>{{- $name -}}</title>
+<title>{{- if eq $type "404" -}}404 Not Found | {{ end -}}{{- $name -}}</title>
 <meta name="author" content="{{- $name -}}" />
+{{- if eq $type "404" -}}
+<meta name="description" content="Error 404 resource not found." />
+{{- else -}}
 <meta name="description" content="{{- $bio -}}" />
+{{- end -}}
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{- .Site.Data.favicon.apple -}}" />
 <link rel="icon" type="image/png" sizes="32x32" href="{{- .Site.Data.favicon.png_32x -}}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{- .Site.Data.favicon.png_16x -}}" />
 <link rel="shortcut icon" href="{{- .Site.Data.favicon.ico -}}" />
 
+{{- if ne $type "404" -}}
 <meta property="og:title" content="{{- $name -}}" />
 <meta property="og:description" content="{{- $bio -}}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{- .Permalink -}}" />
 <meta property="og:image" content="{{- $opengraph -}}" />
-
 <meta name="twitter:title" content="{{- $name -}}" />
 <meta name="twitter:description" content="{{- $bio -}}" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="{{- $opengraph -}}" />
-
-{{- $dev := eq (getenv "NODE_ENV") "development" -}}
-{{- if $dev -}}
-{{- partial "env" . -}}
 {{- end -}}
 
+{{- $dev := eq (getenv "NODE_ENV") "development" -}}
 {{- $pkg := getJSON "package.json" -}}
 {{- $src := "styles/main.scss" -}}
 {{- $out := printf "_assets/main_v%s.min.css" $pkg.version -}}

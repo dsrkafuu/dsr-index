@@ -1,3 +1,5 @@
+{{- $type := .Scratch.Get "PAGE_TYPE" -}}
+
 <div class="card">
   <div class="avatar">
     <picture>
@@ -6,10 +8,16 @@
       <img src="{{- .Site.Data.meta.avatar_jpg -}}" alt="Avatar" aria-label="Avatar" width="128" height="128">
     </picture>
   </div>
+
   <div class="info">
     <div class="meta">
+      {{- if eq $type "404" -}}
+      <h1 aria-label="Error">404 Not Found</h1>
+      <p aria-label="Error Detail">Error 404 resource not found</p>
+      {{- else -}}
       <h1 aria-label="Name">{{- .Site.Data.meta.name -}}</h1>
       <p aria-label="Bio">{{- .Site.Data.meta.bio -}}</p>
+      {{- end -}}
     </div>
 
     <div class="links">
