@@ -12,21 +12,36 @@
   <div class="info">
     <div class="meta">
       {{- if eq $type "404" -}}
+
       <h1 aria-label="Error">404 Not Found</h1>
       <p aria-label="Error Detail">Error 404 resource not found</p>
+
       {{- else -}}
+
       <h1 aria-label="Name">{{- .Site.Data.meta.name -}}</h1>
       <p aria-label="Bio">{{- .Site.Data.meta.bio -}}</p>
+
       {{- end -}}
     </div>
 
     <div class="links">
+      {{- if eq $type "404" -}}
+
+      <a class="link" href="/" title="Home" aria-label="Home">
+        {{- $.Scratch.Set "icon" "home" -}}
+        {{- partial "icon" $ -}}
+      </a>
+
+      {{- else -}}
+
       {{- range .Site.Data.links -}}
       <a class="link" href="{{- .href -}}" target="_blank" rel="noopener" title="{{- .name -}}"
         aria-label="{{- .name -}}">
         {{- $.Scratch.Set "icon" .icon -}}
         {{- partial "icon" $ -}}
       </a>
+      {{- end -}}
+
       {{- end -}}
     </div>
   </div>
