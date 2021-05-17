@@ -9,7 +9,7 @@ console.log('fetching data json files...');
 const dataDir = path.resolve(__dirname, '../data');
 const dataFiles = fs.readdirSync(dataDir).filter((filename) => path.extname(filename) === '.json');
 
-let outPath = path.resolve(__dirname, '../public');
+let outPath = path.resolve(__dirname, '../static');
 if (!fs.existsSync(outPath)) {
   fs.mkdirSync(outPath);
 }

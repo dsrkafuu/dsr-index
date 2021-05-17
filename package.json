@@ -12,9 +12,9 @@
     "rollup": "rollup -c",
     "minify": "node ./scripts/minify.js",
     "data": "node ./scripts/data.js",
-    "dev": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:dev",
-    "inspect": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:inspect",
-    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
+    "dev": "cross-env NODE_ENV=development env-cmd concurrently -m 1 npm:data npm:hugo:dev",
+    "inspect": "cross-env NODE_ENV=development env-cmd concurrently -m 1 npm:data npm:hugo:inspect",
+    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:data npm:hugo:prod npm:minify npm:rollup"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "~7.14.0",
