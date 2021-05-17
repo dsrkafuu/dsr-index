@@ -12,7 +12,7 @@
     {{- partial "main" . -}}
   </main>
 
-  {{- if or (getenv "ICP") (getenv "POLICE") -}}
+  {{- if or (getenv "ICP_LICENSE") (getenv "POLICE_LICENSE") -}}
   <footer>
     {{- partial "footer" . -}}
   </footer>

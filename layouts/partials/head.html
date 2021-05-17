@@ -28,6 +28,10 @@
 <meta name="twitter:image" content="{{- $opengraph -}}" />
 
 {{- $dev := eq (getenv "NODE_ENV") "development" -}}
+{{- if $dev -}}
+{{- partial "env" . -}}
+{{- end -}}
+
 {{- $pkg := getJSON "package.json" -}}
 {{- $src := "styles/main.scss" -}}
 {{- $out := printf "_assets/main_v%s.min.css" $pkg.version -}}
@@ -35,15 +39,15 @@
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
 
-{{- $ga := getenv "GA" -}}
+{{- $gaid := getenv "GA_ID" -}}
 {{- if and (not $dev) $ga -}}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{- $ga -}}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
   }
   gtag('js', new Date());
-  gtag('config', '{{- $ga -}}');
+  gtag('config', '{{- $gaid -}}');
 </script>
 {{- end -}}
