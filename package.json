@@ -13,7 +13,7 @@
     "minify": "node ./minify.js",
     "dev": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:dev",
     "inspect": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:inspect",
-    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify npm:rollup"
+    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
