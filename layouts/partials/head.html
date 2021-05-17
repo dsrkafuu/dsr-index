@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
 
 {{- $gaid := getenv "GA_ID" -}}
-{{- if and (not $dev) $ga -}}
+{{- if and (not $dev) $gaid -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

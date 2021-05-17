@@ -1,9 +1,10 @@
-import { BASE_URL } from '../utils/constants';
-
-export default () => {
+/**
+ * show 404 in not found page
+ */
+export default async () => {
   const path = window.location.pathname;
-  const basePath = new URL(BASE_URL).pathname;
-  if (path !== basePath) {
-    console.log('404 Not Found');
+  if (path !== '/') {
+    const el = document.querySelector('.info .meta h1');
+    el && (el.textContent = '404 Not Found');
   }
 };

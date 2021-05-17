@@ -12,11 +12,9 @@
     {{- partial "main" . -}}
   </main>
 
-  {{- if or (getenv "ICP_LICENSE") (getenv "POLICE_LICENSE") -}}
   <footer>
     {{- partial "footer" . -}}
   </footer>
-  {{- end -}}
 
   {{- $dev := eq (getenv "NODE_ENV") "development" -}}
   {{- $pkg := getJSON "package.json" -}}
