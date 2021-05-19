@@ -15,6 +15,13 @@ footer {
     align-items: center;
   }
 
+  @include responsive {
+    .link {
+      max-width: $size-content-col;
+      min-width: $size-content-col;
+    }
+  }
+
   .police {
     display: block;
     width: 12px;
