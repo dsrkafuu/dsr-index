@@ -1,6 +1,6 @@
-$font-family: -apple-system, BlinkMacSystemFont, Inter, 'SF Pro Text', 'Segoe UI', Arial,
-  'Helvetica Neue', Helvetica, 'Noto Sans SC', 'Source Han Sans CN', 'Source Han Sans SC',
-  'PingFang SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$font-family-en: Inter, -apple-system, BlinkMacSystemFont;
+$font-family-zh: 'Noto Sans SC', 'PingFang SC', 'Source Han Sans CN', 'Source Han Sans SC';
+$font-family: $font-family-en, $font-family-zh, ui-sans-serif, sans-serif;
 
 $font-size-xs: 10px;
 $font-size-sm: 12px;
