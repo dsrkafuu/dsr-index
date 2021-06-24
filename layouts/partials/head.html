@@ -42,15 +42,8 @@
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
 
-{{- $gaid := getenv "GA_ID" -}}
-{{- if and (not $dev) $gaid -}}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', '{{- $gaid -}}');
-</script>
+{{- $cfid := getenv "CF_ID" -}}
+{{- if and (not $dev) $cfid -}}
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+  data-cf-beacon='{"token": "{{- $cfid -}}"}'></script>
 {{- end -}}
