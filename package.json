@@ -1,31 +1,27 @@
 {
   "private": true,
   "name": "dsr-index",
-  "version": "2.1.8",
+  "version": "2.2.0",
   "description": "Index page of all DSR domains.",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
-  "license": "MPL-2.0",
+  "license": "Apache-2.0",
   "scripts": {
     "hugo:dev": "hugo server",
-    "hugo:inspect": "hugo server --bind=0.0.0.0 --baseURL=http://0.0.0.0:1313",
     "hugo:prod": "hugo --cleanDestinationDir",
     "rollup": "rollup -c",
     "minify": "node ./minify.js",
     "dev": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:dev",
-    "inspect": "cross-env NODE_ENV=development env-cmd concurrently npm:hugo:inspect",
-    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify",
-    "start": "serve"
+    "build": "cross-env NODE_ENV=production env-cmd --silent concurrently -m 1 npm:hugo:prod npm:minify"
   },
   "devDependencies": {
-    "autoprefixer": "~10.3.7",
+    "autoprefixer": "~10.4.0",
     "chalk": "~4.1.2",
     "concurrently": "~6.3.0",
     "cross-env": "~7.0.3",
-    "cssnano": "~5.0.8",
+    "cssnano": "~5.0.9",
     "env-cmd": "~10.1.0",
     "html-minifier-terser": "~6.0.2",
-    "postcss": "~8.3.10",
-    "prettier": "~2.4.1",
-    "serve": "~12.0.1"
+    "postcss": "~8.3.11",
+    "prettier": "~2.4.1"
   }
 }
