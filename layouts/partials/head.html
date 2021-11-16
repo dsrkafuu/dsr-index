@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {{- hugo.Generator -}}
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+{{- if (getenv "CN") -}}
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500" />
+{{- else -}}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500" />
+{{- end -}}
+
 {{- $name := .Site.Data.meta.name -}}
 {{- $bio := .Site.Data.meta.bio -}}
 {{- $opengraph := .Site.Data.meta.opengraph -}}
