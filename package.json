@@ -3,7 +3,7 @@
   "name": "dsr-index",
   "version": "2.2.1",
   "description": "Index page of all DSR domains.",
-  "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
+  "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "license": "Apache-2.0",
   "scripts": {
     "hugo:dev": "hugo server",
