@@ -21,6 +21,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{- .Site.Data.favicon.png_32x -}}" />
 <link rel="icon" type="image/png" sizes="16x16" href="{{- .Site.Data.favicon.png_16x -}}" />
 <link rel="shortcut icon" href="{{- .Site.Data.favicon.ico -}}" />
+<link rel="manifest" href='{{- "/site.webmanifest" | relURL -}}' />
 
 {{- if ne $type "404" -}}
 <meta property="og:title" content="{{- $name -}}" />

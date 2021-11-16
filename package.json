@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-index",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Index page of all DSR domains.",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.su)",
   "license": "Apache-2.0",
@@ -16,9 +16,9 @@
   "devDependencies": {
     "autoprefixer": "~10.4.0",
     "chalk": "~4.1.2",
-    "concurrently": "~6.3.0",
+    "concurrently": "~6.4.0",
     "cross-env": "~7.0.3",
-    "cssnano": "~5.0.9",
+    "cssnano": "~5.0.10",
     "env-cmd": "~10.1.0",
     "html-minifier-terser": "~6.0.2",
     "postcss": "~8.3.11",
