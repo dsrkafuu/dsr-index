@@ -1,23 +1,12 @@
-$font-family-en: 'Inter', -apple-system, BlinkMacSystemFont;
-$font-family-zh: 'Noto Sans SC', 'Noto Sans JP';
-$font-family: $font-family-en, $font-family-zh, ui-sans-serif, sans-serif;
-
-$font-size-xs: 10px;
-$font-size-sm: 12px;
-$font-size-base: 14px;
-$font-size-md: 16px;
-$font-size-lg: 18px;
-$font-size-xl: 24px;
+@import 'dsr-design/scss/variables';
 
 $size-responsive: 900px;
 $size-content-row: 450px;
 $size-content-col: 280px;
-$size-avatar: 128px;
-$size-icon: 2.55rem;
-$size-police: $font-size-sm;
-$size-radius: 3px;
+$size-icon: 36px;
+$size-police: 12px;
 
-$filter-blur: saturate(180%) blur(0.2rem);
+// $filter-blur: saturate(180%) blur(0.2rem);
 
 @mixin responsive {
   @media screen and (max-width: $size-responsive) {

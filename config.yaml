@@ -1,16 +1,21 @@
-baseURL: "https://dsrkafuu.net"
+baseURL: 'https://dsrkafuu.net'
 
 hasCJKLanguage: true
 enableEmoji: true
 enableRobotsTXT: true
 enableGitInfo: true
 disableKinds:
-  - "page"
-  - "section"
-  - "taxonomy"
-  - "term"
-  - "RSS"
-  - "sitemap"
+  - 'page'
+  - 'section'
+  - 'taxonomy'
+  - 'term'
+  - 'RSS'
+  - 'sitemap'
 
 build:
   noJSConfigInAssets: true
+
+security:
+  enableInlineShortcodes: true
+  funcs:
+    getenv: '^(HUGO_|NODE_ENV)'

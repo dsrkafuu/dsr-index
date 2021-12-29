@@ -3,10 +3,8 @@
   {{- printf "DSRIndeX v%s Apache-2.0 License" $pkg.version -}}
 </a>
 
-{{- if (getenv "CN") -}}
-
-{{- $icp := getenv "ICP_LICENSE" -}}
-{{- $police := getenv "PD_LICENSE" -}}
+{{- $icp := getenv "HUGO_ICP" -}}
+{{- $police := getenv "HUGO_POLICE" -}}
 
 {{- if $icp -}}
 <a class="link" href="https://beian.miit.gov.cn" target="_blank" rel="noopener" aria-label="ICP License">
@@ -19,6 +17,4 @@
   <img class="police" width="12" height="12" alt="Police Icon" src="{{- .Site.Data.meta.cnpd -}}" />
   {{- printf "&nbsp;%s" $police | safeHTML -}}
 </a>
-{{- end -}}
-
 {{- end -}}

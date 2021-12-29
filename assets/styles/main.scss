@@ -1,11 +1,11 @@
 /*! dsr-index | DSRKafuU (https://dsrkafuu.net) | Copyright (c) Apache-2.0 License */
 
-@import './support/normalize';
-
 @import './support/variables';
-@import './support/colors';
+@import './support/icon';
 
-@import './partials/icon';
+@import 'dsr-design/scss/reset';
+@import 'dsr-design/scss/colors';
+
 @import './partials/global';
 @import './partials/main';
 @import './partials/footer';

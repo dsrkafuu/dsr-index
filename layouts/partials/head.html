@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {{- hugo.Generator -}}
 
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-{{- if (getenv "CN") -}}
+
+{{- if (getenv "HUGO_CN") -}}
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500" />
 {{- else -}}
@@ -48,11 +50,11 @@
 {{- $pkg := getJSON "package.json" -}}
 {{- $src := "styles/main.scss" -}}
 {{- $out := printf "_assets/main_v%s.min.css" $pkg.version -}}
-{{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $dev -}}
+{{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $dev "includePaths" (slice "node_modules") -}}
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
 
-{{- $gaid := getenv "GA_ID" -}}
+{{- $gaid := getenv "HUGO_GA_ID" -}}
 {{- if and (not $dev) $gaid -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
 <script>

@@ -7,29 +7,25 @@ main {
     display: flex;
     width: 100%;
     max-width: $size-content-row;
-    margin: 1.5rem;
+    margin: $space-card;
     box-shadow: var(--box-shadow);
   }
 
   .avatar {
     flex: 0 0 auto;
-    margin: 0.75rem 1.5rem;
+    margin: 10px $space-card;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--color-wrapper);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    picture,
     img {
       display: block;
-      width: $size-avatar;
-      height: $size-avatar;
-    }
-
-    img {
-      color: transparent;
-    }
-
-    picture {
-      overflow: hidden;
-      border-radius: 50%;
-      background-color: var(--color-wrapper);
+      width: 128px;
+      height: 128px;
     }
   }
 
@@ -47,18 +43,18 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 0.55rem;
+    margin-top: 6px;
 
     h1 {
       margin: 0;
-      font-size: $font-size-xl;
-      font-weight: 500;
+      font-size: $font-xl;
+      font-weight: $bold-weight;
     }
 
     p {
       margin: 0;
-      margin-top: 0.75rem;
-      font-size: $font-size-base;
+      margin-top: 10px;
+      font-size: $font-md;
     }
   }
 
@@ -66,11 +62,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: $space-para;
 
     .link {
-      font-size: $font-size-lg;
-      padding: 0.6rem;
+      font-size: $font-lg;
+      padding: 8px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -88,12 +84,12 @@ main {
       margin: 0;
       display: flex;
       justify-content: center;
-      margin-top: 1rem;
+      margin-top: 14px;
     }
 
     .info {
-      margin-top: 1.75rem;
-      margin-bottom: 0.6rem;
+      margin-top: 24.5px;
+      margin-bottom: 8.4px;
     }
   }
 }

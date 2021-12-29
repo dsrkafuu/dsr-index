@@ -3,8 +3,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: $font-size-sm;
-  padding: 1rem;
+  font-size: $font-xs;
+  padding: 14px;
 
   .link {
     width: 100%;
@@ -13,6 +13,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      background-color: rgba(106, 116, 136, 0.1);
+    }
   }
 
   @include responsive {
@@ -24,8 +28,8 @@ footer {
 
   .police {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     color: transparent;
   }
 }
