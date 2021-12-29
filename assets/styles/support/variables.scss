@@ -13,3 +13,12 @@ $size-police: 12px;
     @content;
   }
 }
+
+// custom colors
+:root {
+  --color-footer-active: rgba(106, 116, 136, 0.1);
+
+  @media (prefers-color-scheme: dark) {
+    --color-footer-active: rgba(186, 186, 186, 0.1);
+  }
+}

@@ -6,12 +6,11 @@
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "license": "Apache-2.0",
   "scripts": {
-    "script:minifyHTML": "node ./minify.js",
+    "script:minify": "node \"./scripts/minify.mjs\"",
     "server": "hugo server",
     "compile": "hugo --cleanDestinationDir",
-    "bundle": "rollup -c",
     "dev": "cross-env NODE_ENV=development env-cmd run-s server",
-    "build": "cross-env NODE_ENV=production env-cmd --silent run-s compile bundle script:minifyHTML"
+    "build": "cross-env NODE_ENV=production env-cmd --silent run-s compile script:minify"
   },
   "dependencies": {
     "dsr-design": "~1.1.0",
@@ -24,6 +23,8 @@
     "cross-env": "~7.0.3",
     "cssnano": "~5.0.14",
     "env-cmd": "~10.1.0",
+    "eslint": "~8.5.0",
+    "glob": "~7.2.0",
     "html-minifier-terser": "~6.0.2",
     "npm-run-all": "~4.1.5",
     "postcss": "~8.4.5",

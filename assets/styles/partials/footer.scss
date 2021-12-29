@@ -15,7 +15,7 @@ footer {
     align-items: center;
 
     &:hover {
-      background-color: rgba(106, 116, 136, 0.1);
+      background-color: var(--color-footer-active);
     }
   }
 
