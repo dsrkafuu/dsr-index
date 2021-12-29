@@ -3,6 +3,8 @@
   {{- printf "DSRIndeX v%s Apache-2.0 License" $pkg.version -}}
 </a>
 
+{{- if (getenv "HUGO_CN") -}}
+
 {{- $icp := getenv "HUGO_ICP" -}}
 {{- $police := getenv "HUGO_POLICE" -}}
 
@@ -17,4 +19,6 @@
   <img class="police" width="12" height="12" alt="Police Icon" src="{{- .Site.Data.meta.cnpd -}}" />
   {{- printf "&nbsp;%s" $police | safeHTML -}}
 </a>
+{{- end -}}
+
 {{- end -}}
