@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-index",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Index page of all DSR domains.",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
   "license": "Apache-2.0",
@@ -13,17 +13,17 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent run-s compile script:minify"
   },
   "dependencies": {
-    "dsr-design": "~1.1.0",
+    "dsr-design": "~1.1.1",
     "normalize.css": "~8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "~10.4.0",
+    "autoprefixer": "~10.4.1",
     "browserslist": "~4.19.1",
     "chalk": "~5.0.0",
     "cross-env": "~7.0.3",
     "cssnano": "~5.0.14",
     "env-cmd": "~10.1.0",
-    "eslint": "~8.5.0",
+    "eslint": "~8.6.0",
     "glob": "~7.2.0",
     "html-minifier-terser": "~6.0.2",
     "npm-run-all": "~4.1.5",
