@@ -49,7 +49,7 @@
 {{- $dev := eq (getenv "NODE_ENV") "development" -}}
 {{- $pkg := getJSON "package.json" -}}
 {{- $src := "styles/main.scss" -}}
-{{- $out := printf "_assets/main_v%s.min.css" $pkg.version -}}
+{{- $out := printf "assets/main.v%s.min.css" $pkg.version -}}
 {{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $dev "includePaths" (slice "node_modules") -}}
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
