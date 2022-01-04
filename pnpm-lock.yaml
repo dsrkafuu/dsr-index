@@ -6,7 +6,7 @@ specifiers:
   chalk: ~5.0.0
   cross-env: ~7.0.3
   cssnano: ~5.0.14
-  dsr-design: ~1.1.1
+  dsr-design: ~2.0.2
   env-cmd: ~10.1.0
   eslint: ~8.6.0
   glob: ~7.2.0
@@ -17,7 +17,7 @@ specifiers:
   prettier: ~2.5.1
 
 dependencies:
-  dsr-design: 1.1.1
+  dsr-design: 2.0.2
   normalize.css: 8.0.1
 
 devDependencies:
@@ -481,8 +481,8 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /dsr-design/1.1.1:
-    resolution: {integrity: sha512-vUmKVPvcq+olFeWjoaAfxuXGvIGZ2zLaPdWwtCYgdkTtV6g5hj2zGwY/hvbA7vXS1iwycR1qBQw/Pn5qk5GYwA==}
+  /dsr-design/2.0.2:
+    resolution: {integrity: sha512-OY4ks9BEhNo872DqMfXECCa6/FbeZpBX6xT17r2Fs3Iabhyr8iSWudOlzgIK1pMBjzBhDEW3Y3e8u8rZo9F61Q==}
     dev: false
 
   /electron-to-chromium/1.4.29:
