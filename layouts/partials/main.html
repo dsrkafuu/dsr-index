@@ -28,6 +28,10 @@
         {{- partial "icon" $ -}}
       </a>
 
+      {{- else if (getenv "HUGO_CN") -}}
+
+      <span class="na">Links not available in China</span>
+
       {{- else -}}
 
       {{- range .Site.Data.links -}}

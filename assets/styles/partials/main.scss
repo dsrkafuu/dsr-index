@@ -73,6 +73,11 @@ main {
       justify-content: center;
       align-items: center;
     }
+
+    .na {
+      filter: contrast(0.1);
+      font-size: $font-sm;
+    }
   }
 
   @include responsive {
