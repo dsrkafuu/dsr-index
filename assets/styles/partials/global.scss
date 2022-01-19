@@ -31,7 +31,7 @@ footer {
   text-decoration: none;
   padding: 7px;
   border-radius: $corner-radius;
-  transition: background-color $transition-duration ease;
+  transition: background-color $transition-fast ease;
 
   &:hover {
     color: var(--color-font);

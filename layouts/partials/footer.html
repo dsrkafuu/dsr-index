@@ -1,6 +1,6 @@
 {{- $pkg := getJSON "package.json" -}}
 <a class="link" href="{{- .Site.Data.meta.repo -}}" target="_blank" rel="noopener" aria-label="Code Repo">
-  {{- printf "DSRIndeX v%s Apache-2.0 License" $pkg.version -}}
+  {{- printf "DSRIndeX v%s %s" $pkg.version $pkg.license -}}
 </a>
 
 {{- if (getenv "HUGO_CN") -}}
