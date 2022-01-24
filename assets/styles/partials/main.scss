@@ -1,17 +1,22 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: $size-content-row;
+  margin: $space-card;
+  box-shadow: var(--box-shadow);
+
+  & + & {
+    margin-top: 0;
+  }
+}
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: $size-content-row;
-    margin: $space-card;
-    box-shadow: var(--box-shadow);
-  }
+  flex-direction: column;
 
   .avatar {
     flex: 0 0 auto;

@@ -1,0 +1,16 @@
+{{- $name := "firefox" -}}
+{{- $svg := readFile (printf "assets/svg/%s.svg" $name) -}}
+
+<div class="card">
+  <div id="firefox">
+    <div id="firefox-icon">
+      {{- $svg | safeHTML -}}
+    </div>
+    <p id="firefox-content">
+      Super fast and fiercely independent. Get the only browser that works to make the internet better for everyone.
+    </p>
+    <a id="firefox-ctrl" href="https://www.mozilla.org/en-US/firefox/all/" target="_blank" rel="noopener">
+      Explore Firefox
+    </a>
+  </div>
+</div>
