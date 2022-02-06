@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,11 +79,6 @@ main {
       justify-content: center;
       align-items: center;
     }
-
-    .na {
-      filter: contrast(0.1);
-      font-size: $font-sm;
-    }
   }
 
   @include responsive {
@@ -103,5 +99,26 @@ main {
       margin-top: 24.5px;
       margin-bottom: 8.4px;
     }
+  }
+}
+
+#switch {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-font);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: $corner-radius;
+  transition: background-color $transition-fast ease;
+
+  &:hover {
+    color: var(--color-font);
+    text-decoration: none;
+    background-color: var(--color-transparent-active);
   }
 }

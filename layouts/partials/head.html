@@ -47,12 +47,20 @@
 {{- end -}}
 
 {{- $dev := eq (getenv "NODE_ENV") "development" -}}
+{{- $prod := eq (getenv "NODE_ENV") "production" -}}
 {{- $pkg := getJSON "package.json" -}}
+
 {{- $src := "styles/main.scss" -}}
 {{- $out := printf "assets/main.v%s.min.css" $pkg.version -}}
 {{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $dev "includePaths" (slice "node_modules") -}}
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+
+{{- $src = "main.js" -}}
+{{- $out = printf "assets/main.v%s.min.js" $pkg.version -}}
+{{- $options := dict "targetPath" $out "target" "es2020" "minify" $prod -}}
+{{- $js := resources.Get $src | js.Build $options -}}
+<script defer src="{{- $js.RelPermalink -}}" ></script>
 
 {{- $gaid := getenv "HUGO_GA_ID" -}}
 {{- if and (not $dev) $gaid -}}

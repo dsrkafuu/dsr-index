@@ -1,48 +1,45 @@
 {{- $type := .Scratch.Get "PAGE_TYPE" -}}
+{{- $user := .Site.Data.user -}}
+{{- $links := .Site.Data.links -}}
 
 <div class="card">
   <div class="avatar">
-    <img src="{{- .Site.Data.meta.avatar -}}" alt=" " aria-label="Avatar" width="128" height="128" />
+    <img src="{{- $user.avatar -}}" alt=" " aria-label="Avatar" width="128" height="128" />
   </div>
 
   <div class="info">
     <div class="meta">
       {{- if eq $type "404" -}}
-
       <h1 aria-label="Error">404 Not Found</h1>
       <p aria-label="Error Detail">Error 404 resource not found</p>
-
       {{- else -}}
-
-      <h1 aria-label="Name">{{- .Site.Data.meta.name -}}</h1>
-      <p aria-label="Bio">{{- .Site.Data.meta.bio -}}</p>
-
+      <h1 aria-label="Name">{{- $user.name -}}</h1>
+      <p aria-label="Bio">{{- $user.bio -}}</p>
       {{- end -}}
     </div>
 
     <div class="links">
       {{- if eq $type "404" -}}
-
       <a class="link" href="{{- .Site.BaseURL | relURL -}}" title="Home" aria-label="Home">
         {{- $.Scratch.Set "ICON" "home" -}}
         {{- partial "icon" $ -}}
       </a>
-
-      {{- else if (getenv "HUGO_CN") -}}
-
-      <span class="na">Links not available in China</span>
-
       {{- else -}}
-
-      {{- range .Site.Data.links -}}
+      {{- range $links -}}
       <a class="link" href="{{- .href -}}" target="_blank" rel="noopener" title="{{- .name -}}"
-        aria-label="{{- .name -}}">
+         aria-label="{{- .name -}}">
         {{- $.Scratch.Set "ICON" .icon -}}
         {{- partial "icon" $ -}}
       </a>
       {{- end -}}
-
       {{- end -}}
     </div>
   </div>
+
+  {{- if ne $type "404" -}}
+  <div id="switch">
+    {{- $.Scratch.Set "ICON" "exchange" -}}
+    {{- partial "icon" $ -}}
+  </div>
+  {{- end -}}
 </div>
