@@ -76,6 +76,13 @@ function switchUser() {
     links.appendChild(newNode);
   });
   document.querySelector('.links').replaceWith(links);
+  // update head
+  const title = document.querySelector('head title');
+  title.textContent = newUser.user.name;
+  const author = document.querySelector('head meta[name="author"]');
+  author.setAttribute('content', newUser.user.name);
+  const desc = document.querySelector('head meta[name="description"]');
+  desc.setAttribute('content', newUser.user.bio);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
