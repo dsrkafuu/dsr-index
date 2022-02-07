@@ -77,12 +77,25 @@ function switchUser() {
   });
   document.querySelector('.links').replaceWith(links);
   // update head
-  const title = document.querySelector('head title');
+  const head = document.querySelector('head');
+  const title = head.querySelector('title');
   title.textContent = newUser.user.name;
-  const author = document.querySelector('head meta[name="author"]');
-  author.setAttribute('content', newUser.user.name);
-  const desc = document.querySelector('head meta[name="description"]');
-  desc.setAttribute('content', newUser.user.bio);
+  const nameMetas = [
+    head.querySelector('meta[name="author"]'),
+    head.querySelector('meta[property="og:title"]'),
+    head.querySelector('meta[name="twitter:title"]'),
+  ];
+  nameMetas.forEach((meta) => {
+    meta.setAttribute('content', newUser.user.name);
+  });
+  const descMetas = [
+    head.querySelector('meta[name="description"]'),
+    head.querySelector('meta[property="og:description"]'),
+    head.querySelector('meta[name="twitter:description"]'),
+  ];
+  descMetas.forEach((meta) => {
+    meta.setAttribute('content', newUser.user.bio);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
