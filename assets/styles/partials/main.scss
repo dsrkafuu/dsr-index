@@ -101,24 +101,3 @@ main {
     }
   }
 }
-
-#switch {
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-font);
-  text-decoration: none;
-  padding: 8px;
-  border-radius: $corner-radius;
-  transition: background-color $transition-fast ease;
-
-  &:hover {
-    color: var(--color-font);
-    text-decoration: none;
-    background-color: var(--color-transparent-active);
-  }
-}

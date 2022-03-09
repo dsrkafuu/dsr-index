@@ -56,12 +56,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500" />
 {{- end -}}
 
-{{- $src = "main.js" -}}
-{{- $out = printf "assets/main.v%s.min.js" $pkg.version -}}
-{{- $options := dict "targetPath" $out "target" "es2020" "minify" $prod -}}
-{{- $js := resources.Get $src | js.Build $options -}}
-<script defer src="{{- $js.RelPermalink -}}" ></script>
-
 {{- $gaid := getenv "HUGO_GA_ID" -}}
 {{- if and (not $dev) $gaid -}}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{- $gaid -}}"></script>
