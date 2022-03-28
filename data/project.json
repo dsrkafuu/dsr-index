@@ -2,35 +2,35 @@
   "original": [
     {
       "name": "Skyline Overlay",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@7.0.0/project/skyline-overlay.png",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/project/skyline-overlay.png",
       "href": "https://github.com/dsrkafuu/skyline-overlay#readme"
     },
     {
       "name": "FFXIV Overlay API",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@7.0.0/project/ffxiv-overlay-api.png",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/project/ffxiv-overlay-api.png",
       "href": "https://github.com/dsrkafuu/ffxiv-overlay-api#readme"
     },
     {
       "name": "DSRTOOLS",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@7.0.0/project/dsr-tools.png",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/project/dsr-tools.png",
       "href": "https://tools.dsrkafuu.net/"
     }
   ],
   "mirror": [
     {
       "name": "Moe Counter CF",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@7.0.0/project/moe-counter-cf.png",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/project/moe-counter-cf.png",
       "href": "https://count.dsrkafuu.net/"
     },
     {
-      "name": "Squoosh",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@7.0.0/project/squoosh.png",
-      "href": "https://squoosh.dsrkafuu.net/"
+      "name": "Aofuji Light",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/project/vscode-theme-aofuji.png",
+      "href": "https://marketplace.visualstudio.com/items?itemName=dsrkafuu.vscode-theme-aofuji"
     },
     {
-      "name": "FFXIV Gearing",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@7.0.0/project/ffxiv-gearing.png",
-      "href": "https://ffxiv.dsrkafuu.net/"
+      "name": "Squoosh",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@8.0.0/project/squoosh.png",
+      "href": "https://squoosh.dsrkafuu.net/"
     }
   ]
 }
