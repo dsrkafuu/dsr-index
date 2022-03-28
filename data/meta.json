@@ -1,6 +1,5 @@
 {
-  "opengraph": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@3.0.0/opengraph/dsrkafuu.jpg",
+  "opengraph": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@4.0.0/opengraph/dsrkafuu.jpg",
   "repo": "https://github.com/dsrkafuu/dsr-index",
-  "cnpd": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@3.0.0/misc/cnpd.png",
-  "firefox": "https://www.mozilla.org/en-US/firefox/all/"
+  "cnpd": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@4.0.0/misc/cnpd.png"
 }
