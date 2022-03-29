@@ -1,2 +1,2 @@
 User-agent: *
-Allow: /
+{{ if (getenv "HUGO_CN") -}}Disallow: /{{- else -}}Allow: /{{- end -}}
