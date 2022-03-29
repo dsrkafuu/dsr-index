@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-{{- $name := .Site.Data.user.name -}}
-{{- $bio := .Site.Data.user.bio -}}
+{{- $name := .Site.Data.meta.name -}}
+{{- $bio := .Site.Data.meta.bio -}}
 {{- $opengraph := .Site.Data.meta.opengraph -}}
 
 <title>{{- if eq $type "404" -}}404 Not Found | {{ end -}}{{- $name -}}</title>
