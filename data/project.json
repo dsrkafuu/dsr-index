@@ -1,14 +1,14 @@
 {
-  "original": [
+  "main": [
     {
       "name": "Skyline Overlay",
       "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@9.0.0/project/skyline-overlay.png",
       "href": "https://github.com/dsrkafuu/skyline-overlay#readme"
     },
     {
-      "name": "FFXIV Overlay API",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@9.0.0/project/ffxiv-overlay-api.png",
-      "href": "https://github.com/dsrkafuu/ffxiv-overlay-api#readme"
+      "name": "Moe Counter CF",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@9.0.0/project/moe-counter-cf.png",
+      "href": "https://count.dsrkafuu.net/"
     },
     {
       "name": "DSRTOOLS",
@@ -16,16 +16,16 @@
       "href": "https://tools.dsrkafuu.net/"
     }
   ],
-  "mirror": [
-    {
-      "name": "Moe Counter CF",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@9.0.0/project/moe-counter-cf.png",
-      "href": "https://count.dsrkafuu.net/"
-    },
+  "extend": [
     {
       "name": "Aofuji Light",
       "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@9.0.0/project/vscode-theme-aofuji.png",
       "href": "https://marketplace.visualstudio.com/items?itemName=dsrkafuu.vscode-theme-aofuji"
+    },
+    {
+      "name": "FFXIV Overlay API",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@9.0.0/project/ffxiv-overlay-api.png",
+      "href": "https://github.com/dsrkafuu/ffxiv-overlay-api#readme"
     },
     {
       "name": "Squoosh",

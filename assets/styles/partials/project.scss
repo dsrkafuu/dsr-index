@@ -34,8 +34,8 @@
   }
 }
 
-@include responsive {
-  .project {
-    align-self: stretch;
+.card.pjck {
+  @include responsive {
+    display: none;
   }
 }

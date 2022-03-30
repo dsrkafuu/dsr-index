@@ -1,11 +1,11 @@
 {{- $project := .Site.Data.project -}}
-{{- $original := $project.original -}}
-{{- $mirror := $project.mirror -}}
+{{- $extend := $project.extend -}}
+{{- $main := $project.main -}}
 
-<div class="card">
+<div class="card pjck">
   <div class="project">
     <ul class="list">
-      {{- range $original -}}
+      {{- range $main -}}
       <li>
         <a class="link" href="{{- .href -}}" target="_blank" rel="noopener">
           <img src="{{- .icon -}}" alt="">
@@ -17,7 +17,7 @@
   </div>
   <div class="project">
     <ul class="list">
-      {{- range $mirror -}}
+      {{- range $extend -}}
       <li>
         <a class="link" href="{{- .href -}}" target="_blank" rel="noopener">
           <img src="{{- .icon -}}" alt="">
