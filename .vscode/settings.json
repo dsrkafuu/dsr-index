@@ -4,5 +4,4 @@
   },
   "html.format.endWithNewline": true,
   "html.format.wrapAttributes": "aligned-multiple",
-  "px-to-rem.px-per-rem": 14
 }
