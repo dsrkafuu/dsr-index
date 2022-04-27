@@ -6,11 +6,6 @@
       "href": "https://github.com/dsrkafuu/skyline-overlay#readme"
     },
     {
-      "name": "Moe Counter CF",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@10.0.0/project/moe-counter-cf.png",
-      "href": "https://count.dsrkafuu.net/"
-    },
-    {
       "name": "DSRTOOLS",
       "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@10.0.0/project/dsr-tools.png",
       "href": "https://tools.dsrkafuu.net/"
@@ -23,14 +18,9 @@
       "href": "https://marketplace.visualstudio.com/items?itemName=dsrkafuu.vscode-theme-aofuji"
     },
     {
-      "name": "FFXIV Gearing",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@10.0.0/project/ffxiv-gearing.png",
-      "href": "https://ffxiv.dsrkafuu.net/"
-    },
-    {
-      "name": "Squoosh",
-      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@10.0.0/project/squoosh.png",
-      "href": "https://squoosh.dsrkafuu.net/"
+      "name": "Moe Counter CF",
+      "icon": "https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-assets@10.0.0/project/moe-counter-cf.png",
+      "href": "https://count.dsrkafuu.net/"
     }
   ]
 }
