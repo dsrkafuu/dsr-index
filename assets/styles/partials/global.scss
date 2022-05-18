@@ -8,11 +8,6 @@ body {
 html {
   height: 100%;
   background-color: var(--color-body);
-  background-image: url('https://cdn.dsrkafuu.net/background/pexelsm.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   overflow: hidden;
 }
 
@@ -36,14 +31,13 @@ body {
   &:hover {
     color: var(--color-font);
     text-decoration: none;
-    background-color: var(--color-backdrop-active);
+    background-color: var(--color-bg-active);
   }
 }
 
 .card {
   padding: $space-card;
-  background-color: var(--color-backdrop);
+  background-color: var(--color-bg);
   border-radius: $corner-radius-lg;
-  box-shadow: var(--box-shadow-backdrop);
-  backdrop-filter: $filter-mica;
+  box-shadow: var(--box-shadow);
 }

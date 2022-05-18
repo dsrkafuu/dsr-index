@@ -7,6 +7,7 @@ footer {
   font-size: $font-xs;
   padding: $space-card;
   width: $size-content-col;
+  margin-bottom: $space-card;
 
   .link {
     text-align: center;
@@ -15,7 +16,7 @@ footer {
     align-items: center;
 
     &:hover {
-      background-color: var(--color-backdrop-active);
+      background-color: var(--color-bg-active);
     }
   }
 
