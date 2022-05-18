@@ -15,7 +15,7 @@
 {{- end -}}
 {{- if $police -}}
 <a class="link" href="https://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" rel="noopener"
-  aria-label="Police License">
+   aria-label="Police License">
   <img class="police" width="12" height="12" alt="Police Icon" src="{{- .Site.Data.meta.cnpd -}}" />
   {{- printf "&nbsp;%s" $police | safeHTML -}}
 </a>

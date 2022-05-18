@@ -7,22 +7,22 @@ body {
 
 html {
   height: 100%;
+  background-color: var(--color-body);
+  background-image: url('https://cdn.dsrkafuu.net/background/pexelsm.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
 body {
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  background-color: var(--color-body);
   color: var(--color-font);
-}
-
-main {
-  flex: 1 1 auto;
-}
-
-footer {
-  flex: 0 0 auto;
 }
 
 .link {
@@ -30,18 +30,20 @@ footer {
   color: var(--color-font);
   text-decoration: none;
   padding: 7px;
-  border-radius: $corner-radius;
+  border-radius: $corner-radius-sm;
   transition: background-color $transition-fast ease;
 
   &:hover {
     color: var(--color-font);
     text-decoration: none;
-    background-color: var(--color-transparent-active);
+    background-color: var(--color-backdrop-active);
   }
 }
 
 .card {
   padding: $space-card;
-  background-color: var(--color-bg);
-  border-radius: $corner-radius;
+  background-color: var(--color-backdrop);
+  border-radius: $corner-radius-lg;
+  box-shadow: var(--box-shadow-backdrop);
+  backdrop-filter: $filter-mica;
 }

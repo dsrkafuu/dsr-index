@@ -1,23 +1,11 @@
-.card {
+main {
+  z-index: 2;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: $size-content-row;
+  width: $size-content-row;
   margin: $space-card;
-  box-shadow: var(--box-shadow);
-
-  & + & {
-    margin-top: 0;
-  }
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
   .avatar {
     flex: 0 0 auto;
@@ -82,11 +70,8 @@ main {
   }
 
   @include responsive {
-    .card {
-      flex-direction: column;
-      max-width: $size-content-col;
-      min-width: $size-content-col;
-    }
+    flex-direction: column;
+    width: $size-content-col;
 
     .avatar {
       margin: 0;

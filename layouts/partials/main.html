@@ -2,37 +2,35 @@
 {{- $user := .Site.Data.meta -}}
 {{- $links := .Site.Data.links -}}
 
-<div class="card">
-  <div class="avatar">
-    <img src="{{- $user.avatar -}}" alt=" " aria-label="Avatar" width="128" height="128" />
+<div class="avatar">
+  <img src="{{- $user.avatar -}}" alt=" " aria-label="Avatar" width="128" height="128" />
+</div>
+
+<div class="info">
+  <div class="meta">
+    {{- if eq $type "404" -}}
+    <h1 aria-label="Error">404 Not Found</h1>
+    <p aria-label="Error Detail">Error 404 resource not found</p>
+    {{- else -}}
+    <h1 aria-label="Name">{{- $user.name -}}</h1>
+    <p aria-label="Bio">{{- $user.bio -}}</p>
+    {{- end -}}
   </div>
 
-  <div class="info">
-    <div class="meta">
-      {{- if eq $type "404" -}}
-      <h1 aria-label="Error">404 Not Found</h1>
-      <p aria-label="Error Detail">Error 404 resource not found</p>
-      {{- else -}}
-      <h1 aria-label="Name">{{- $user.name -}}</h1>
-      <p aria-label="Bio">{{- $user.bio -}}</p>
-      {{- end -}}
-    </div>
-
-    <div class="links">
-      {{- if eq $type "404" -}}
-      <a class="link" href="{{- .Site.BaseURL | relURL -}}" title="Home" aria-label="Home">
-        {{- $.Scratch.Set "ICON" "home" -}}
-        {{- partial "icon" $ -}}
-      </a>
-      {{- else -}}
-      {{- range $links -}}
-      <a class="link" href="{{- .href -}}" target="_blank" rel="noopener" title="{{- .name -}}"
-         aria-label="{{- .name -}}">
-        {{- $.Scratch.Set "ICON" .icon -}}
-        {{- partial "icon" $ -}}
-      </a>
-      {{- end -}}
-      {{- end -}}
-    </div>
+  <div class="links">
+    {{- if eq $type "404" -}}
+    <a class="link" href="{{- .Site.BaseURL | relURL -}}" title="Home" aria-label="Home">
+      {{- $.Scratch.Set "ICON" "home" -}}
+      {{- partial "icon" $ -}}
+    </a>
+    {{- else -}}
+    {{- range $links -}}
+    <a class="link" href="{{- .href -}}" target="_blank" rel="noopener" title="{{- .name -}}"
+       aria-label="{{- .name -}}">
+      {{- $.Scratch.Set "ICON" .icon -}}
+      {{- partial "icon" $ -}}
+    </a>
+    {{- end -}}
+    {{- end -}}
   </div>
 </div>
