@@ -1,3 +1,13 @@
+:root {
+  --color-footer-active: rgba(106, 116, 136, 0.1);
+  @media (prefers-color-scheme: dark) {
+    --color-footer-active: rgba(186, 186, 186, 0.1);
+  }
+}
+body[data-theme='dark'] {
+  --color-footer-active: rgba(186, 186, 186, 0.1);
+}
+
 footer {
   z-index: 1;
   display: flex;
@@ -14,9 +24,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
 
     &:hover {
-      background-color: var(--color-bg-active);
+      background-color: var(--color-footer-active);
     }
   }
 
