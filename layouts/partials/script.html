@@ -1,0 +1,20 @@
+{{- $user := .Site.Data.meta -}}
+
+<script>
+  window.addEventListener('load', function () {
+    var container = document.querySelector('.avatar');
+    var avatar = document.querySelector('.avatar img');
+    if (container && avatar) {
+      var dsrkafuu = avatar.src;
+      var karyl = '{{- $user.karyl -}}';
+      var image = new Image();
+      image.src = karyl;
+      image.onload = function () {
+        container.style = 'cursor: pointer';
+        container.addEventListener('click', function () {
+          avatar.src = avatar.src === karyl ? dsrkafuu : karyl;
+        });
+      };
+    }
+  });
+</script>
