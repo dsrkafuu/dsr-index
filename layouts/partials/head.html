@@ -45,12 +45,12 @@
 
 {{- $src := "styles/main.scss" -}}
 {{- $out := printf "assets/main.v%s.min.css" $pkg.version -}}
-{{- $options := dict "targetPath" $out "outputStyle" "expanded" "enableSourceMap" $dev "includePaths" (slice "node_modules") -}}
+{{- $options := dict "targetPath" $out "outputStyle" "compressed" "enableSourceMap" $dev "includePaths" (slice "node_modules") -}}
 {{- $css := resources.Get $src | resources.ToCSS $options -}}
 <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
 
-{{- if (getenv "HUGO_CN") -}}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500&family=Noto+Sans+JP:wght@400;500" />
+{{- if (getenv "HUGO_CN_MODE") -}}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500" />
 {{- else -}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500" />
 {{- end -}}

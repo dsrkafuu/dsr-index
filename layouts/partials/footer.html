@@ -3,10 +3,10 @@
   {{- printf "DSRIndeX v%s %s" $pkg.version $pkg.license -}}
 </a>
 
-{{- if (getenv "HUGO_CN") -}}
+{{- if (getenv "HUGO_CN_MODE") -}}
 
-{{- $icp := getenv "HUGO_ICP" -}}
-{{- $police := getenv "HUGO_POLICE" -}}
+{{- $icp := getenv "HUGO_ICP_LICENSE" -}}
+{{- $police := getenv "HUGO_POLICE_LICENSE" -}}
 
 {{- if $icp -}}
 <a class="link" href="https://beian.miit.gov.cn" target="_blank" rel="noopener" aria-label="ICP License">
@@ -15,8 +15,8 @@
 {{- end -}}
 {{- if $police -}}
 <a class="link" href="https://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" rel="noopener"
-   aria-label="Police License">
-  <img class="police" width="12" height="12" alt="Police Icon" src="{{- .Site.Data.meta.cnpd -}}" />
+   aria-label="Police License"><img class="police" width="12" height="12" alt="Police Icon"
+       src="{{- .Site.Data.meta.cnpd -}}" />
   {{- printf "&nbsp;%s" $police | safeHTML -}}
 </a>
 {{- end -}}
