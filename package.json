@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-index",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "description": "Index page of all DSR domains.",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net/)",
   "license": "AGPL-3.0",
@@ -10,12 +10,12 @@
     "build": "cross-env NODE_ENV=production env-cmd --silent hugo --cleanDestinationDir --minify"
   },
   "dependencies": {
-    "dsr-design": "~3.3.0"
+    "dsr-design": "~3.5.1"
   },
   "devDependencies": {
     "cross-env": "~7.0.3",
     "env-cmd": "~10.1.0",
-    "eslint": "~8.17.0",
-    "prettier": "~2.6.2"
+    "eslint": "~8.21.0",
+    "prettier": "~2.7.1"
   }
 }
