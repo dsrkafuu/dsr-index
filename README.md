@@ -5,7 +5,6 @@ Index page of all DSR domains.
 ## Environment Variables
 
 ```
-HUGO_GA_ID=G-0000000000
 HUGO_CN_MODE=1
 HUGO_ICP_LICENSE=苏 ICP 备 0000000000 号
 HUGO_POLICE_LICENSE=苏公网安备 00000000000000 号
