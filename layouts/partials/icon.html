@@ -1,6 +1,0 @@
-{{- $name := .Scratch.Get "ICON" -}}
-{{- $svg := readFile (printf "assets/svg/%s.svg" $name) -}}
-
-{{- $class := "icon" -}}
-{{- $svg = replace $svg "<svg" (printf "<svg class='%s %s-%s'" $class $class $name) 1 -}}
-{{- $svg | safeHTML -}}

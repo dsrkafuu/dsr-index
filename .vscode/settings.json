@@ -1,7 +1,4 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "html.format.endWithNewline": true,
-  "html.format.wrapAttributes": "aligned-multiple",
+  "typescript.tsdk": "node_modules\\.pnpm\\typescript@4.9.3\\node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
