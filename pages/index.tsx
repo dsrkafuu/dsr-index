@@ -47,10 +47,14 @@ function Home() {
         left='50%'
         top='50%'
         transform='translate(-50%, -50%)'
-        px='8'
-        py='6'
+        py={{ base: '7', md: '6' }}
+        w={{ base: '260px', md: '440px' }}
       >
-        <Flex>
+        <Flex
+          justify='center'
+          align='center'
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Image
             className={styles.image}
             width={128}
@@ -59,7 +63,13 @@ function Home() {
             alt='Avatar'
             priority
           />
-          <Flex direction='column' justify='center' align='center' ml='4'>
+          <Flex
+            direction='column'
+            justify='center'
+            align='center'
+            ml={{ base: '0', md: '4' }}
+            mt={{ base: '4', md: '0' }}
+          >
             <Heading size='lg'>DSRKafuU</Heading>
             <Text mt='1'>Internet for people, not profit</Text>
             <ButtonGroup spacing='0.5' mt='1'>

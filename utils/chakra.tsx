@@ -18,7 +18,9 @@ export const theme = extendTheme({
     }),
   },
   fonts: {
+    heading: `Inter, -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'Noto Sans JP', sans-serif`,
     body: `Inter, -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'Noto Sans JP', sans-serif`,
+    mono: `'Fira Code', 'Noto Sans SC', 'Noto Sans JP', monospace`,
   },
 });
 
