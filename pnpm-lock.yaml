@@ -5,8 +5,6 @@ specifiers:
   '@chakra-ui/react': ^2.4.6
   '@dsrca/cdn': ^2.1.1
   '@dsrca/config': ^2.1.1
-  '@dsrca/design': ^2.1.1
-  '@dsrca/react': ^2.1.1
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
   '@types/node': ^18.11.18
@@ -27,8 +25,6 @@ specifiers:
 dependencies:
   '@chakra-ui/react': 2.4.6_uibis2bm44wz3hkzfktj2mle4y
   '@dsrca/cdn': 2.1.1
-  '@dsrca/design': 2.1.1
-  '@dsrca/react': 2.1.1_react@18.2.0
   '@emotion/react': 11.10.5_jp5qgyg6plq757v5hojp7ls2oe
   '@emotion/styled': 11.10.5_jp5djshq6aqfasno3mth3hguci
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
@@ -1346,20 +1342,6 @@ packages:
       - supports-color
     dev: true
 
-  /@dsrca/design/2.1.1:
-    resolution: {integrity: sha512-sp3/Z3PrEPcsIG8Z81Dm0HEqEnDM5IyBlltQzKnkVTHQI3vLfL0jA2eGjH1gewVpcmUQeam0cjsqwVnF5+OHhg==}
-    dev: false
-
-  /@dsrca/react/2.1.1_react@18.2.0:
-    resolution: {integrity: sha512-1YFWTSQ7ncbj2AfpmL6TsKKEfQPEUiFzU5CypUMRFJTkICRk9OuIGxvZFYI+IkI+mfyjzZKvX/ksXUUeN1gKMQ==}
-    peerDependencies:
-      react: ^18.0.0
-    dependencies:
-      '@dsrca/design': 2.1.1
-      clsx: 1.2.1
-      react: 18.2.0
-    dev: false
-
   /@emotion/babel-plugin/11.10.5_@babel+core@7.20.12:
     resolution: {integrity: sha512-xE7/hyLHJac7D2Ve9dKroBBZqBT7WuPQmWcq7HSGb84sUuP4mlOWoB8dvVfD9yk5DHkU1m6RW7xSoDtnQHNQeA==}
     peerDependencies:
@@ -2177,11 +2159,6 @@ packages:
 
   /client-only/0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
-    dev: false
-
-  /clsx/1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
-    engines: {node: '>=6'}
     dev: false
 
   /color-convert/1.9.3:

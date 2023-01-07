@@ -13,8 +13,6 @@
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",
     "@dsrca/cdn": "^2.1.1",
-    "@dsrca/design": "^2.1.1",
-    "@dsrca/react": "^2.1.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "framer-motion": "^6.5.1",
