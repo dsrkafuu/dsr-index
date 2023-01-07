@@ -1,6 +1,5 @@
-'use client';
-
 import 'sakana-widget/lib/index.css';
+import styles from './index.module.scss';
 import { useEffect } from 'react';
 import _SakanaWidget from 'sakana-widget';
 
@@ -20,7 +19,11 @@ function SakanaWidget() {
     };
   }, []);
 
-  return <div id='sakana-widget'> </div>;
+  return (
+    <div id='sakana-widget' className={styles.widget}>
+      {' '}
+    </div>
+  );
 }
 
 export default SakanaWidget;

@@ -2,8 +2,7 @@
   "extends": "@dsrca/config",
   "compilerOptions": {
     "jsx": "preserve",
-    "incremental": true,
-    "plugins": [{ "name": "next" }]
+    "incremental": true
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
