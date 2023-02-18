@@ -1,0 +1,14 @@
+@import '@dsrca/design/reset';
+@import '@dsrca/design/colors';
+
+@include dsr-colors-full;
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.anticon {
+}

@@ -1,5 +1,5 @@
+dist/
 node_modules/
-.vscode/
-.next/
-*.tsbuildinfo
 .DS_Store
+.env*
+stats.html

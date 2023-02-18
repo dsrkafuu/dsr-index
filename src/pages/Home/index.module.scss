@@ -1,0 +1,61 @@
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.card {
+  :global {
+    .ant-card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+}
+
+.bio {
+  margin: 0;
+}
+
+.btns {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.routes {
+  :global {
+    .ant-card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+    }
+  }
+}
