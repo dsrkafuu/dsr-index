@@ -1,0 +1,32 @@
+{
+  "siteName": "DSRKafuU",
+  "siteBio": "Internet for people, not profit",
+  "siteLinks": [
+    {
+      "key": "blog",
+      "name": "Blog",
+      "href": "https://blog.dsrkafuu.net/"
+    },
+    {
+      "key": "github",
+      "name": "GitHub",
+      "href": "https://github.com/dsrkafuu"
+    },
+    {
+      "key": "twitter",
+      "name": "Twitter",
+      "href": "https://twitter.com/dsrkafuu"
+    },
+    {
+      "key": "bgm",
+      "name": "Bangumi",
+      "href": "https://bgm.tv/user/dsrkafuu"
+    },
+    {
+      "key": "steam",
+      "name": "Steam",
+      "href": "https://steamcommunity.com/id/dsrkafuu/"
+    }
+  ],
+  "hideAppEntry": false
+}

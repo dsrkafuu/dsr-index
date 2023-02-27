@@ -1,7 +1,12 @@
 {
   "extends": "@dsrca/config/tsconfig",
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "$config": ["./config.json"]
+    }
   },
   "include": ["./src"]
 }

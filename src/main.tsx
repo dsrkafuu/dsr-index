@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { ConfigProvider } from 'antd';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { routes } from './router';
+import routes from './routes';
 
 const router = createBrowserRouter(routes);
 

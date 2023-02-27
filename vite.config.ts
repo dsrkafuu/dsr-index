@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { defineConfig } from 'vite';
-import { splitVendorChunkPlugin } from 'vite';
+import path from 'path';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 import htmlEnv from 'vite-plugin-html-env';
@@ -12,6 +12,12 @@ const NODE_ENVS: any = process.env || {};
  * https://vitejs.dev/config/
  */
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      $config: path.resolve(__dirname, './config.json'),
+    },
+  },
   plugins: [
     splitVendorChunkPlugin(),
     htmlEnv({ ...NODE_ENVS }),

@@ -1,16 +1,16 @@
 import styles from './Cover.module.scss';
 import { Outlet } from 'react-router';
-import { Helmet } from 'react-helmet-async';
-import { useExactMatch } from '../router';
+import { useExactMatch } from '@/hooks';
+import Head from '@/components/Head';
 
 function Cover() {
-  const match = useExactMatch();
+  const {
+    meta: { title },
+  } = useExactMatch();
 
   return (
     <>
-      <Helmet>
-        <title>{match.meta.title || 'DSRKafuU'}</title>
-      </Helmet>
+      <Head title={title} />
       <main className={styles.main}>
         <Outlet />
       </main>

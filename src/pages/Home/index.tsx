@@ -1,50 +1,27 @@
 import styles from './index.module.scss';
 import { useNavigate } from 'react-router';
 import { Button, Card, Image } from 'antd';
+import { siteName, siteBio, siteLinks, hideAppEntry } from '$config';
 import { AVATAR__DSRKAFUU_256P_WEBP } from '@dsrca/cdn';
 import {
   IBlog,
   IBrowser,
   IGitHub,
+  ILink,
   ISteam,
   ITVRetro,
   ITwitter,
-} from '../../icons';
-import { FALLBACK_IMG } from '../../utils/constants';
-import { reportClick } from '../../utils/gtag';
+} from '@/icons';
+import { FALLBACK_IMG } from '@/utils/constants';
+import { reportClick } from '@/utils/gtag';
 
-const LINKS = [
-  {
-    name: 'Blog',
-    Icon: IBlog,
-    href: 'https://blog.dsrkafuu.net/',
-    event: 'goto_blog',
-  },
-  {
-    name: 'GitHub',
-    Icon: IGitHub,
-    href: 'https://github.com/dsrkafuu',
-    event: 'goto_github',
-  },
-  {
-    name: 'Twitter',
-    Icon: ITwitter,
-    href: 'https://twitter.com/dsrkafuu',
-    event: 'goto_twitter',
-  },
-  {
-    name: 'Bangumi',
-    Icon: ITVRetro,
-    href: 'https://bgm.tv/user/dsrkafuu',
-    event: 'goto_bgm',
-  },
-  {
-    name: 'Steam',
-    Icon: ISteam,
-    href: 'https://steamcommunity.com/id/dsrkafuu/',
-    event: 'goto_steam',
-  },
-];
+const LINK_ICONS = {
+  blog: IBlog,
+  github: IGitHub,
+  twitter: ITwitter,
+  bgm: ITVRetro,
+  steam: ISteam,
+};
 
 function Home() {
   const navigate = useNavigate();
@@ -63,10 +40,11 @@ function Home() {
           />
         </div>
         <div className={styles.meta}>
-          <h1 className={styles.title}>DSRKafuU</h1>
-          <p className={styles.bio}>Internet for people, not profit</p>
+          <h1 className={styles.title}>{siteName}</h1>
+          <p className={styles.bio}>{siteBio}</p>
           <div className={styles.btns}>
-            {LINKS.map(({ name, Icon, href, event }) => {
+            {siteLinks.map(({ key, name, href }) => {
+              const Icon = LINK_ICONS[key as keyof typeof LINK_ICONS] || ILink;
               return (
                 <Button
                   key={name}
@@ -75,23 +53,21 @@ function Home() {
                   title={name}
                   href={href}
                   target='_blank'
-                  onClick={(e) => reportClick(event, e)}
+                  onClick={(e) => reportClick(`goto_${key}`, e)}
                 />
               );
             })}
           </div>
         </div>
       </Card>
-      {import.meta.env.VITE_HIDE_APPS !== '1' && (
-        <Card className={styles.routes} bordered={false}>
-          <Button
-            type='text'
-            icon={<IBrowser />}
-            onClick={() => navigate('/app/katacode')}
-          >
-            Apps
-          </Button>
-        </Card>
+      {!hideAppEntry && (
+        <Button
+          type='text'
+          icon={<IBrowser />}
+          onClick={() => navigate('/app/katacode')}
+        >
+          Apps
+        </Button>
       )}
     </>
   );

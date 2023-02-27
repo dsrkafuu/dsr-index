@@ -16,11 +16,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px 24px;
+      padding: 24px 32px;
 
       @include responsive('md') {
         flex-direction: column;
-        padding: 24px;
+        padding: 40px 24px;
       }
     }
   }
@@ -61,15 +61,4 @@
   justify-content: center;
   align-items: center;
   gap: 3px;
-}
-
-.routes {
-  :global {
-    .ant-card-body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 3px;
-    }
-  }
 }
