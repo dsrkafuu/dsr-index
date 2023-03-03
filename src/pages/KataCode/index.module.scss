@@ -1,0 +1,45 @@
+.ctrls {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  flex: 1 1 50%;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.ctrlbtn {
+  &:first-child {
+    margin-right: 12px;
+  }
+  &:last-child {
+    margin-left: 12px;
+  }
+}
+
+.area {
+  flex: 1 1 auto;
+  height: 50vh;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+
+  &:first-child {
+    margin-right: 24px;
+  }
+}
+
+.input {
+  flex: 1 1 auto;
+}

@@ -8,7 +8,9 @@ interface HeadProps {
 function Head({ title }: HeadProps) {
   return (
     <Helmet>
-      <title>{title ? `${title} | ${siteName}` : siteName}</title>
+      <title>
+        {title && title !== 'Home' ? `${title} | ${siteName}` : siteName}
+      </title>
     </Helmet>
   );
 }

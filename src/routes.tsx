@@ -13,7 +13,9 @@ const routes: RouteObject[] = [
         index: true,
         element: <Home />,
         handle: () => ({
-          meta: {},
+          meta: {
+            title: 'Home',
+          },
         }),
       },
     ],
