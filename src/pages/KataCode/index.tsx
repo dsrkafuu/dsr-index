@@ -1,7 +1,13 @@
 import styles from './index.module.scss';
 import { useCallback, useState } from 'react';
-import { Button, Card, Input } from 'antd';
-import { IArrowsRepeat, ICopy, ITrash } from '@/icons';
+import { Button, Card, Input, message } from 'antd';
+import {
+  IArrowsRepeat,
+  IChevronsLeft,
+  IChevronsRight,
+  ICopy,
+  ITrash,
+} from '@/icons';
 import { decodeKata, encodeKata } from '@/utils/katacode';
 
 function KataCode() {
@@ -13,60 +19,71 @@ function KataCode() {
     setTarget('');
   }, []);
 
-  const handleSourceChange = useCallback(
-    async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const value = e.target.value;
-      setSource(value);
-      const result = await encodeKata(value);
+  const handleConvert = useCallback(async () => {
+    try {
+      if (!source) {
+        return;
+      }
+      let result = await encodeKata(source);
+      result = `KataCode::<https://dsrkafuu.net/app/katacode::${result}`;
       setTarget(result);
-    },
-    []
-  );
+    } catch (e) {
+      message.error('Error encoding kata code, please check your source input');
+    }
+  }, [source]);
 
-  const handleTargetChange = useCallback(
-    async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const value = e.target.value;
-      setTarget(value);
-      const result = await decodeKata(value);
+  const handleRevert = useCallback(async () => {
+    try {
+      if (!target) {
+        return;
+      }
+      const input = target.trim().split('::')[2];
+      const result = await decodeKata(input);
       setSource(result);
-    },
-    []
-  );
+    } catch {
+      message.error('Error decoding kata code, please check your code input');
+    }
+  }, [target]);
 
   return (
-    <Card bordered={false}>
+    <Card className={styles.card} bordered={false}>
       <div className={styles.ctrls}>
-        <Button className={styles.ctrlbtn} icon={<ICopy />}>
-          Copy
-        </Button>
-        <Button icon={<ITrash />} onClick={handleClear}>
-          Clear
-        </Button>
+        <Button icon={<ICopy />} />
         <span className={styles.title}>Source</span>
         <IArrowsRepeat />
         <span className={styles.title}>Result</span>
-        <Button icon={<ICopy />}>Copy</Button>
-        <Button
-          className={styles.ctrlbtn}
-          icon={<ITrash />}
-          onClick={handleClear}
-        >
-          Clear
-        </Button>
+        <Button icon={<ICopy />} />
       </div>
       <div className={styles.inputs}>
         <div className={styles.area}>
           <Input.TextArea
             className={styles.input}
             value={source}
-            onChange={handleSourceChange}
+            onChange={(e) => setSource(e.target.value)}
+          />
+        </div>
+        <div className={styles.center}>
+          <Button
+            className={styles.convert}
+            icon={<IChevronsRight />}
+            onClick={handleConvert}
+          />
+          <Button
+            className={styles.convert}
+            icon={<IChevronsLeft />}
+            onClick={handleRevert}
+          />
+          <Button
+            className={styles.convert}
+            icon={<ITrash />}
+            onClick={handleClear}
           />
         </div>
         <div className={styles.area}>
           <Input.TextArea
             className={styles.input}
             value={target}
-            onChange={handleTargetChange}
+            onChange={(e) => setTarget(e.target.value)}
           />
         </div>
       </div>
