@@ -1,5 +1,11 @@
-dist/
+.next/
+.vercel/
+build/
+legacy/
 node_modules/
+out/
 .DS_Store
-.env*
-index.html
+.env*.local
+next-env.d.ts
+pnpm-lock.yaml
+*.tsbuildinfo
