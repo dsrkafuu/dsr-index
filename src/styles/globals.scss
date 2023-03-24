@@ -1,3 +1,4 @@
+@import '@dsrca/design/variables';
 @import '@dsrca/design/reset';
 @import '@dsrca/design/colors';
 
@@ -8,9 +9,14 @@ body {
   height: 100%;
   color: var(--color-font);
   background-color: var(--color-body);
+  font-family: $family-body;
 }
 
-#__next,
-#__app {
+#__next {
   height: 100%;
+}
+
+pre,
+code {
+  font-family: $family-mono;
 }
