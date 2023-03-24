@@ -1,0 +1,74 @@
+.card {
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  padding: 20px 24px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.avatar {
+  flex: 0 0 auto;
+  width: 128px;
+  height: 128px;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.image {
+  width: 128px;
+  height: 128px;
+  text-align: center;
+  line-height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meta {
+  flex: 1 1 auto;
+  text-align: center;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.bio {
+  margin: 0 0 8px 0;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: var(--color-font);
+
+  &:hover {
+    background-color: var(--color-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--color-bg-active);
+  }
+
+  & + & {
+    margin-left: 2px;
+  }
+}

@@ -1,0 +1,16 @@
+@import '@dsrca/design/reset';
+@import '@dsrca/design/colors';
+
+@include dsr-colors-full;
+
+html,
+body {
+  height: 100%;
+  color: var(--color-font);
+  background-color: var(--color-body);
+}
+
+#__next,
+#__app {
+  height: 100%;
+}
