@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { AVATAR__DSRKAFUU_256P_PNG } from '@dsrca/cdn';
 import HomeLayout from '@/layouts/Home';
 import { IBlog, IGitHub, ISteam, ITVRetro, ITwitter } from '@/icons';
+import { sendLinkClick } from '@/utils/analytics';
 
 const HomeIcons = {
   blog: IBlog,
@@ -111,6 +112,7 @@ const Home: NextPageWithLayout<HomeProps> = ({ data }) => {
                   className={styles.link}
                   href={link.href}
                   title={link.name}
+                  onClick={(e) => sendLinkClick(`goto_${link.key}`, e)}
                   target='_blank'
                 >
                   <Icon />
