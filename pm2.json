@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "dsr-index",
+      "script": "npm",
+      "args": "start",
+      "exec_mode": "cluster",
+      "instances": "max"
+    }
+  ]
+}
