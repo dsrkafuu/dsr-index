@@ -2,8 +2,8 @@
   "apps": [
     {
       "name": "dsr-index",
-      "script": "./node_modules/.bin/next",
-      "args": "start -H 127.0.0.1 -p 3000",
+      "script": "npm",
+      "args": "start -- -H 127.0.0.1 -p 3000",
       "exec_mode": "cluster",
       "instances": "max"
     }
