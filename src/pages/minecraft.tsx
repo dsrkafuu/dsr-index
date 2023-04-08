@@ -1,4 +1,4 @@
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 import type { NextPageWithLayout } from './_app';
 import type { Config } from '@/utils/config';
 import styles from './minecraft.module.scss';
@@ -24,12 +24,13 @@ interface MinecraftProps {
   };
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     'https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-vmc/index.json'
   );
   const data = await res.json();
   return {
+    revalidate: 3600,
     props: { config: getConfig(), data },
   };
 };
