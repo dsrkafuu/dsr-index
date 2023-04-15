@@ -47,23 +47,25 @@ const Home: NextPageWithLayout<HomeProps> = ({ config }) => {
         <div className={styles.meta}>
           <h1 className={styles.name}>{name}</h1>
           <p className={styles.bio}>{bio}</p>
-          <div className={styles.links}>
-            {links.map((link) => {
-              const Icon = HomeIcons[link.icon as keyof typeof HomeIcons];
-              return (
-                <a
-                  key={link.key}
-                  className={styles.link}
-                  href={link.href}
-                  title={link.name}
-                  onClick={(e) => sendLinkClick(`goto_${link.key}`, e)}
-                  target='_blank'
-                >
-                  <Icon />
-                </a>
-              );
-            })}
-          </div>
+          {!!links && !!links.length && (
+            <div className={styles.links}>
+              {links.map((link: any) => {
+                const Icon = HomeIcons[link.icon as keyof typeof HomeIcons];
+                return (
+                  <a
+                    key={link.key}
+                    className={styles.link}
+                    href={link.href}
+                    title={link.name}
+                    onClick={(e) => sendLinkClick(`goto_${link.key}`, e)}
+                    target='_blank'
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </>
