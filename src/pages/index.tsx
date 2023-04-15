@@ -49,7 +49,7 @@ const Home: NextPageWithLayout<HomeProps> = ({ config }) => {
           <p className={styles.bio}>{bio}</p>
           {!!links && !!links.length && (
             <div className={styles.links}>
-              {links.map((link: any) => {
+              {links.map((link) => {
                 const Icon = HomeIcons[link.icon as keyof typeof HomeIcons];
                 return (
                   <a
