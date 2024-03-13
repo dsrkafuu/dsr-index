@@ -4,7 +4,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.jsdelivr.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
+      },
+    ],
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
