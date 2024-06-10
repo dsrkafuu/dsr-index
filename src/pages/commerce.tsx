@@ -86,11 +86,6 @@ const Control = ({ link, copy, qrcode }: ControlProps) => {
           </div>
         </div>
       )}
-      {link && (
-        <a className={styles.btn} href={link}>
-          <ILink className={styles.icon} />
-        </a>
-      )}
       {copy && (
         <a className={styles.btn} ref={clipboardRef} data-clipboard-text={copy}>
           <ICopy className={styles.icon} />
@@ -99,6 +94,11 @@ const Control = ({ link, copy, qrcode }: ControlProps) => {
       {qrcode && (
         <a className={styles.btn} onClick={() => setModalType('qrcode')}>
           <IQRCode className={styles.icon} />
+        </a>
+      )}
+      {link && (
+        <a className={styles.btn} href={link}>
+          <ILink className={styles.icon} />
         </a>
       )}
     </div>
@@ -121,9 +121,9 @@ const Commerce: NextPageWithLayout<CommerceProps> = ({ config }) => {
               <span className={styles.hint}>仅支持 CNY 收款</span>
             </div>
             <Control
-              link='https://qr.alipay.com/tsx18086dyhsjedljnzid11'
               copy='dsrkafuu@outlook.com'
               qrcode={imageAlipay}
+              link='https://qr.alipay.com/tsx18086dyhsjedljnzid11'
             />
             <div>dsrkafuu@outlook.com</div>
           </div>
@@ -134,10 +134,7 @@ const Commerce: NextPageWithLayout<CommerceProps> = ({ config }) => {
               <h1 className={styles.title}>转数快</h1>
               <span className={styles.hint}>仅支持 HKD 收款</span>
             </div>
-            <Control
-              link='https://qr.alipay.com/tsx18086dyhsjedljnzid11'
-              copy='dsrkafuu@outlook.com'
-            />
+            <Control copy='dsrkafuu@outlook.com' />
             <div>dsrkafuu@outlook.com (众安银行)</div>
           </div>
         </div>
