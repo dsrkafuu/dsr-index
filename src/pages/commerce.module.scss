@@ -1,0 +1,148 @@
+@import '@dsrca/design/variables';
+
+.card {
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  padding: 20px 24px;
+  border-radius: 8px;
+  width: 100%;
+
+  :global {
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.hint {
+  background-color: var(--color-wrapper);
+  padding: 0 8px;
+  font-size: 14px;
+  border-radius: $radius-sm;
+  margin-left: 12px;
+  line-height: 24px;
+}
+
+.control {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: flex;
+  border: $size-border solid var(--color-border);
+  width: 48px;
+  height: 32px;
+  border-radius: $radius-md;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  & + & {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    background-color: var(--color-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--color-bg-active);
+  }
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalCard {
+  background-color: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  padding: 20px 24px;
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+}
+
+.modalTitle {
+  font-weight: 600;
+}
+
+.modalContent {
+  margin-top: 8px;
+}
+
+.modalControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.modalBtn {
+  display: flex;
+  border: $size-border solid var(--color-border);
+  width: 64px;
+  height: 32px;
+  border-radius: $radius-md;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--color-bg-hover);
+  }
+
+  &:active {
+    background-color: var(--color-bg-active);
+  }
+}
+
+.image {
+  width: 320px;
+  height: auto;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
