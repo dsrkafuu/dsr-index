@@ -68,7 +68,12 @@ const Control = ({ link, copy, qrcode }: ControlProps) => {
           <div className={styles.modalCard}>
             <div className={styles.modalTitle}>QRCode</div>
             <div className={styles.modalContent}>
-              <Image className={styles.image} src={qrcode} alt='QRCode' />
+              <Image
+                className={styles.image}
+                src={qrcode}
+                alt='QRCode'
+                priority
+              />
             </div>
             <div className={styles.modalControl}>
               <div
