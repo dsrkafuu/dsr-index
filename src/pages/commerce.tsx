@@ -9,8 +9,8 @@ import { ICopy, ILink, IQRCode } from '@/icons';
 import { useEffect, useRef, useState } from 'react';
 import ClipboardJS from 'clipboard';
 import Image from 'next/image';
-import imageAlipay from '../../public/alipay.jpg';
-import imageCrypto from '../../public/crypto.jpg';
+import imageAlipay from '../../public/alipay.webp';
+import imageCrypto from '../../public/crypto.webp';
 
 interface CommerceProps {
   config: Config;
