@@ -111,7 +111,7 @@ const Commerce: NextPageWithLayout<CommerceProps> = ({ config }) => {
   return (
     <>
       <Head>
-        <title>转账指南 - {name}</title>
+        <title>{`转账指南 - ${name}`}</title>
       </Head>
       <div className={styles.page} lang='zh'>
         <div className={styles.card}>

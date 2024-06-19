@@ -42,7 +42,7 @@ const Minecraft: NextPageWithLayout<MinecraftProps> = ({ config, data }) => {
   return (
     <>
       <Head>
-        <title>DSRVMC Minecraft 原版整合 - {name}</title>
+        <title>{`DSRVMC Minecraft 原版整合 - ${name}`}</title>
       </Head>
       <div className={styles.card} lang='zh'>
         <div>
