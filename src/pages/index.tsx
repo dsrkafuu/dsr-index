@@ -8,6 +8,7 @@ import HomeLayout from '@/layouts/Home';
 import { IBlog, IGitHub, ISteam, ITVRetro, ITwitter } from '@/icons';
 import { getConfig } from '@/utils/config';
 import { sendLinkClick } from '@/utils/analytics';
+import imageAvatar from '../../public/irasutoya.jpg';
 
 const HomeIcons = {
   blog: IBlog,
@@ -26,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: NextPageWithLayout<HomeProps> = ({ config }) => {
-  const { avatar, name, bio, links } = config;
+  const { name, bio, links } = config;
 
   return (
     <>
@@ -37,7 +38,7 @@ const Home: NextPageWithLayout<HomeProps> = ({ config }) => {
         <div className={styles.avatar}>
           <Image
             className={styles.image}
-            src={avatar}
+            src={imageAvatar}
             alt='Avatar'
             width={128}
             height={128}
