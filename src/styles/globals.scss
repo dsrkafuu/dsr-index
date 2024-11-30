@@ -1,15 +1,16 @@
-@import '@dsrca/design/variables';
-@import '@dsrca/design/reset';
-@import '@dsrca/design/colors';
+@use '@dsrca/design/variables';
+@use '@dsrca/design/reset';
+@use '@dsrca/design/colors';
 
-@include dsr-colors-full;
+@include reset.sanitize;
+@include colors.full;
 
 html,
 body {
   height: 100%;
   color: var(--color-font);
   background-color: var(--color-body);
-  font-family: $family-body;
+  font-family: variables.$family-body;
 }
 
 #__next {
@@ -18,5 +19,5 @@ body {
 
 pre,
 code {
-  font-family: $family-mono;
+  font-family: variables.$family-mono;
 }

@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dsr-index",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Index page of DSR project.",
   "license": "AGPL-3.0",
   "author": "DSRKafuU <dsrkafuu@outlook.com> (https://dsrkafuu.net)",
@@ -11,28 +11,28 @@
     "start": "next start"
   },
   "dependencies": {
-    "@dsrca/cdn": "^3.4.0",
-    "@dsrca/design": "^3.5.0",
-    "antd": "^5.18.0",
-    "axios": "^1.7.2",
+    "@dsrca/cdn": "^4.4.0",
+    "@dsrca/design": "^4.3.0",
+    "antd": "^5.22.2",
+    "axios": "^1.7.8",
     "clipboard": "^2.0.11",
     "clsx": "^2.1.1",
-    "dayjs": "^1.11.11",
-    "next": "^14.2.3",
-    "nextjs-google-analytics": "^2.3.3",
+    "dayjs": "^1.11.13",
+    "next": "^15.0.3",
+    "nextjs-google-analytics": "^2.3.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sass": "^1.77.4",
-    "sharp": "^0.33.4"
+    "sass": "^1.81.0",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@dsrca/config": "^3.4.0",
+    "@dsrca/config": "^4.4.1",
     "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20.14.2",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
-    "prettier": "^3.3.1",
-    "typescript": "^5.4.5"
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.1",
+    "typescript": "~5.4.5"
   }
 }

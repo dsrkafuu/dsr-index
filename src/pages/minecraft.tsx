@@ -64,13 +64,28 @@ const Minecraft: NextPageWithLayout<MinecraftProps> = ({ config, data }) => {
               </p>
             </div>
             <div className={styles.dls}>
-              <a className={styles.dl} target='_blank' href={download}>
+              <a
+                className={styles.dl}
+                target='_blank'
+                href={download}
+                rel='noreferrer'
+              >
                 整合包下载
               </a>
-              <a className={styles.dl} target='_blank' href={modrinth}>
+              <a
+                className={styles.dl}
+                target='_blank'
+                href={modrinth}
+                rel='noreferrer'
+              >
                 Modrinth
               </a>
-              <a className={styles.dl} target='_blank' href={java}>
+              <a
+                className={styles.dl}
+                target='_blank'
+                href={java}
+                rel='noreferrer'
+              >
                 Java 下载
               </a>
             </div>
@@ -79,7 +94,7 @@ const Minecraft: NextPageWithLayout<MinecraftProps> = ({ config, data }) => {
                 return (
                   <div className={styles.mod} key={name}>
                     <span>{name}</span>
-                    <a target='_blank' href={link}>
+                    <a target='_blank' href={link} rel='noreferrer'>
                       {source === 0 ? 'Modrinth' : 'CurseForge'}
                     </a>
                   </div>

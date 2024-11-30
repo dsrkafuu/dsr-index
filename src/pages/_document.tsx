@@ -6,8 +6,12 @@ const CustomDocument = () => {
       <Head>
         <meta name='author' content='DSRKafuU' />
         <meta name='description' content='Homepage of DSRKafuU and DSRGroup.' />
-        <link rel='icon' href='/favicon.svg' />
-        <link rel='apple-touch-icon' sizes='180x180' href='/favicon.png' />
+        <link rel='icon' href='/favicon.ico' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'

@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import '@/styles/globals.scss';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
 };
 

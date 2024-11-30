@@ -59,6 +59,7 @@ const Home: NextPageWithLayout<HomeProps> = ({ config }) => {
                     title={link.name}
                     onClick={(e) => sendLinkClick(`goto_${link.key}`, e)}
                     target='_blank'
+                    rel='noreferrer'
                   >
                     <Icon />
                   </a>

@@ -1,4 +1,4 @@
-@import '@dsrca/design/variables';
+@use '@dsrca/design/variables';
 
 .card {
   background-color: var(--color-bg);
@@ -39,7 +39,7 @@
   background-color: var(--color-wrapper);
   padding: 0 8px;
   font-size: 14px;
-  border-radius: $radius-sm;
+  border-radius: variables.$radius-sm;
   margin-left: 12px;
   line-height: 24px;
 }
@@ -51,10 +51,10 @@
 
 .btn {
   display: flex;
-  border: $size-border solid var(--color-border);
+  border: variables.$size-border solid var(--color-border);
   width: 48px;
   height: 32px;
-  border-radius: $radius-md;
+  border-radius: variables.$radius-md;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -97,6 +97,8 @@
   border-radius: 8px;
   max-width: 100%;
   max-height: 100%;
+  min-width: fit-content;
+  min-height: fit-content;
   text-align: center;
 }
 
@@ -117,10 +119,10 @@
 
 .modalBtn {
   display: flex;
-  border: $size-border solid var(--color-border);
+  border: variables.$size-border solid var(--color-border);
   width: 64px;
   height: 32px;
-  border-radius: $radius-md;
+  border-radius: variables.$radius-md;
   justify-content: center;
   align-items: center;
   cursor: pointer;
